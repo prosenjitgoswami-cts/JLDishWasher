@@ -31,15 +31,25 @@ extension SpecificProductInfo {
 
 			displaySpecialOffer = displaySpecialOfferStr;
 		}
+
+		bindMedia(with: response)
 	}
 }
 
 //MARK:------------------------------- * ----------------------------------
-//MARK: Private Method
 extension SpecificProductInfo {
 
-private func bindMedia(with media:Dictionary<String, Any>?) {
+ func bindMedia(with mediaResult:Dictionary<String, Any>?) {
 
+	let media: Media = Media()
+	media.initWith(response: mediaResult)
 
+	}
+
+	func bindDetails(with detailsResult:Dictionary<String, Any>?) {
+
+		let media: Details = Media()
+		media.initWith(response: detailsResult)
+		
 	}
 }

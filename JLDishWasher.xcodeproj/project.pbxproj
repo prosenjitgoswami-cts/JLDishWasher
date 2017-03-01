@@ -35,6 +35,9 @@
 		EA5FCFC81E6722F300F65C1F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5FCFC01E6722F300F65C1F /* Product.swift */; };
 		EA5FCFC91E6722F300F65C1F /* ProductPrise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5FCFC21E6722F300F65C1F /* ProductPrise.swift */; };
 		EA5FCFCA1E6722F300F65C1F /* SpecificProductInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5FCFC41E6722F300F65C1F /* SpecificProductInfo.swift */; };
+		EA5FCFCF1E6723FD00F65C1F /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5FCFCE1E6723FD00F65C1F /* Media.swift */; };
+		EA5FCFD41E67243000F65C1F /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5FCFD11E67243000F65C1F /* Details.swift */; };
+		EA5FCFD51E67243000F65C1F /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5FCFD31E67243000F65C1F /* Feature.swift */; };
 		EA607F351E670066004419F5 /* HelperUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA607F341E670066004419F5 /* HelperUtils.swift */; };
 		EA607F381E6702C2004419F5 /* JLDWProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA607F371E6702C2004419F5 /* JLDWProductDetailsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -76,6 +79,9 @@
 		EA5FCFC01E6722F300F65C1F /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		EA5FCFC21E6722F300F65C1F /* ProductPrise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductPrise.swift; sourceTree = "<group>"; };
 		EA5FCFC41E6722F300F65C1F /* SpecificProductInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificProductInfo.swift; sourceTree = "<group>"; };
+		EA5FCFCE1E6723FD00F65C1F /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		EA5FCFD11E67243000F65C1F /* Details.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
+		EA5FCFD31E67243000F65C1F /* Feature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		EA607F341E670066004419F5 /* HelperUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperUtils.swift; sourceTree = "<group>"; };
 		EA607F371E6702C2004419F5 /* JLDWProductDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWProductDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -234,6 +240,9 @@
 			isa = PBXGroup;
 			children = (
 				EA5FCFB81E6722F300F65C1F /* BaseModel */,
+				EA5FCFD01E67243000F65C1F /* Details */,
+				EA5FCFD21E67243000F65C1F /* Feature */,
+				EA5FCFCD1E6723FD00F65C1F /* Media */,
 				EA5FCFBF1E6722F300F65C1F /* Product */,
 				EA5FCFC11E6722F300F65C1F /* ProductPrise */,
 				EA5FCFC31E6722F300F65C1F /* SpecificProductInfo */,
@@ -313,6 +322,30 @@
 				EA5FCFC41E6722F300F65C1F /* SpecificProductInfo.swift */,
 			);
 			path = SpecificProductInfo;
+			sourceTree = "<group>";
+		};
+		EA5FCFCD1E6723FD00F65C1F /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				EA5FCFCE1E6723FD00F65C1F /* Media.swift */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		EA5FCFD01E67243000F65C1F /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				EA5FCFD11E67243000F65C1F /* Details.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		EA5FCFD21E67243000F65C1F /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				EA5FCFD31E67243000F65C1F /* Feature.swift */,
+			);
+			path = Feature;
 			sourceTree = "<group>";
 		};
 		EA607F361E6702A6004419F5 /* ProductDetailsViewController */ = {
@@ -437,12 +470,15 @@
 				EA5FCFCA1E6722F300F65C1F /* SpecificProductInfo.swift in Sources */,
 				EA5FCFC81E6722F300F65C1F /* Product.swift in Sources */,
 				C66428351E6857020016B562 /* JLDWProductGridVCCollectionViewCell.swift in Sources */,
+				EA5FCFD51E67243000F65C1F /* Feature.swift in Sources */,
+				EA5FCFCF1E6723FD00F65C1F /* Media.swift in Sources */,
 				C664282C1E6852D50016B562 /* DataService.swift in Sources */,
 				EA5FCF9C1E67197A00F65C1F /* JLDWProductDetailsViewControllerPresenter.swift in Sources */,
 				EA607F381E6702C2004419F5 /* JLDWProductDetailsViewController.swift in Sources */,
 				EA5FCFC51E6722F300F65C1F /* BaseModel.swift in Sources */,
 				EA607F351E670066004419F5 /* HelperUtils.swift in Sources */,
 				C65B3E101E682EFB0055CD22 /* AppDelegate.swift in Sources */,
+				EA5FCFD41E67243000F65C1F /* Details.swift in Sources */,
 				C65B3E211E6832670055CD22 /* JLDWProductGridViewControllerPresenter.swift in Sources */,
 				C65B3E161E6831C80055CD22 /* JLDWProductGridViewController.swift in Sources */,
 				C664282D1E6852D50016B562 /* DNWebService.swift in Sources */,

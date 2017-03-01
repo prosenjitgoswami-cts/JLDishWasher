@@ -10,4 +10,7 @@
 class SpecificProductInfo: Product {
 
 	var media: Media?
+	var details: Details?
+	
+
 }

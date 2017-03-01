@@ -6,9 +6,8 @@
 //  Copyright © 2017 CTS. All rights reserved.
 //
 
-import UIKit
 
-class ProductPrise: NSObject {
+class ProductPrise: BaseModel {
 
     var priseNow : String?
     var priseCurrency : String?

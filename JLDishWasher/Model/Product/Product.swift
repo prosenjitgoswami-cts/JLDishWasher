@@ -6,9 +6,7 @@
 //  Copyright © 2017 CTS. All rights reserved.
 //
 
-import UIKit
-
-class Product: NSObject {
+class Product: BaseModel {
 
 	var productId: String?
 	var title: String?

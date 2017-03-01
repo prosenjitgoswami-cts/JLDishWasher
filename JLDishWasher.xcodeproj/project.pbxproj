@@ -26,10 +26,6 @@
 		EA5FCF901E67174300F65C1F /* DNWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664282B1E6852D50016B562 /* DNWebService.swift */; };
 		EA5FCF911E67174900F65C1F /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664282A1E6852D50016B562 /* DataService.swift */; };
 		EA5FCF921E67176500F65C1F /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664282E1E6852DC0016B562 /* ErrorManager.swift */; };
-		EA5FCF961E6718BF00F65C1F /* TestJsonFileForProductsListWith21Products.json in Resources */ = {isa = PBXBuildFile; fileRef = EA5FCF931E6718BF00F65C1F /* TestJsonFileForProductsListWith21Products.json */; };
-		EA5FCF971E6718BF00F65C1F /* TestJsonFileForProductsListWithNoProduct.json in Resources */ = {isa = PBXBuildFile; fileRef = EA5FCF941E6718BF00F65C1F /* TestJsonFileForProductsListWithNoProduct.json */; };
-		EA5FCF981E6718BF00F65C1F /* TestJsonFileForProductsListWithValidProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = EA5FCF951E6718BF00F65C1F /* TestJsonFileForProductsListWithValidProducts.json */; };
-		EA5FCF9A1E67194B00F65C1F /* TestJsonForProductPage.json in Resources */ = {isa = PBXBuildFile; fileRef = EA5FCF991E67194B00F65C1F /* TestJsonForProductPage.json */; };
 		EA5FCF9C1E67197A00F65C1F /* JLDWProductDetailsViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5FCF9B1E67197A00F65C1F /* JLDWProductDetailsViewControllerPresenter.swift */; };
 		EA5FCFC51E6722F300F65C1F /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5FCFB91E6722F300F65C1F /* BaseModel.swift */; };
 		EA5FCFC81E6722F300F65C1F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5FCFC01E6722F300F65C1F /* Product.swift */; };
@@ -47,6 +43,17 @@
 		EA5FCFDC1E6727F900F65C1F /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5FCFB91E6722F300F65C1F /* BaseModel.swift */; };
 		EA5FCFDE1E67285900F65C1F /* JLDWProductDetailsVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5FCFDD1E67285900F65C1F /* JLDWProductDetailsVCTests.swift */; };
 		EA5FCFDF1E67287400F65C1F /* JLDWProductDetailsViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5FCF9B1E67197A00F65C1F /* JLDWProductDetailsViewControllerPresenter.swift */; };
+		EA5FCFE21E672AC800F65C1F /* TestJsonForProductPageNoProductInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = EA5FCFE01E672AC800F65C1F /* TestJsonForProductPageNoProductInfo.json */; };
+		EA5FCFE31E672ACE00F65C1F /* TestJsonForProductPage.json in Resources */ = {isa = PBXBuildFile; fileRef = EA5FCF991E67194B00F65C1F /* TestJsonForProductPage.json */; };
+		EA5FCFE41E672AD100F65C1F /* TestJsonFileForProductsListWith21Products.json in Resources */ = {isa = PBXBuildFile; fileRef = EA5FCF931E6718BF00F65C1F /* TestJsonFileForProductsListWith21Products.json */; };
+		EA5FCFE51E672AD300F65C1F /* TestJsonFileForProductsListWithNoProduct.json in Resources */ = {isa = PBXBuildFile; fileRef = EA5FCF941E6718BF00F65C1F /* TestJsonFileForProductsListWithNoProduct.json */; };
+		EA5FCFE61E672AD500F65C1F /* TestJsonFileForProductsListWithValidProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = EA5FCF951E6718BF00F65C1F /* TestJsonFileForProductsListWithValidProducts.json */; };
+		EA5FCFE71E672B7C00F65C1F /* TestJsonForProductPageNoProductInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = EA5FCFE01E672AC800F65C1F /* TestJsonForProductPageNoProductInfo.json */; };
+		EA5FCFE81E672B7E00F65C1F /* TestJsonForProductPage.json in Resources */ = {isa = PBXBuildFile; fileRef = EA5FCF991E67194B00F65C1F /* TestJsonForProductPage.json */; };
+		EA5FCFE91E672B8000F65C1F /* TestJsonFileForProductsListWith21Products.json in Resources */ = {isa = PBXBuildFile; fileRef = EA5FCF931E6718BF00F65C1F /* TestJsonFileForProductsListWith21Products.json */; };
+		EA5FCFEA1E672B8200F65C1F /* TestJsonFileForProductsListWithNoProduct.json in Resources */ = {isa = PBXBuildFile; fileRef = EA5FCF941E6718BF00F65C1F /* TestJsonFileForProductsListWithNoProduct.json */; };
+		EA5FCFEB1E672B8400F65C1F /* TestJsonFileForProductsListWithValidProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = EA5FCF951E6718BF00F65C1F /* TestJsonFileForProductsListWithValidProducts.json */; };
+		EA5FCFEC1E672FD200F65C1F /* JLDWTestUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E2E1E6836A50055CD22 /* JLDWTestUtility.swift */; };
 		EA607F351E670066004419F5 /* HelperUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA607F341E670066004419F5 /* HelperUtils.swift */; };
 		EA607F381E6702C2004419F5 /* JLDWProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA607F371E6702C2004419F5 /* JLDWProductDetailsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -92,6 +99,7 @@
 		EA5FCFD11E67243000F65C1F /* Details.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 		EA5FCFD31E67243000F65C1F /* Feature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		EA5FCFDD1E67285900F65C1F /* JLDWProductDetailsVCTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWProductDetailsVCTests.swift; sourceTree = "<group>"; };
+		EA5FCFE01E672AC800F65C1F /* TestJsonForProductPageNoProductInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestJsonForProductPageNoProductInfo.json; sourceTree = "<group>"; };
 		EA607F341E670066004419F5 /* HelperUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperUtils.swift; sourceTree = "<group>"; };
 		EA607F371E6702C2004419F5 /* JLDWProductDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWProductDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -279,6 +287,7 @@
 		C66428271E6845660016B562 /* TestJsonFile */ = {
 			isa = PBXGroup;
 			children = (
+				EA5FCFE01E672AC800F65C1F /* TestJsonForProductPageNoProductInfo.json */,
 				EA5FCF991E67194B00F65C1F /* TestJsonForProductPage.json */,
 				EA5FCF931E6718BF00F65C1F /* TestJsonFileForProductsListWith21Products.json */,
 				EA5FCF941E6718BF00F65C1F /* TestJsonFileForProductsListWithNoProduct.json */,
@@ -451,12 +460,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA5FCFE91E672B8000F65C1F /* TestJsonFileForProductsListWith21Products.json in Resources */,
+				EA5FCFE81E672B7E00F65C1F /* TestJsonForProductPage.json in Resources */,
+				EA5FCFEB1E672B8400F65C1F /* TestJsonFileForProductsListWithValidProducts.json in Resources */,
+				EA5FCFEA1E672B8200F65C1F /* TestJsonFileForProductsListWithNoProduct.json in Resources */,
 				C65B3DEC1E682ECE0055CD22 /* LaunchScreen.storyboard in Resources */,
-				EA5FCF9A1E67194B00F65C1F /* TestJsonForProductPage.json in Resources */,
-				EA5FCF971E6718BF00F65C1F /* TestJsonFileForProductsListWithNoProduct.json in Resources */,
+				EA5FCFE71E672B7C00F65C1F /* TestJsonForProductPageNoProductInfo.json in Resources */,
 				C65B3DE91E682ECE0055CD22 /* Assets.xcassets in Resources */,
-				EA5FCF961E6718BF00F65C1F /* TestJsonFileForProductsListWith21Products.json in Resources */,
-				EA5FCF981E6718BF00F65C1F /* TestJsonFileForProductsListWithValidProducts.json in Resources */,
 				C65B3DE71E682ECE0055CD22 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,6 +475,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA5FCFE61E672AD500F65C1F /* TestJsonFileForProductsListWithValidProducts.json in Resources */,
+				EA5FCFE51E672AD300F65C1F /* TestJsonFileForProductsListWithNoProduct.json in Resources */,
+				EA5FCFE41E672AD100F65C1F /* TestJsonFileForProductsListWith21Products.json in Resources */,
+				EA5FCFE31E672ACE00F65C1F /* TestJsonForProductPage.json in Resources */,
+				EA5FCFE21E672AC800F65C1F /* TestJsonForProductPageNoProductInfo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +499,7 @@
 				EA5FCFD51E67243000F65C1F /* Feature.swift in Sources */,
 				EA5FCFCF1E6723FD00F65C1F /* Media.swift in Sources */,
 				C664282C1E6852D50016B562 /* DataService.swift in Sources */,
+				EA5FCFEC1E672FD200F65C1F /* JLDWTestUtility.swift in Sources */,
 				EA5FCF9C1E67197A00F65C1F /* JLDWProductDetailsViewControllerPresenter.swift in Sources */,
 				EA607F381E6702C2004419F5 /* JLDWProductDetailsViewController.swift in Sources */,
 				EA5FCFC51E6722F300F65C1F /* BaseModel.swift in Sources */,

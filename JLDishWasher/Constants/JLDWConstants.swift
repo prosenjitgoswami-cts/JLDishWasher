@@ -20,13 +20,10 @@ let kDictImageURLString = "image"
 let kDictPriseNow = "now"
 let kDictpriseCurrency = "currency"
 
-
-
 // Error
 let kErrorDomain = "com.DishWasher.error"
 
 // Enums
-
 enum ErrorManagerErrorCode: Int {
 
     case NilURLString = 1
@@ -34,12 +31,13 @@ enum ErrorManagerErrorCode: Int {
 }
 
 // Page Title
-
 let PageTitleProductGridVC = "Dishwashers"
 
 // CollectionView Cell Identifier
-
-let ProductGridCollectionViewCellId = "ProductGridCollectionViewCell"
+let kCellID_JLDWProductGridVCCollectionViewCell = "JLDWProductGridVCCollectionViewCell"
 
 // Padding
 let leftAndRightPaddings = 10.0
+
+// Segue Identifier
+let kSegurID_ToJLDWProductDetailsViewController = "ToJLDWProductDetailsViewController"

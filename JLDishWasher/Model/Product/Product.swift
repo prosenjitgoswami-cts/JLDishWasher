@@ -10,32 +10,35 @@ import UIKit
 
 class Product: NSObject {
 
-    var productId: String?
-    var title: String?
-    var imageURLString: String?
-    var productPrise: ProductPrise?
-    var priseDisplayString: String?
+	var productId: String?
+	var title: String?
+	var imageURLString: String?
+	var productPrise: ProductPrise?
+	var priseDisplayString: String?
 
-    public func initWithResponse(response: Dictionary<String, Any>?) {
+	public func initWithResponse(response: Dictionary<String, Any?>?) {
 
-        if let response = response {
+		if let response = response {
 
-            productId = response[kDictProductId] as! String?
-            title = response[kDictTitle] as! String?
-            imageURLString = response[kDictImageURLString] as! String?
+			productId = response[kDictProductId] as! String?
+			title = response[kDictTitle] as! String?
+			imageURLString = response[kDictImageURLString] as! String?
 
-            if let dictPrice = response[kDictPrice] as! Dictionary<String, Any?>?{
-                perseProductPriseWith(price: dictPrice)
-            }
-        }
-    }
+			if let dictPrice = response[kDictPrice] as! Dictionary<String, Any?>?{
+				perseProductPriseWith(priceDetails: dictPrice)
+			}
+		}
+	}
 
-
-    private func perseProductPriseWith(price: Dictionary<String, Any>){
-        productPrise = ProductPrise();
-        productPrise?.initWith(productPrise: price)
-        if let productPrise = productPrise?.priseNow {
-        self.priseDisplayString  = "£" + productPrise
-        }
-    }
+	/**
+	Perse product prise response and Bind with model
+	@param  priceDetails: It product prise details Dictionary
+	*/
+	private func perseProductPriseWith(priceDetails: Dictionary<String, Any>){
+		productPrise = ProductPrise();
+		productPrise?.initWith(productPrise: priceDetails)
+		if let productPrise = productPrise?.priseNow {
+			self.priseDisplayString  = "£" + productPrise
+		}
+	}
 }

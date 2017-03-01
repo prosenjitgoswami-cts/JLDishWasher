@@ -24,7 +24,6 @@ let kDictpriseCurrency = "currency"
 let kErrorDomain = "com.DishWasher.error"
 
 // Enums
-
 enum ErrorManagerErrorCode: Int {
 
     case NilURLString = 1
@@ -32,13 +31,13 @@ enum ErrorManagerErrorCode: Int {
 }
 
 // Page Title
-
 let PageTitleProductGridVC = "Dishwashers"
 
 // CollectionView Cell Identifier
-
-let JLDWProductGridVCCollectionViewCellID = "JLDWProductGridVCCollectionViewCell"
+let kCellID_JLDWProductGridVCCollectionViewCell = "JLDWProductGridVCCollectionViewCell"
 
 // Padding
 let leftAndRightPaddings = 10.0
 
+// Segue Identifier
+let kSegurID_ToJLDWProductDetailsViewController = "ToJLDWProductDetailsViewController"

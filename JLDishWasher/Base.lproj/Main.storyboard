@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EAv-S5-xLh">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EAv-S5-xLh">
+    <device id="ipad12_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,6 +10,29 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Product Details View Controller-->
+        <scene sceneID="U5O-E7-eBd">
+            <objects>
+                <viewController storyboardIdentifier="JLDWProductDetailsViewController" id="vKA-BG-Rb7" customClass="JLDWProductDetailsViewController" customModule="JLDishWasher" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tO8-1P-saM"/>
+                        <viewControllerLayoutGuide type="bottom" id="yK1-DT-fSE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Q5T-n7-cbW">
+                        <rect key="frame" x="0.0" y="0.0" width="786" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="786" height="1024"/>
+                    <connections>
+                        <outlet property="view" destination="Q5T-n7-cbW" id="DsT-Ex-GxA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NYr-gV-JNr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3892" y="-2741"/>
+        </scene>
         <!--Product Grid View Controller-->
         <scene sceneID="dps-FG-cDp">
             <objects>
@@ -104,11 +127,12 @@
                     <connections>
                         <outlet property="productGridCollectionView" destination="CDF-FO-gb0" id="ABF-bu-O3i"/>
                         <outlet property="view" destination="90B-DN-G8c" id="hqo-Te-gJH"/>
+                        <segue destination="vKA-BG-Rb7" kind="show" identifier="ToJLDWProductDetailsViewController" id="Q0G-0d-fho"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GXp-4a-JLd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2899.1999999999998" y="115.14242878560721"/>
+            <point key="canvasLocation" x="714" y="-2351"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VJo-gl-JyN">
@@ -126,7 +150,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5R5-ih-Cg0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="294" y="-293"/>
+            <point key="canvasLocation" x="-1462" y="-2741"/>
         </scene>
     </scenes>
 </document>

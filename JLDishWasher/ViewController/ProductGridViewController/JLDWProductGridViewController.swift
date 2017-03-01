@@ -135,7 +135,7 @@ extension JLDWProductGridViewController: UICollectionViewDataSource,UICollection
 		let cellReuseIdentifier: String = kCellID_JLDWProductGridVCCollectionViewCell
 
 		let cell: JLDWProductGridVCCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as! JLDWProductGridVCCollectionViewCell
-		cell.backgroundColor = UIColor.init(colorLiteralRed: <#T##Float#>, green: <#T##Float#>, blue: <#T##Float#>, alpha: <#T##Float#>);
+		cell.backgroundColor = UIColor.lightText;
 
 		if let product = productDatasource?[indexPath.row] {
 			cell.setProductDetails(product: product)
@@ -145,6 +145,7 @@ extension JLDWProductGridViewController: UICollectionViewDataSource,UICollection
 	}
 
 	// Set Size in CollectionView cell
+
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
 		return UIEdgeInsets(top: 0, left: 10, bottom: 0, right:10)
 	}

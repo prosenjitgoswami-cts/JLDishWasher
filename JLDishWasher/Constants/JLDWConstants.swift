@@ -28,6 +28,7 @@ let kDictPrice = "price"
 let kDictImageURLString = "image"
 let kDictPriseNow = "now"
 let kDictpriseCurrency = "currency"
+let kDictDisplaySpecialOffer = "displaySpecialOffer"
 
 // Error
 let kErrorDomain = "com.DishWasher.error"

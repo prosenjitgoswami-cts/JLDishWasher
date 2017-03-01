@@ -12,7 +12,11 @@ class ProductPrise: BaseModel {
     var priseNow : String?
     var priseCurrency : String?
 
-    func initWith(productPrise: Dictionary<String, Any>) {
+    func initWith(productPrise: Dictionary<String, Any>?) {
+
+		guard let productPrise = productPrise else {
+			return;
+		}
 
         if let priseNow = productPrise[kDictPriseNow] as! String? {
 

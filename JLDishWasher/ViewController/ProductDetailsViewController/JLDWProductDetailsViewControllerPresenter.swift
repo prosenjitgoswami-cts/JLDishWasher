@@ -14,23 +14,39 @@ class JLDWProductDetailsViewControllerPresenter: NSObject {
 	/**
 	Perse the Json Response Result
 	@param results: Server Response
-	@retutn Return Collection of Product Detsls
+	@retutn Return Collection of SpecificProductInfo
 	*/
-	public func perseResponseAndBind(results: [NSDictionary]) -> [Product] {
+	public func perseResponseAndBind(withResults results: [NSDictionary]?) -> [SpecificProductInfo]? {
 
-		var products : [Product] = [Product] ()
+		var specificProductInfos : [SpecificProductInfo];
 
-		var i = 0
-		for product: NSDictionary in results {
+		if let results = results {
 
-			if i>=20 { break}
+			guard results.count > 0 else {
 
-			let  productDetails =  Product()
-			productDetails.initWithResponse(response: product as? Dictionary<String, Any>)
-			products.append(productDetails)
-			i += 1
+				return nil;
+			}
+			specificProductInfos  = [SpecificProductInfo] ()
+
+			for productInfo: NSDictionary? in results {
+
+				if let productInfo = productInfo {
+
+					if productInfo.count > 0 {
+
+						 let specificProductInfo =  SpecificProductInfo()
+
+						specificProductInfo.initWithResponse(response: productInfo as? Dictionary<String, Any>)
+
+						specificProductInfos.append(specificProductInfo)
+
+					}
+				}
+			}
+
+			return specificProductInfos
 		}
-		return products
-	}
 
+		return nil
+	}
 }

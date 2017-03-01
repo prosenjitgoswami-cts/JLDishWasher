@@ -10,9 +10,9 @@ import UIKit
 
 class JLDWTestUtility: NSObject {
 
-    class func fetchJSONFromTestJsonFile(jsonFile: String?) -> [NSDictionary]? {
+    class func fetchJSONFromTestJsonFile(withJSONFileName jsonFileName: String?) -> [NSDictionary]? {
 
-        if let path = Bundle.main.path(forResource: jsonFile, ofType: "json") {
+        if let path = Bundle.main.path(forResource: jsonFileName, ofType: "json") {
             do {
                 let jsonData = try NSData(contentsOfFile: path, options: NSData.ReadingOptions.mappedIfSafe)
                 do {
@@ -33,4 +33,29 @@ class JLDWTestUtility: NSObject {
         
         return nil;
     }
+
+	// Invoke JSON From TestJson File For Product Details
+	class func invokeJSONFromTestJsonFileForProductDetails(withJSONFileName jsonFileName: String?) -> [NSDictionary]? {
+
+		if let path = Bundle.main.path(forResource: jsonFileName, ofType: "json") {
+			do {
+				let jsonData = try NSData(contentsOfFile: path, options: NSData.ReadingOptions.mappedIfSafe)
+				do {
+					let jsonResult: NSDictionary = try JSONSerialization.jsonObject(with: jsonData as Data, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
+
+					return [jsonResult]
+
+				} catch {
+
+					return nil;
+
+				}
+			} catch {
+
+				return nil;
+			}
+		}
+
+		return nil;
+	}
 }

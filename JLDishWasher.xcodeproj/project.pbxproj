@@ -32,6 +32,7 @@
 		C664282F1E6852DC0016B562 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664282E1E6852DC0016B562 /* ErrorManager.swift */; };
 		C66428351E6857020016B562 /* JLDWProductGridVCCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66428341E6857020016B562 /* JLDWProductGridVCCollectionViewCell.swift */; };
 		EA607F351E670066004419F5 /* HelperUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA607F341E670066004419F5 /* HelperUtils.swift */; };
+		EA607F381E6702C2004419F5 /* JLDWProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA607F371E6702C2004419F5 /* JLDWProductDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		C664282E1E6852DC0016B562 /* ErrorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
 		C66428341E6857020016B562 /* JLDWProductGridVCCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWProductGridVCCollectionViewCell.swift; sourceTree = "<group>"; };
 		EA607F341E670066004419F5 /* HelperUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperUtils.swift; sourceTree = "<group>"; };
+		EA607F371E6702C2004419F5 /* JLDWProductDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWProductDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,17 +198,10 @@
 		C65B3E0D1E682EFB0055CD22 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C65B3E0E1E682EFB0055CD22 /* ProductDetailsViewController */,
+				EA607F361E6702A6004419F5 /* ProductDetailsViewController */,
 				C65B3E0F1E682EFB0055CD22 /* ProductGridViewController */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		C65B3E0E1E682EFB0055CD22 /* ProductDetailsViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ProductDetailsViewController;
 			sourceTree = "<group>";
 		};
 		C65B3E0F1E682EFB0055CD22 /* ProductGridViewController */ = {
@@ -291,6 +286,14 @@
 				C66428341E6857020016B562 /* JLDWProductGridVCCollectionViewCell.swift */,
 			);
 			path = ProductGridVCCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		EA607F361E6702A6004419F5 /* ProductDetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EA607F371E6702C2004419F5 /* JLDWProductDetailsViewController.swift */,
+			);
+			path = ProductDetailsViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,6 +408,7 @@
 				C65B3E181E6831F90055CD22 /* JLDWConstants.swift in Sources */,
 				C66428351E6857020016B562 /* JLDWProductGridVCCollectionViewCell.swift in Sources */,
 				C664282C1E6852D50016B562 /* DataService.swift in Sources */,
+				EA607F381E6702C2004419F5 /* JLDWProductDetailsViewController.swift in Sources */,
 				C65B3E1E1E6832280055CD22 /* Product.swift in Sources */,
 				EA607F351E670066004419F5 /* HelperUtils.swift in Sources */,
 				C65B3E101E682EFB0055CD22 /* AppDelegate.swift in Sources */,

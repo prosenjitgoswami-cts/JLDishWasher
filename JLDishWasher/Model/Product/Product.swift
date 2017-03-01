@@ -16,7 +16,7 @@ class Product: NSObject {
 	var productPrise: ProductPrise?
 	var priseDisplayString: String?
 
-	public func initWithResponse(response: Dictionary<String, Any?>?) {
+	public func initWithResponse(response: Dictionary<String, Any>?) {
 
 		if let response = response {
 
@@ -24,7 +24,7 @@ class Product: NSObject {
 			title = response[kDictTitle] as! String?
 			imageURLString = response[kDictImageURLString] as! String?
 
-			if let dictPrice = response[kDictPrice] as! Dictionary<String, Any?>?{
+			if let dictPrice = response[kDictPrice] as! Dictionary<String, Any>?{
 				perseProductPriseWith(priceDetails: dictPrice)
 			}
 		}

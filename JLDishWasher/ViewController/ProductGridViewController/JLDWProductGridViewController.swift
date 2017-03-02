@@ -14,9 +14,10 @@ import UIKit
 class JLDWProductGridViewController: UIViewController {
 	@IBOutlet weak var productGridCollectionView: UICollectionView!
 
-	var cellsPerRow:CGFloat = 4
+	var cellsPerRow:CGFloat = 3
 	let cellPadding:CGFloat = 1
 	var productDatasource: [Product]?
+    let sectionInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right:10)
 	lazy var presenter: JLDWProductGridViewControllerPresenter = {
 		return JLDWProductGridViewControllerPresenter()
 	}()
@@ -138,20 +139,23 @@ extension JLDWProductGridViewController: UICollectionViewDataSource,UICollection
 
 		if let product = productDatasource?[indexPath.row] {
 			cell.setProductDetails(product: product)
+
 		}
+        cell.backgroundColor = UIColor.white
 		return cell
 	}
 
 	// Set Size in CollectionView cell
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-		return UIEdgeInsets(top: 0, left: 10, bottom: 0, right:10)
+		return sectionInsets
 	}
 
 
 	// Set Size in collectionView
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		let widthMinusPadding = UIScreen.main.bounds.width - (cellPadding * cellsPerRow+1)
-		let width = widthMinusPadding / cellsPerRow
+		let widthMinusPadding = sectionInsets.left * (cellsPerRow+1)
+        let availableWidth = view.frame.size.width - widthMinusPadding
+		let width = availableWidth / cellsPerRow
 		return CGSize(width: width, height: max(width, 300.0))
 	}
 

@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C65B3DE21E682ECD0055CD22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3DE11E682ECD0055CD22 /* AppDelegate.swift */; };
-		C65B3DE41E682ECE0055CD22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3DE31E682ECE0055CD22 /* ViewController.swift */; };
 		C65B3DE71E682ECE0055CD22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C65B3DE51E682ECE0055CD22 /* Main.storyboard */; };
 		C65B3DE91E682ECE0055CD22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C65B3DE81E682ECE0055CD22 /* Assets.xcassets */; };
 		C65B3DEC1E682ECE0055CD22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C65B3DEA1E682ECE0055CD22 /* LaunchScreen.storyboard */; };
 		C65B3DF71E682ECE0055CD22 /* JLDishWasherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3DF61E682ECE0055CD22 /* JLDishWasherTests.swift */; };
+		C65B3E101E682EFB0055CD22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E021E682EFB0055CD22 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,8 +26,6 @@
 
 /* Begin PBXFileReference section */
 		C65B3DDE1E682ECD0055CD22 /* JLDishWasher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLDishWasher.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C65B3DE11E682ECD0055CD22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C65B3DE31E682ECE0055CD22 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C65B3DE61E682ECE0055CD22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C65B3DE81E682ECE0055CD22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C65B3DEB1E682ECE0055CD22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +33,7 @@
 		C65B3DF21E682ECE0055CD22 /* JLDishWasherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JLDishWasherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C65B3DF61E682ECE0055CD22 /* JLDishWasherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLDishWasherTests.swift; sourceTree = "<group>"; };
 		C65B3DF81E682ECE0055CD22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C65B3E021E682EFB0055CD22 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +75,15 @@
 		C65B3DE01E682ECD0055CD22 /* JLDishWasher */ = {
 			isa = PBXGroup;
 			children = (
-				C65B3DE11E682ECD0055CD22 /* AppDelegate.swift */,
-				C65B3DE31E682ECE0055CD22 /* ViewController.swift */,
-				C65B3DE51E682ECE0055CD22 /* Main.storyboard */,
+				C65B3E011E682EFB0055CD22 /* Application */,
+				C65B3E041E682EFB0055CD22 /* Constants */,
+				C65B3E051E682EFB0055CD22 /* Manager */,
+				C65B3E061E682EFB0055CD22 /* Resource */,
+				C65B3E081E682EFB0055CD22 /* Utility */,
+				C65B3E0B1E682EFB0055CD22 /* View */,
+				C65B3E0D1E682EFB0055CD22 /* ViewController */,
+				C65B3E121E682F050055CD22 /* Storyboard */,
 				C65B3DE81E682ECE0055CD22 /* Assets.xcassets */,
-				C65B3DEA1E682ECE0055CD22 /* LaunchScreen.storyboard */,
 				C65B3DED1E682ECE0055CD22 /* Info.plist */,
 			);
 			path = JLDishWasher;
@@ -94,6 +96,113 @@
 				C65B3DF81E682ECE0055CD22 /* Info.plist */,
 			);
 			path = JLDishWasherTests;
+			sourceTree = "<group>";
+		};
+		C65B3E011E682EFB0055CD22 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				C65B3E021E682EFB0055CD22 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		C65B3E041E682EFB0055CD22 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		C65B3E051E682EFB0055CD22 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		C65B3E061E682EFB0055CD22 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C65B3E071E682EFB0055CD22 /* Plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		C65B3E071E682EFB0055CD22 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
+		C65B3E081E682EFB0055CD22 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				C65B3E091E682EFB0055CD22 /* ErrorManager */,
+				C65B3E0A1E682EFB0055CD22 /* ServiceManager */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		C65B3E091E682EFB0055CD22 /* ErrorManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ErrorManager;
+			sourceTree = "<group>";
+		};
+		C65B3E0A1E682EFB0055CD22 /* ServiceManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ServiceManager;
+			sourceTree = "<group>";
+		};
+		C65B3E0B1E682EFB0055CD22 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C65B3E0C1E682EFB0055CD22 /* ProductGridVCCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C65B3E0C1E682EFB0055CD22 /* ProductGridVCCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProductGridVCCell;
+			sourceTree = "<group>";
+		};
+		C65B3E0D1E682EFB0055CD22 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C65B3E0E1E682EFB0055CD22 /* ProductDetailsViewController */,
+				C65B3E0F1E682EFB0055CD22 /* ProductGridViewController */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C65B3E0E1E682EFB0055CD22 /* ProductDetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProductDetailsViewController;
+			sourceTree = "<group>";
+		};
+		C65B3E0F1E682EFB0055CD22 /* ProductGridViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProductGridViewController;
+			sourceTree = "<group>";
+		};
+		C65B3E121E682F050055CD22 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				C65B3DE51E682ECE0055CD22 /* Main.storyboard */,
+				C65B3DEA1E682ECE0055CD22 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C65B3DE41E682ECE0055CD22 /* ViewController.swift in Sources */,
-				C65B3DE21E682ECD0055CD22 /* AppDelegate.swift in Sources */,
+				C65B3E101E682EFB0055CD22 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,10 +448,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JLDishWasher/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cognizantmobility.JLDishWasher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -352,10 +462,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JLDishWasher/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cognizantmobility.JLDishWasher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

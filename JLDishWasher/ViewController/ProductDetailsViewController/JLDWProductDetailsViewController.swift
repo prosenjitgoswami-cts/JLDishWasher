@@ -25,9 +25,12 @@ class JLDWProductDetailsViewController: UIViewController {
 
 extension JLDWProductDetailsViewController {
 
-
 public func setProduct(withProduct product: Product) {
 
+	if let endPointURL = URLStringProductPage(withPeroductID: product.productId) {
+	print(endPointURL)
+
+	}
 	}
 
 }

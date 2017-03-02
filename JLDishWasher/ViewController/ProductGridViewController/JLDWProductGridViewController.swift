@@ -27,18 +27,18 @@ class JLDWProductGridViewController: UIViewController {
 		self.productGridCollectionView.dataSource = self
 		productDatasource = [Product]()
 		configureUI()
-		fetchService ()
+        //fetchService ()
 
 	}
 
 	// In a storyboard-based application, you will often want to do a little preparation before navigation
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
+        if segue.identifier == kSegurID_ToJLDWProductDetailsViewController {
 		let destinationVC: JLDWProductDetailsViewController = segue.destination as! JLDWProductDetailsViewController
-
-		let selectedProduct: Product = sender as! Product
-		destinationVC.setProduct(withProduct: selectedProduct)
-
+		let selectedProduct = sender
+		destinationVC.setProduct(withProduct: selectedProduct as! Product)
+        }
 
 	}
 }
@@ -134,18 +134,15 @@ extension JLDWProductGridViewController: UICollectionViewDataSource,UICollection
 
 		let cellReuseIdentifier: String = kCellID_JLDWProductGridVCCollectionViewCell
 
-		let cell: JLDWProductGridVCCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as! JLDWProductGridVCCollectionViewCell
-		cell.backgroundColor = UIColor.lightText;
+		let cell: JLDWProductGridVCCollectionViewCell = (collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as! JLDWProductGridVCCollectionViewCell)
 
 		if let product = productDatasource?[indexPath.row] {
 			cell.setProductDetails(product: product)
 		}
-
 		return cell
 	}
 
 	// Set Size in CollectionView cell
-
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
 		return UIEdgeInsets(top: 0, left: 10, bottom: 0, right:10)
 	}

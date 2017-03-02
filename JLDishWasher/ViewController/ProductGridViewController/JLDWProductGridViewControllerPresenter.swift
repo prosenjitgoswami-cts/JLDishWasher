@@ -45,8 +45,7 @@ class JLDWProductGridViewControllerPresenter: NSObject {
 
             if i>=20 { break}
 
-            let  productDetails =  Product()
-            productDetails.initWithResponse(response: product as? Dictionary<String, Any>)
+            let  productDetails =  Product(product: product as? [String: Any])
             products.append(productDetails)
             i += 1
         }

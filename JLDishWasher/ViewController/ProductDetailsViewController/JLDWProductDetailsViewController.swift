@@ -10,6 +10,13 @@ import UIKit
 
 class JLDWProductDetailsViewController: UIViewController {
 
+    @IBOutlet weak var priceDetailsHConstraint: NSLayoutConstraint!
+    @IBOutlet weak var rightSidePanelWidthConstraints: NSLayoutConstraint!
+//    @IBOutlet weak var backgroundPanelContainerStackView: UIView!
+    @IBOutlet weak var rightPanelContainerView: UIView!
+    @IBOutlet weak var leftPanelContainerView: UIView!
+
+
     lazy var presenter: JLDWProductDetailsViewControllerPresenter = {
         return JLDWProductDetailsViewControllerPresenter()
     }()
@@ -23,13 +30,36 @@ class JLDWProductDetailsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         fetchService()
+        updateUIOnOrientation()
 
     }
 
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        updateUIOnOrientation()
+    }
+
+    // Update UI  On Orientation
+    func updateUIOnOrientation() {
+
+        if UIDevice.current.orientation.isLandscape {
+            rightSidePanelWidthConstraints.constant = 300
+            //  backgroundPanelContainerStackView.axis = .horizontal
+priceDetailsHConstraint.constant = 0
+
+        } else {
+               rightSidePanelWidthConstraints.constant = 0
+            // backgroundPanelContainerStackView.axis = .vertical
+            priceDetailsHConstraint.constant = 180
+            
+
+
+        }
+    }
+
+    // PubLic Method
     public func setProduct(withProduct product: Product) {
         productID = product.productId;
     }
-
 }
 
 

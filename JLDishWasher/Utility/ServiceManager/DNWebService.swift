@@ -128,7 +128,6 @@ class ConnectionManager: URLSession {
 }
 
 //MARK:------------------------------- * ----------------------------------
-//MARK: Private Method
 extension ConnectionManager {
 
 	/**

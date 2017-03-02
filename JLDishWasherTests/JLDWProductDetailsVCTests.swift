@@ -69,10 +69,42 @@ class JLDWProductDetailsVCTests: XCTestCase {
 		let product: SpecificProductInfo? = specificProductInfos?[0]
 		XCTAssertNotEqual(product?.productId, "0000")
 	}
+    //MARK:------------------------------- * ----------------------------------
+    //MARK: Test Cases For Title
+    func testCheckThatResponseHasNotContainedTitle() {
+
+        let specificProductInfos : [SpecificProductInfo]? = productPageJsonInvalidResults()
+        let product: SpecificProductInfo? = specificProductInfos?[0]
+        XCTAssertNil(product?.title)
+    }
+
+    func testCheckThatResponseHasContainsTitle() {
+
+        let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
+        let product: SpecificProductInfo? = specificProductInfos?[0]
+        XCTAssertNotNil(product?.title)
+    }
+
+    // Check the Response Json response has contained valid product id
+    func testCheckThatResponseHasContainedValidTitle() {
+
+        let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
+        let product: SpecificProductInfo? = specificProductInfos?[0]
+        XCTAssertEqual(product?.title, "Bosch SMV53M40GB Fully Integrated Dishwasher")
+    }
+
+    // Check the Response Json response has not contained valid product id
+    func testCheckThatResponseHasNotContainedValidTitle() {
+
+        let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
+        let product: SpecificProductInfo? = specificProductInfos?[0]
+        XCTAssertNotEqual(product?.title, "NotContainedValidTitle")
+    }
+
 }
 
 //MARK:------------------------------- * ----------------------------------
-
+// Common Method
 extension JLDWProductDetailsVCTests {
 
 	public func productPageJsonResults () -> [SpecificProductInfo]? {
@@ -87,7 +119,7 @@ extension JLDWProductDetailsVCTests {
 
 	public func productPageJsonInvalidResults () -> [SpecificProductInfo]? {
 
-		let specificProductInfos : [NSDictionary]? = JLDWTestUtility.invokeJSONFromTestJsonFileForProductDetails(withJSONFileName: TestJsonFileForProductPage)
+		let specificProductInfos : [NSDictionary]? = JLDWTestUtility.invokeJSONFromTestJsonFileForProductDetails(withJSONFileName: TestJsonFileForProductPageNoProductInfo)
 
 		let specificProductInfo: [SpecificProductInfo]? = self.presenter.perseResponseAndBind(withResults: specificProductInfos)
 

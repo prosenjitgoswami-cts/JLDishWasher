@@ -184,8 +184,7 @@ class JLDWProductGridVCTests: XCTestCase {
         }
     }
     //MARK:------------------------------- * ----------------------------------
-    // Check the Response Json response containts not null ProductPrise Result
-
+    //MARK: Test Cases For ProductPrise
     // Check the Response Json response has invalid productPrise result
     func testCheckThatResponseHasInValidProductPriseResult() {
 

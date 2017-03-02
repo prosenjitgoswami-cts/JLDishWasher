@@ -11,7 +11,8 @@ import UIKit
 class JLDWTestUtility: NSObject {
 
     class func fetchJSONFromTestJsonFile(jsonFile: String?) -> [NSDictionary]? {
-        if let path = Bundle.main.path(forResource: jsonFile, ofType: "json") {
+
+        if let path = Bundle.main.path(forResource: jsonFile, ofType: "txt") {
             do {
                 let jsonData = try NSData(contentsOfFile: path, options: NSData.ReadingOptions.mappedIfSafe)
                 do {

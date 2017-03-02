@@ -9,7 +9,9 @@
 import XCTest
 import Foundation
 
-let kTestJsonFileForProductsList_20Product = "TestJsonFileForProductsList_20Product"
+let TestJsonFileForProductsListWith21Products = "TestJsonFileForProductsListWith21Products"
+let TestJsonFileForProductsListWithNoProduct = "TestJsonFileForProductsListWithNoProducts"
+
 
 class JLDWProductGridVCTests: XCTestCase {
 
@@ -38,7 +40,40 @@ class JLDWProductGridVCTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-    
+
+    // Check the Response Json response is valid
+    func testCheckThatResponseContainsValidResult() {
+
+        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(jsonFile:TestJsonFileForProductsListWith21Products) {
+
+            let productLists: [Product] = self.presenter.perseResponseAndBind(results: products)
+
+            XCTAssertTrue(productLists.count > 0)
+        }
+    }
+
+    // Check the Response Json containts Max 20 results
+    func testJsonFileForProductsListWithMax20Products() {
+
+        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(jsonFile:TestJsonFileForProductsListWith21Products) {
+
+            let productLists: [Product] = self.presenter.perseResponseAndBind(results: products)
+            XCTAssertTrue(productLists.count == 20)
+        }
+    }
+
+
+    // Check the Response Json response is nil
+    func testCheckThatResponseContainsNilResult() {
+
+        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(jsonFile:TestJsonFileForProductsListWithNoProduct) {
+
+            let productLists: [Product] = self.presenter.perseResponseAndBind(results: products)
+
+            XCTAssertTrue(productLists.count ==  0)
+        }
+    }
+
 }
 
 

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JLDishWasherTests/JLDWProductGridVCTests.swift"
+            timestampString = "510149963.698182"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "testCheckThatResponseContainsNilResult()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JLDishWasherTests.JLDWProductGridVCTests.testCheckThatResponseContainsNilResult () -&gt; ()"
+                  moduleName = "JLDishWasherTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Prosenjit_Goswami/Desktop/6/JLDishWasher/JLDishWasherTests/JLDWProductGridVCTests.swift"
+                  timestampString = "510149966.438985"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JLDishWasherTests.JLDWProductGridVCTests.testCheckThatResponseContainsNilResult () -&gt; ()"
+                  moduleName = "JLDishWasherTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Prosenjit_Goswami/Desktop/6/JLDishWasher/JLDishWasherTests/JLDWProductGridVCTests.swift"
+                  timestampString = "510149966.440478"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "134">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JLDishWasherTests/Utility/JLDWTestUtility.swift"
+            timestampString = "510150016.124521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "fetchJSONFromTestJsonFile(jsonFile:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JLDishWasherTests/JLDWProductGridVCTests.swift"
+            timestampString = "510149963.698182"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "testJsonFileForProductsListWithMax20Products()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

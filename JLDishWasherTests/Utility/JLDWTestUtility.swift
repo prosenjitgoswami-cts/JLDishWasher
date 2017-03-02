@@ -35,15 +35,17 @@ class JLDWTestUtility: NSObject {
     }
 
 	// Invoke JSON From TestJson File For Product Details
-	class func invokeJSONFromTestJsonFileForProductDetails(withJSONFileName jsonFileName: String?) -> [NSDictionary]? {
+	class func invokeJSONFromTestJsonFileForProductDetails(withJSONFileName jsonFileName: String?) -> [String: Any]? {
 
 		if let path = Bundle.main.path(forResource: jsonFileName, ofType: "json") {
 			do {
 				let jsonData = try NSData(contentsOfFile: path, options: NSData.ReadingOptions.mappedIfSafe)
 				do {
-					let jsonResult: NSDictionary = try JSONSerialization.jsonObject(with: jsonData as Data, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
+                    let jsonResult: [String: Any] = try JSONSerialization.jsonObject(with: jsonData as Data, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: Any]
 
-					return [jsonResult]
+                    //	return [jsonResult]
+                    return jsonResult
+
 
 				} catch {
 

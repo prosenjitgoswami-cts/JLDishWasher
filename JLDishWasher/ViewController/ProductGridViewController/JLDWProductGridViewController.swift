@@ -27,7 +27,7 @@ class JLDWProductGridViewController: UIViewController {
 		self.productGridCollectionView.dataSource = self
 		productDatasource = [Product]()
 		configureUI()
-        //fetchService ()
+        fetchService ()
 
 	}
 

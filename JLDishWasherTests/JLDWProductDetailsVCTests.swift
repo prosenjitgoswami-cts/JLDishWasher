@@ -420,7 +420,7 @@ extension JLDWProductDetailsVCTests {
 
 	public func productPageJsonResults () -> [SpecificProductInfo]? {
 
-		let specificProductInfos : [NSDictionary]? = JLDWTestUtility.invokeJSONFromTestJsonFileForProductDetails(withJSONFileName: TestJsonFileForProductPage)
+		let specificProductInfos : [String: Any]? = JLDWTestUtility.invokeJSONFromTestJsonFileForProductDetails(withJSONFileName: TestJsonFileForProductPage)
 
 		let specificProductInfo: [SpecificProductInfo]? = self.presenter.perseResponseAndBind(withResults: specificProductInfos)
 
@@ -430,7 +430,7 @@ extension JLDWProductDetailsVCTests {
 
 	public func productPageJsonInvalidResults () -> [SpecificProductInfo]? {
 
-		let specificProductInfos : [NSDictionary]? = JLDWTestUtility.invokeJSONFromTestJsonFileForProductDetails(withJSONFileName: TestJsonFileForProductPageNoProductInfo)
+		let specificProductInfos : [String: Any]? = JLDWTestUtility.invokeJSONFromTestJsonFileForProductDetails(withJSONFileName: TestJsonFileForProductPageNoProductInfo)
 
 		let specificProductInfo: [SpecificProductInfo]? = self.presenter.perseResponseAndBind(withResults: specificProductInfos)
 

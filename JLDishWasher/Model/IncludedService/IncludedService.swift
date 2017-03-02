@@ -12,12 +12,17 @@ class IncludedService: BaseModel {
 
     var guaranteeinfo: String?
 
+    required init(includedServices result: String?) {
+        super.init()
+        bindIncludedServicesResult(includedServices: result)
+    }
+
 }
 //MARK:------------------------------- * ----------------------------------
-//MARK: Public Method
+//MARK: Bind Data Method
 extension IncludedService {
 
-    public func initWith(includedServices result: String?) {
+    public func bindIncludedServicesResult(includedServices result: String?) {
 
         guard let result = result else{
             return;

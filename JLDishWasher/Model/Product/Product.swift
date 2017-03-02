@@ -14,29 +14,40 @@ class Product: BaseModel {
 	var productPrise: ProductPrise?
 	var priseDisplayString: String?
 
-	public func initWithResponse(response: Dictionary<String, Any>?) {
+    required init(product response: [String: Any]?) {
+    super.init()
+        bindWithProductResult(product: response)
+    }
 
-		if let response = response {
+}
 
-			productId = response[kDictProductId] as? String
-			title = response[kDictTitle] as? String
-			imageURLString = response[kDictImageURLString] as? String
+//MARK:------------------------------- * ----------------------------------
+//MARK: Data Bind Method
 
-			if let dictPrice = response[kDictPrice] as? Dictionary<String, Any>{
-				perseProductPriseWith(priceDetails: dictPrice)
-			}
-		}
-	}
+extension Product {
 
-	/**
-	Perse product prise response and Bind with model
-	@param  priceDetails: It product prise details Dictionary
-	*/
-	private func perseProductPriseWith(priceDetails: Dictionary<String, Any>){
-		productPrise = ProductPrise();
-		productPrise?.initWith(productPrise: priceDetails)
-		if let productPrise = productPrise?.priseNow {
-			self.priseDisplayString  = "£" + productPrise
-		}
-	}
+    public func bindWithProductResult(product response: [String: Any]?) {
+
+        if let response = response {
+
+            productId = response[kDictProductId] as? String
+            title = response[kDictTitle] as? String
+            imageURLString = response[kDictImageURLString] as? String
+
+            if let dictPrice = response[kDictPrice] as? [String: Any]{
+                bindWith(priceDetails: dictPrice)
+            }
+        }
+    }
+
+    /**
+     Perse product prise response and Bind with model
+     @param  priceDetails: It product prise details Dictionary
+     */
+    private func bindWith(priceDetails: [String: Any]){
+        productPrise = ProductPrise(productPrise: priceDetails)
+        if let productPrise = productPrise?.priseNow {
+            self.priseDisplayString  = "£" + productPrise
+        }
+    }
 }

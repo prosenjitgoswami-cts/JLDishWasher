@@ -11,24 +11,24 @@ import UIKit
 class AdditionalService: BaseModel {
 
     var includedServices:[IncludedService]?
+    required init(additionalService result: [String: Any]?) {
+        super.init()
+        dataBindWith(additionalService: result)
+    }
 }
 //MARK:------------------------------- * ----------------------------------
-//MARK: Public Method
+//MARK: Data Bind Method
 extension AdditionalService {
 
-    public func initWith(additionalService result: Dictionary<String, Any>?) {
+    public func dataBindWith(additionalService result: [String: Any]?) {
 
         guard let result = result else{
             return;
         }
         bindIncludedServices(includedServices: result)
     }
-}
-
-//MARK:------------------------------- * ----------------------------------
-extension AdditionalService {
-
-    func bindIncludedServices(includedServices results:Dictionary<String, Any>?) {
+    
+    func bindIncludedServices(includedServices results:[String: Any]?) {
 
         if let services  = results?[kDictIncludedServices] as? [String] {
             includedServices = [IncludedService]()
@@ -36,8 +36,7 @@ extension AdditionalService {
             for service in services {
                 let service: String? = service
                 if let service = service {
-                let includedService = IncludedService()
-                includedService.initWith(includedServices: service)
+                let includedService = IncludedService(includedServices: service)
                 includedServices?.append(includedService)
                 }
             }

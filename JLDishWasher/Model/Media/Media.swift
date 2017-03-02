@@ -11,13 +11,18 @@ import UIKit
 class Media: BaseModel {
 
 	var imageURLStrings: [String]?
+
+    required init(media results: [String: Any]?) {
+        super.init()
+        bindMediaResultResult(media: results)
+    }
 }
 
 //MARK:------------------------------- * ----------------------------------
-//MARK: Public Method
+//MARK: Bind Data
 extension Media {
 
-	public func initWith(media results: Dictionary<String, Any>?) {
+	public func bindMediaResultResult(media results: [String: Any]?) {
 
 		guard let results = results else{
 			return;

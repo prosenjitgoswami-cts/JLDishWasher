@@ -32,8 +32,7 @@ class JLDWProductDetailsViewControllerPresenter: NSObject {
 
 				if let productInfo = productInfo {
 					if productInfo.count > 0 {
-						 let specificProductInfo =  SpecificProductInfo()
-						specificProductInfo.initWith(response: productInfo as? Dictionary<String, Any>)
+						 let specificProductInfo =  SpecificProductInfo(product: productInfo as? [String: Any])
 						specificProductInfos.append(specificProductInfo)
                     } else {
                         return nil

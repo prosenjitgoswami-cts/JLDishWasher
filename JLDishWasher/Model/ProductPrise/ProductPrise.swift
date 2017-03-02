@@ -12,11 +12,22 @@ class ProductPrise: BaseModel {
     var priseNow : String?
     var priseCurrency : String?
 
-    func initWith(productPrise: Dictionary<String, Any>?) {
+    required init(productPrise: [String: Any]?) {
+        super.init()
+        dindProductPriseResult(productPrise: productPrise)
+    }
 
-		guard let productPrise = productPrise else {
-			return;
-		}
+}
+
+//MARK:------------------------------- * ----------------------------------
+//MARK: Data Bind Method
+extension ProductPrise {
+
+    func dindProductPriseResult(productPrise: [String: Any]?) {
+
+        guard let productPrise = productPrise else {
+            return;
+        }
 
         if let priseNow = productPrise[kDictPriseNow] as? String {
 
@@ -24,7 +35,7 @@ class ProductPrise: BaseModel {
         }
 
         if let priseNow = productPrise[kDictpriseCurrency] as? String {
-            
+
             self.priseCurrency = priseNow
         }
     }

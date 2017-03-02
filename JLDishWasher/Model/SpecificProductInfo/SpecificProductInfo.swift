@@ -16,19 +16,22 @@ class SpecificProductInfo: Product {
     var guaranteeInformation: String?
     var productInformation: String?
     var additionalService: AdditionalService?
+
+    required init(product response: [String : Any]?) {
+        super.init(product: response)
+        dataBindWith(response: response)    }
 }
 
 //MARK:------------------------------- * ----------------------------------
-//MARK: Public Method
+//MARK: Data Bind Method
+
 extension SpecificProductInfo {
 
-    public func initWith(response: Dictionary<String, Any>?) {
+    public func dataBindWith(response: [String: Any]?) {
 
         guard let response = response else{
             return;
         }
-        super.initWithResponse(response: response)
-
         if let displaySpecialOfferStr = response[kDictDisplaySpecialOffer] as? String {
             displaySpecialOffer = displaySpecialOfferStr;
         }
@@ -37,9 +40,9 @@ extension SpecificProductInfo {
             code = codeString;
         }
 
-        bindMedia(with: response)
-        bindDetails(with: response)
-        bindAdditionalService(with: response)
+        bindMediaResult(with: response)
+        bindDetailsResult(with: response)
+        bindAdditionalServiceResult(with: response)
         getGuaranteeInformation()
         getProductInformation()
 
@@ -59,35 +62,28 @@ extension SpecificProductInfo {
         }
     }
 
-}
-
-//MARK:------------------------------- * ----------------------------------
-// Dependency Binding
-extension SpecificProductInfo {
-
-    func bindMedia(with mediaResult:Dictionary<String, Any>?) {
+    func bindMediaResult(with mediaResult:[String: Any]?) {
 
         if let mediaResult: [String : Any] = mediaResult?[kDictMedia] as? [String:Any]{
-            media = Media()
-            media?.initWith(media: mediaResult)
+            media = Media(media: mediaResult)
         }
     }
 
-    func bindDetails(with detailsResult:Dictionary<String, Any>?) {
+    func bindDetailsResult(with detailsResult:[String: Any]?) {
         
         if let detailsResult: [String : Any] = detailsResult?[kDictDetails] as? [String:Any]{
 
-            details = Details()
-            details?.initWith(details: detailsResult)
+            details = Details(details: detailsResult)
         }
     }
 
-    func bindAdditionalService(with additionalServiceResult:Dictionary<String, Any>?) {
+    func bindAdditionalServiceResult(with additionalServiceResult:[String: Any]?) {
 
         if let result: [String : Any] = additionalServiceResult?[kDictAdditionalServices] as? [String:Any]{
 
-            additionalService = AdditionalService()
-            additionalService?.initWith(additionalService: result)
+            additionalService = AdditionalService(additionalService: result)
         }
     }
+
+    
 }

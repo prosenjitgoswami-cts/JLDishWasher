@@ -66,7 +66,7 @@ class ConnectionManager: URLSession {
 
 	class func requestWithURLString(urlString: String?,
 	                                failed: @escaping (Error) -> Void,
-	                                successBlock: @escaping (Dictionary<String, Any>?)->Void) -> Void{
+	                                successBlock: @escaping ([String: Any]?)->Void) -> Void{
 
 		// Set up the URL request
 		let  endpointURLString: String? = urlString

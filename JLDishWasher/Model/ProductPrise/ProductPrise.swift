@@ -10,5 +10,19 @@ import UIKit
 
 class ProductPrise: NSObject {
 
-    
+    var priseNow : String?
+    var priseCurrency : String?
+
+    func initWith(productPrise: Dictionary<String, Any>) {
+
+        if let priseNow = productPrise[kDictPriseNow] as! String? {
+
+            self.priseNow = priseNow
+        }
+
+        if let priseNow = productPrise[kDictpriseCurrency] as! String? {
+            
+            self.priseCurrency = priseNow
+        }
+    }
 }

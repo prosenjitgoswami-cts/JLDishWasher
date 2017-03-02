@@ -10,7 +10,6 @@
 		C65B3DE71E682ECE0055CD22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C65B3DE51E682ECE0055CD22 /* Main.storyboard */; };
 		C65B3DE91E682ECE0055CD22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C65B3DE81E682ECE0055CD22 /* Assets.xcassets */; };
 		C65B3DEC1E682ECE0055CD22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C65B3DEA1E682ECE0055CD22 /* LaunchScreen.storyboard */; };
-		C65B3DF71E682ECE0055CD22 /* JLDishWasherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3DF61E682ECE0055CD22 /* JLDishWasherTests.swift */; };
 		C65B3E101E682EFB0055CD22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E021E682EFB0055CD22 /* AppDelegate.swift */; };
 		C65B3E161E6831C80055CD22 /* JLDWProductGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E151E6831C80055CD22 /* JLDWProductGridViewController.swift */; };
 		C65B3E181E6831F90055CD22 /* JLDWConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E171E6831F90055CD22 /* JLDWConstants.swift */; };
@@ -19,6 +18,11 @@
 		C65B3E211E6832670055CD22 /* ProductGridViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E201E6832670055CD22 /* ProductGridViewControllerPresenter.swift */; };
 		C65B3E231E6832DA0055CD22 /* JLDWProductGridVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E221E6832DA0055CD22 /* JLDWProductGridVCTests.swift */; };
 		C65B3E271E6833390055CD22 /* TestJsonFileForProductsList_20Product.json in Resources */ = {isa = PBXBuildFile; fileRef = C65B3E261E6833390055CD22 /* TestJsonFileForProductsList_20Product.json */; };
+		C65B3E281E68342B0055CD22 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E1B1E6832280055CD22 /* Product.swift */; };
+		C65B3E291E68342E0055CD22 /* ProductPrise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E1D1E6832280055CD22 /* ProductPrise.swift */; };
+		C65B3E2B1E6834340055CD22 /* ProductGridViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E201E6832670055CD22 /* ProductGridViewControllerPresenter.swift */; };
+		C65B3E2C1E6834450055CD22 /* JLDWConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E171E6831F90055CD22 /* JLDWConstants.swift */; };
+		C65B3E2F1E6836A50055CD22 /* JLDWTestUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E2E1E6836A50055CD22 /* JLDWTestUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +42,6 @@
 		C65B3DEB1E682ECE0055CD22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C65B3DED1E682ECE0055CD22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C65B3DF21E682ECE0055CD22 /* JLDishWasherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JLDishWasherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C65B3DF61E682ECE0055CD22 /* JLDishWasherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLDishWasherTests.swift; sourceTree = "<group>"; };
 		C65B3DF81E682ECE0055CD22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C65B3E021E682EFB0055CD22 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C65B3E151E6831C80055CD22 /* JLDWProductGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWProductGridViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +51,7 @@
 		C65B3E201E6832670055CD22 /* ProductGridViewControllerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductGridViewControllerPresenter.swift; sourceTree = "<group>"; };
 		C65B3E221E6832DA0055CD22 /* JLDWProductGridVCTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWProductGridVCTests.swift; sourceTree = "<group>"; };
 		C65B3E261E6833390055CD22 /* TestJsonFileForProductsList_20Product.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestJsonFileForProductsList_20Product.json; sourceTree = "<group>"; };
+		C65B3E2E1E6836A50055CD22 /* JLDWTestUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWTestUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +111,8 @@
 		C65B3DF51E682ECE0055CD22 /* JLDishWasherTests */ = {
 			isa = PBXGroup;
 			children = (
+				C65B3E2D1E6836870055CD22 /* Utility */,
 				C65B3E241E6832E90055CD22 /* Resource */,
-				C65B3DF61E682ECE0055CD22 /* JLDishWasherTests.swift */,
 				C65B3DF81E682ECE0055CD22 /* Info.plist */,
 				C65B3E221E6832DA0055CD22 /* JLDWProductGridVCTests.swift */,
 			);
@@ -266,6 +270,14 @@
 			path = JsonFile;
 			sourceTree = "<group>";
 		};
+		C65B3E2D1E6836870055CD22 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				C65B3E2E1E6836A50055CD22 /* JLDWTestUtility.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -383,8 +395,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C65B3DF71E682ECE0055CD22 /* JLDishWasherTests.swift in Sources */,
+				C65B3E2C1E6834450055CD22 /* JLDWConstants.swift in Sources */,
+				C65B3E291E68342E0055CD22 /* ProductPrise.swift in Sources */,
+				C65B3E2F1E6836A50055CD22 /* JLDWTestUtility.swift in Sources */,
 				C65B3E231E6832DA0055CD22 /* JLDWProductGridVCTests.swift in Sources */,
+				C65B3E2B1E6834340055CD22 /* ProductGridViewControllerPresenter.swift in Sources */,
+				C65B3E281E68342B0055CD22 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +602,7 @@
 				C65B3DFD1E682ECE0055CD22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C65B3DFE1E682ECE0055CD22 /* Build configuration list for PBXNativeTarget "JLDishWasherTests" */ = {
 			isa = XCConfigurationList;
@@ -594,6 +611,7 @@
 				C65B3E001E682ECE0055CD22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

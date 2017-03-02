@@ -26,6 +26,7 @@
 		C66428241E6845640016B562 /* TestJsonFileForProductsListWith21Products.txt in Resources */ = {isa = PBXBuildFile; fileRef = C66428211E6845640016B562 /* TestJsonFileForProductsListWith21Products.txt */; };
 		C66428251E6845640016B562 /* TestJsonFileForProductsListWithNoProduct.txt in Resources */ = {isa = PBXBuildFile; fileRef = C66428221E6845640016B562 /* TestJsonFileForProductsListWithNoProduct.txt */; };
 		C66428261E6845640016B562 /* TestJsonFileForProductsListWithNoProduct.txt in Resources */ = {isa = PBXBuildFile; fileRef = C66428221E6845640016B562 /* TestJsonFileForProductsListWithNoProduct.txt */; };
+		C66428291E6849270016B562 /* TestJsonFileForProductsListWithValidProducts.txt in Resources */ = {isa = PBXBuildFile; fileRef = C66428281E6849270016B562 /* TestJsonFileForProductsListWithValidProducts.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		C65B3E2E1E6836A50055CD22 /* JLDWTestUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWTestUtility.swift; sourceTree = "<group>"; };
 		C66428211E6845640016B562 /* TestJsonFileForProductsListWith21Products.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestJsonFileForProductsListWith21Products.txt; sourceTree = "<group>"; };
 		C66428221E6845640016B562 /* TestJsonFileForProductsListWithNoProduct.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestJsonFileForProductsListWithNoProduct.txt; sourceTree = "<group>"; };
+		C66428281E6849270016B562 /* TestJsonFileForProductsListWithValidProducts.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestJsonFileForProductsListWithValidProducts.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +279,7 @@
 		C66428271E6845660016B562 /* TestJsonFile */ = {
 			isa = PBXGroup;
 			children = (
+				C66428281E6849270016B562 /* TestJsonFileForProductsListWithValidProducts.txt */,
 				C66428221E6845640016B562 /* TestJsonFileForProductsListWithNoProduct.txt */,
 				C66428211E6845640016B562 /* TestJsonFileForProductsListWith21Products.txt */,
 			);
@@ -371,6 +374,7 @@
 				C65B3DE91E682ECE0055CD22 /* Assets.xcassets in Resources */,
 				C65B3DE71E682ECE0055CD22 /* Main.storyboard in Resources */,
 				C66428231E6845640016B562 /* TestJsonFileForProductsListWith21Products.txt in Resources */,
+				C66428291E6849270016B562 /* TestJsonFileForProductsListWithValidProducts.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

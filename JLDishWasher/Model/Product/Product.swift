@@ -14,7 +14,6 @@ class Product: NSObject {
     var title: String?
     var imageURLString: String?
     var productPrise: ProductPrise?
-    var prise: String?
 
     public func initWithResponse(response: Dictionary<String, Any>?) {
 

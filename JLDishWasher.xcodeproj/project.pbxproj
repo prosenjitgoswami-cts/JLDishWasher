@@ -12,6 +12,13 @@
 		C65B3DEC1E682ECE0055CD22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C65B3DEA1E682ECE0055CD22 /* LaunchScreen.storyboard */; };
 		C65B3DF71E682ECE0055CD22 /* JLDishWasherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3DF61E682ECE0055CD22 /* JLDishWasherTests.swift */; };
 		C65B3E101E682EFB0055CD22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E021E682EFB0055CD22 /* AppDelegate.swift */; };
+		C65B3E161E6831C80055CD22 /* JLDWProductGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E151E6831C80055CD22 /* JLDWProductGridViewController.swift */; };
+		C65B3E181E6831F90055CD22 /* JLDWConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E171E6831F90055CD22 /* JLDWConstants.swift */; };
+		C65B3E1E1E6832280055CD22 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E1B1E6832280055CD22 /* Product.swift */; };
+		C65B3E1F1E6832280055CD22 /* ProductPrise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E1D1E6832280055CD22 /* ProductPrise.swift */; };
+		C65B3E211E6832670055CD22 /* ProductGridViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E201E6832670055CD22 /* ProductGridViewControllerPresenter.swift */; };
+		C65B3E231E6832DA0055CD22 /* JLDWProductGridVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E221E6832DA0055CD22 /* JLDWProductGridVCTests.swift */; };
+		C65B3E271E6833390055CD22 /* TestJsonFileForProductsList_20Product.json in Resources */ = {isa = PBXBuildFile; fileRef = C65B3E261E6833390055CD22 /* TestJsonFileForProductsList_20Product.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +41,13 @@
 		C65B3DF61E682ECE0055CD22 /* JLDishWasherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLDishWasherTests.swift; sourceTree = "<group>"; };
 		C65B3DF81E682ECE0055CD22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C65B3E021E682EFB0055CD22 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C65B3E151E6831C80055CD22 /* JLDWProductGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWProductGridViewController.swift; sourceTree = "<group>"; };
+		C65B3E171E6831F90055CD22 /* JLDWConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWConstants.swift; sourceTree = "<group>"; };
+		C65B3E1B1E6832280055CD22 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		C65B3E1D1E6832280055CD22 /* ProductPrise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductPrise.swift; sourceTree = "<group>"; };
+		C65B3E201E6832670055CD22 /* ProductGridViewControllerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductGridViewControllerPresenter.swift; sourceTree = "<group>"; };
+		C65B3E221E6832DA0055CD22 /* JLDWProductGridVCTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWProductGridVCTests.swift; sourceTree = "<group>"; };
+		C65B3E261E6833390055CD22 /* TestJsonFileForProductsList_20Product.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestJsonFileForProductsList_20Product.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +92,7 @@
 				C65B3E011E682EFB0055CD22 /* Application */,
 				C65B3E041E682EFB0055CD22 /* Constants */,
 				C65B3E051E682EFB0055CD22 /* Manager */,
+				C65B3E191E6832280055CD22 /* Model */,
 				C65B3E061E682EFB0055CD22 /* Resource */,
 				C65B3E081E682EFB0055CD22 /* Utility */,
 				C65B3E0B1E682EFB0055CD22 /* View */,
@@ -92,8 +107,10 @@
 		C65B3DF51E682ECE0055CD22 /* JLDishWasherTests */ = {
 			isa = PBXGroup;
 			children = (
+				C65B3E241E6832E90055CD22 /* Resource */,
 				C65B3DF61E682ECE0055CD22 /* JLDishWasherTests.swift */,
 				C65B3DF81E682ECE0055CD22 /* Info.plist */,
+				C65B3E221E6832DA0055CD22 /* JLDWProductGridVCTests.swift */,
 			);
 			path = JLDishWasherTests;
 			sourceTree = "<group>";
@@ -109,6 +126,7 @@
 		C65B3E041E682EFB0055CD22 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				C65B3E171E6831F90055CD22 /* JLDWConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -192,6 +210,8 @@
 		C65B3E0F1E682EFB0055CD22 /* ProductGridViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C65B3E151E6831C80055CD22 /* JLDWProductGridViewController.swift */,
+				C65B3E201E6832670055CD22 /* ProductGridViewControllerPresenter.swift */,
 			);
 			path = ProductGridViewController;
 			sourceTree = "<group>";
@@ -203,6 +223,47 @@
 				C65B3DEA1E682ECE0055CD22 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		C65B3E191E6832280055CD22 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C65B3E1A1E6832280055CD22 /* Product */,
+				C65B3E1C1E6832280055CD22 /* ProductPrise */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C65B3E1A1E6832280055CD22 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				C65B3E1B1E6832280055CD22 /* Product.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		C65B3E1C1E6832280055CD22 /* ProductPrise */ = {
+			isa = PBXGroup;
+			children = (
+				C65B3E1D1E6832280055CD22 /* ProductPrise.swift */,
+			);
+			path = ProductPrise;
+			sourceTree = "<group>";
+		};
+		C65B3E241E6832E90055CD22 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C65B3E251E6832E90055CD22 /* JsonFile */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		C65B3E251E6832E90055CD22 /* JsonFile */ = {
+			isa = PBXGroup;
+			children = (
+				C65B3E261E6833390055CD22 /* TestJsonFileForProductsList_20Product.json */,
+			);
+			path = JsonFile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +359,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C65B3E271E6833390055CD22 /* TestJsonFileForProductsList_20Product.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +370,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C65B3E181E6831F90055CD22 /* JLDWConstants.swift in Sources */,
+				C65B3E1E1E6832280055CD22 /* Product.swift in Sources */,
 				C65B3E101E682EFB0055CD22 /* AppDelegate.swift in Sources */,
+				C65B3E211E6832670055CD22 /* ProductGridViewControllerPresenter.swift in Sources */,
+				C65B3E161E6831C80055CD22 /* JLDWProductGridViewController.swift in Sources */,
+				C65B3E1F1E6832280055CD22 /* ProductPrise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C65B3DF71E682ECE0055CD22 /* JLDishWasherTests.swift in Sources */,
+				C65B3E231E6832DA0055CD22 /* JLDWProductGridVCTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

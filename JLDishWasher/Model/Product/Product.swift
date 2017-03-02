@@ -14,6 +14,7 @@ class Product: NSObject {
     var title: String?
     var imageURLString: String?
     var productPrise: ProductPrise?
+    var priseDisplayString: String?
 
     public func initWithResponse(response: Dictionary<String, Any>?) {
 
@@ -33,6 +34,8 @@ class Product: NSObject {
     private func perseProductPriseWith(price: Dictionary<String, Any>){
         productPrise = ProductPrise();
         productPrise?.initWith(productPrise: price)
-        
+        if let productPrise = productPrise?.priseNow {
+        self.priseDisplayString  = "£" + productPrise
+        }
     }
 }

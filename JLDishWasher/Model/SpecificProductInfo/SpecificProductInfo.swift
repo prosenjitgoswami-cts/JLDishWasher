@@ -15,6 +15,7 @@ class SpecificProductInfo: Product {
     var code :String?
     var guaranteeInformation: String?
     var productInformation: String?
+
     var additionalService: AdditionalService?
 
     required init(product response: [String : Any]?) {
@@ -62,13 +63,15 @@ extension SpecificProductInfo {
         }
     }
 
+
+    // Bind the Media
     func bindMediaResult(with mediaResult:[String: Any]?) {
 
         if let mediaResult: [String : Any] = mediaResult?[kDictMedia] as? [String:Any]{
             media = Media(media: mediaResult)
         }
     }
-
+    // Bind the Details
     func bindDetailsResult(with detailsResult:[String: Any]?) {
         
         if let detailsResult: [String : Any] = detailsResult?[kDictDetails] as? [String:Any]{
@@ -76,7 +79,8 @@ extension SpecificProductInfo {
             details = Details(details: detailsResult)
         }
     }
-
+    
+    // Bind the AdditionalService
     func bindAdditionalServiceResult(with additionalServiceResult:[String: Any]?) {
 
         if let result: [String : Any] = additionalServiceResult?[kDictAdditionalServices] as? [String:Any]{

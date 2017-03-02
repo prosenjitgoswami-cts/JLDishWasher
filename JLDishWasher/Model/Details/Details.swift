@@ -9,7 +9,7 @@
 
 class Details: BaseModel {
 
-    var specificFeature : SpecificFeature?
+    var attributes : [Attribute]?
     var productInformation: String?
 
     required init(details result: [String: Any]?) {
@@ -32,21 +32,26 @@ extension Details {
             productInformation = productInfo
         }
 
-        bindAdditionalSpecificFeature(with: result)
+        bindAdditionalAttribute(attributes: result)
     }
 
 
-    func bindAdditionalSpecificFeature(with result:[String:Any]?) {
+    func bindAdditionalAttribute(attributes result:[String:Any]?) {
 
+        if let features = result?[kDictFeature] as? [[String:Any]] {
 
-        if let spFeatures = result?[kDictFeature] as? [[String:Any]] {
+            let first:Dictionary = features[0]
+            let attrResults: [[String:Any]] = first[kDictAttributes] as! [[String : Any]]
 
-            let firstFeature  = spFeatures[0]
+            attributes = [Attribute]()
 
-            if let attributes = firstFeature[kDictAttributes] as? [String:Any] {
-                specificFeature = SpecificFeature(specificFeature: attributes)
+            for attribute in attrResults {
+
+                let attribute = Attribute(attribute: attribute)
+                attributes?.append(attribute)
+                }
+            }
             }
         }
-    }
-    
-}
+
+

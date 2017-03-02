@@ -347,6 +347,71 @@ class JLDWProductDetailsVCTests: XCTestCase {
         XCTAssertNotEqual(specificProductInfo?.guaranteeInformation, "NA")
     }
 
+    //MARK:------------------------------- * ----------------------------------
+    //MARK: Test Cases For Attributs
+    // Test the response has contained Attributs
+    func testCheckThatResponseHasContainedAttributs() {
+
+        let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
+        let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
+        XCTAssertNotNil(specificProductInfo?.details?.attributes)
+    }
+
+    // Test the response has not contained Attributs
+    func testCheckThatResponseHasNotContainedAttributs() {
+
+        let specificProductInfos : [SpecificProductInfo]? = productPageJsonInvalidResults()
+        let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
+        XCTAssertNil(specificProductInfo?.details?.attributes)
+    }
+
+    // Test the response has contained valid specific attribut Name
+    func testCheckThatResponseHasContainedValidAttributName() {
+
+        let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
+        let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
+
+        let name  = specificProductInfo?.details?.attributes?[0].specificProductName
+        XCTAssertEqual(name, "Dimensions")
+    }
+
+    // Test the response has contained invalid specific attribut Name
+    func testCheckThatResponseHasContainedInValidAttributName() {
+
+        let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
+        let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
+
+        let name  = specificProductInfo?.details?.attributes?[0].specificProductName
+        XCTAssertNotEqual(name, "NA-Dimensions")
+    }
+
+    // Test the response has contained valid specific attribut Value
+    func testCheckThatResponseHasContainedValidAttributValue() {
+
+        let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
+        let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
+
+        let value  = specificProductInfo?.details?.attributes?[0].specificProductvalue
+        XCTAssertEqual(value, "H81.5 x W59.8 x D55cm")
+    }
+
+    // Test the response has contained invalid specific attribut value
+    func testCheckThatResponseHasContainedInValidAttributValue() {
+
+        let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
+        let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
+
+        let value  = specificProductInfo?.details?.attributes?[0].specificProductvalue
+        XCTAssertNotEqual(value, "NA-H81.5 x W59.8 x D55cm")
+    }
+
+
+
+    /*"id": "attr9834700020",
+    "name": "Dimensions",
+    "toolTip": "",
+    "uom": "",
+    "value": "H81.5 x W59.8 x D55cm"*/
 }
 
 //MARK:------------------------------- * ----------------------------------

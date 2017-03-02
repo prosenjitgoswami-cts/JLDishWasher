@@ -1,5 +1,5 @@
 //
-//  SpecificFeature.swift
+//  Attribute.swift
 //  JLDishWasher
 //
 //  Created by Prsenjit Goswami on 02/03/17.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class SpecificFeature: NSObject {
+class Attribute: NSObject {
 
     var specificProductName: String?
     var specificProductvalue: String?
 
-    required init(specificFeature result: [String:Any]?) {
+    required init(attribute result: [String:Any]?) {
         super.init()
         guard let result = result else{
             return;

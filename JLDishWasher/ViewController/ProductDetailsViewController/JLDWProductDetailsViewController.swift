@@ -10,56 +10,55 @@ import UIKit
 
 class JLDWProductDetailsViewController: UIViewController {
 
-    @IBOutlet weak var priceDetailsHConstraint: NSLayoutConstraint!
-    @IBOutlet weak var rightSidePanelWidthConstraints: NSLayoutConstraint!
-//    @IBOutlet weak var backgroundPanelContainerStackView: UIView!
-    @IBOutlet weak var rightPanelContainerView: UIView!
-    @IBOutlet weak var leftPanelContainerView: UIView!
+	@IBOutlet weak var productImagesCollectionView: JLDWProductsCollectionView!
+	@IBOutlet weak var priceDetailsHConstraint: NSLayoutConstraint!
+	@IBOutlet weak var rightSidePanelWidthConstraints: NSLayoutConstraint!
+	@IBOutlet weak var rightPanelContainerView: UIView!
+	@IBOutlet weak var leftPanelContainerView: UIView!
+
+	@IBOutlet weak var priceLabel: UILabel!
+	@IBOutlet weak var displaySpecialOfferLabel: UILabel!
+	@IBOutlet weak var GuaranteeInfoLabel: UILabel!
 
 
-    lazy var presenter: JLDWProductDetailsViewControllerPresenter = {
-        return JLDWProductDetailsViewControllerPresenter()
-    }()
+	var productImagesDataSource: [String]?
+	var specificProduct: SpecificProductInfo?
 
-    var productID: String?
-    var datasource: [SpecificProductInfo]?
+	lazy var presenter: JLDWProductDetailsViewControllerPresenter = {
+		return JLDWProductDetailsViewControllerPresenter()
+	}()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+	var productID: String?
 
-    override func viewWillAppear(_ animated: Bool) {
-        fetchService()
-        updateUIOnOrientation()
+	override func viewDidLoad() {
+		super.viewDidLoad()
+	}
 
-    }
+	override func viewWillAppear(_ animated: Bool) {
+		fetchService()
+		updateUIOnOrientation()
+	}
 
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        updateUIOnOrientation()
-    }
+	override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+		updateUIOnOrientation()
+	}
 
-    // Update UI  On Orientation
-    func updateUIOnOrientation() {
+	// Update UI  On Orientation
+	func updateUIOnOrientation() {
 
-        if UIDevice.current.orientation.isLandscape {
-            rightSidePanelWidthConstraints.constant = 300
-            //  backgroundPanelContainerStackView.axis = .horizontal
-priceDetailsHConstraint.constant = 0
+		if UIDevice.current.orientation.isLandscape {
+			rightSidePanelWidthConstraints.constant = 300
+			//priceDetailsHConstraint.constant = 0
 
-        } else {
-               rightSidePanelWidthConstraints.constant = 0
-            // backgroundPanelContainerStackView.axis = .vertical
-            priceDetailsHConstraint.constant = 180
-            
+		} else {
+			rightSidePanelWidthConstraints.constant = 0
+		}
+	}
 
-
-        }
-    }
-
-    // PubLic Method
-    public func setProduct(withProduct product: Product) {
-        productID = product.productId;
-    }
+	// PubLic Method
+	public func setProduct(withProduct product: Product) {
+		productID = product.productId;
+	}
 }
 
 
@@ -67,71 +66,79 @@ priceDetailsHConstraint.constant = 0
 
 extension JLDWProductDetailsViewController {
 
-    /**
-     Invoke Web Service and Get Products details and Refresh UI
-     @param failed: Fail Block
+	/**
+	Invoke Web Service and Get Products details and Refresh UI
+	@param failed: Fail Block
 
-     */
-    func fetchService() {
+	*/
+	func fetchService() {
 
-        if let productID  = productID {
-            presenter.fetchProductDetails(withProducetID: productID, failed: { (error) in
+		if let productID  = productID {
+			presenter.fetchProductDetails(withProducetID: productID, failed: { (error) in
 
-            }, success: {(specificProductInfos) in
+			}, success: {[weak self] (specificProductInfos) in
 
-                print ("Helllllll")
-                self.datasource = specificProductInfos;
-            })
-        }
-    }
+				if let datasource = specificProductInfos {
+					self?.specificProduct = datasource[0]
+					self?.updateUI()
+				}
+			})
+		}
+	}
 
-    /**
-     Update UI
-     @param products: Collection of Product
-     */
-    internal func updateUI(withProducts products: [Product]?) {
+	/**
+	Update UI
+	@param products: Collection of Product
+	*/
+	internal func updateUI() {
+		setNavigationBarTitle(withProductTitle: specificProduct?.title)
+		loadProductImages()
 
-        if let products = products {
-            setNavigationBarTitle(withProductCount:products.count)
+		if let priceLabelText = specificProduct?.priseDisplayString {
+			priceLabel.text = priceLabelText
+		}
 
-        }
-    }
+		if let displaySpecialOfferLabelText = specificProduct?.displaySpecialOffer {
+			displaySpecialOfferLabel.text = displaySpecialOfferLabelText
+		}
 
-    /**
-     Navigate to JLDWProductDetailsViewController though Segue
-     @param product: Selected product details
-     */
-    internal func navigate(withSelectedProduct product: Product?) {
+		if let guaranteeInfoLabelText = specificProduct?.guaranteeInformation {
+			displaySpecialOfferLabel.text = guaranteeInfoLabelText
+		}
+	}
 
-        if let product: Product = product {
-            self.performSegue(withIdentifier: kSegurID_ToJLDWProductDetailsViewController, sender: product)
-        }
-    }
+	/**
+	Navigate to JLDWProductDetailsViewController though Segue
+	@param product: Selected product details
+	*/
+	internal func navigate(withSelectedProduct product: Product?) {
 
-    /**
-     Set Navigation Bar Title
-     */
-    internal func configureUI() {
-
-        setNavigationBarTitle(withProductCount: 0)
-    }
+		if let product: Product = product {
+			self.performSegue(withIdentifier: kSegurID_ToJLDWProductDetailsViewController, sender: product)
+		}
+	}
 
 
-    /**
-     Navigate to JLDWProductDetailsViewController though Segue
-     @param product: Selected product details
-     */
-    private func setNavigationBarTitle(withProductCount productCount: Int) {
+	func loadProductImages() {
 
-        var pageTitle: String = PageTitleProductGridVC;
-        
-        if (productCount > 0) {
-            
-            pageTitle.append("("+"\(productCount)"+")")
-        }
-        self.title = pageTitle
-        
-    }
+		if let _productImagesDataSource = specificProduct?.media?.imageURLStrings {
+
+			productImagesDataSource = _productImagesDataSource
+			productImagesCollectionView.reloadCollectionView(withCollections: productImagesDataSource)
+		}
+	}
+
+	/**
+	Navigate to JLDWProductDetailsViewController though Segue
+	@param product: Selected product details
+	*/
+	private func setNavigationBarTitle(withProductTitle title: String?) {
+
+		if let title = title {
+			self.title = title
+
+		}
+	}
 }
 
 

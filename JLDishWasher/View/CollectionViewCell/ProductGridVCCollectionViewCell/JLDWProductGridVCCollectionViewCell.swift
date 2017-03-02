@@ -13,7 +13,6 @@ class JLDWProductGridVCCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var productCostLabel: UILabel!
     @IBOutlet weak var productBriefDescLabel: UILabel!
 
-    // Public Function
     public func setProductDetails(product: Product) {
         if let productTitle = product.title {
             productBriefDescLabel.text = productTitle

@@ -10,8 +10,6 @@ import UIKit
 
 class JLDWProductDetailsViewControllerPresenter: NSObject {
 
-
-
     /**
      URLStringProductPage
      @param withPeroductID: withPeroductID is ProductID

@@ -66,12 +66,10 @@ extension JLDWProductGridViewController {
      */
     internal func fetchService() {
 
-        self.presenter.fetchProductList(failed: { (error) in
+        self.presenter.fetchProductList(failed: {(error) in
             print(error)
-        }) { (products) in
-
-
-            self.updateUI(withProducts: products)
+        }) { [weak self](products) in
+            self?.updateUI(withProducts: products)
         }
     }
 

@@ -18,12 +18,12 @@ class ProductPrise: BaseModel {
 			return;
 		}
 
-        if let priseNow = productPrise[kDictPriseNow] as! String? {
+        if let priseNow = productPrise[kDictPriseNow] as? String {
 
             self.priseNow = priseNow
         }
 
-        if let priseNow = productPrise[kDictpriseCurrency] as! String? {
+        if let priseNow = productPrise[kDictpriseCurrency] as? String {
             
             self.priseCurrency = priseNow
         }

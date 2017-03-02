@@ -9,9 +9,9 @@
 
 class SpecificProductInfo: Product {
 
-	var media: Media?
-	var details: Details?
-	var displaySpecialOffer :String?
+    var media: Media?
+    var details: Details?
+    var displaySpecialOffer :String?
 
 
 }
@@ -20,36 +20,41 @@ class SpecificProductInfo: Product {
 //MARK: Public Method
 extension SpecificProductInfo {
 
-	public func initWith(response: Dictionary<String, Any>?) {
+    public func initWith(response: Dictionary<String, Any>?) {
 
-		guard let response = response else{
-			return;
-		}
-		super.initWithResponse(response: response)
+        guard let response = response else{
+            return;
+        }
+        super.initWithResponse(response: response)
 
-		if let displaySpecialOfferStr = response[kDictDisplaySpecialOffer] as! String? {
+        if let displaySpecialOfferStr = response[kDictDisplaySpecialOffer] as? String {
 
-			displaySpecialOffer = displaySpecialOfferStr;
-		}
+            displaySpecialOffer = displaySpecialOfferStr;
+        }
 
-		bindMedia(with: response)
-	}
+        bindMedia(with: response)
+        bindDetails(with: response)
+    }
 }
 
 //MARK:------------------------------- * ----------------------------------
 extension SpecificProductInfo {
 
- func bindMedia(with mediaResult:Dictionary<String, Any>?) {
+    func bindMedia(with mediaResult:Dictionary<String, Any>?) {
 
-	let media: Media = Media()
-	media.initWith(response: mediaResult)
+        let media: Media = Media()
 
-	}
+        if let mediaResult: [String : Any] = mediaResult?[kDictMedia] as? [String:Any]{
+            media.initWith(media: mediaResult)
+        }
+    }
 
-	func bindDetails(with detailsResult:Dictionary<String, Any>?) {
+    func bindDetails(with detailsResult:Dictionary<String, Any>?) {
+        
+        let details: Details = Details()
 
-		let media: Media = Media()
-		media.initWith(response: detailsResult)
-		
-	}
+        if let detailsResult: [String : Any] = detailsResult?[kDictDetails] as? [String:Any]{
+            details.initWith(details: detailsResult)
+        }
+    }
 }

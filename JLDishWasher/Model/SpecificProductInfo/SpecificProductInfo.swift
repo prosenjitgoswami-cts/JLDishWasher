@@ -42,19 +42,18 @@ extension SpecificProductInfo {
 
     func bindMedia(with mediaResult:Dictionary<String, Any>?) {
 
-        let media: Media = Media()
-
         if let mediaResult: [String : Any] = mediaResult?[kDictMedia] as? [String:Any]{
-            media.initWith(media: mediaResult)
+            media = Media()
+            media?.initWith(media: mediaResult)
         }
     }
 
     func bindDetails(with detailsResult:Dictionary<String, Any>?) {
         
-        let details: Details = Details()
-
         if let detailsResult: [String : Any] = detailsResult?[kDictDetails] as? [String:Any]{
-            details.initWith(details: detailsResult)
+
+            details = Details()
+            details?.initWith(details: detailsResult)
         }
     }
 }

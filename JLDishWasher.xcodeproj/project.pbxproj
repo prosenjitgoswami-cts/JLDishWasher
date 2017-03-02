@@ -21,7 +21,8 @@
 		C664282C1E6852D50016B562 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664282A1E6852D50016B562 /* DataService.swift */; };
 		C664282D1E6852D50016B562 /* DNWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664282B1E6852D50016B562 /* DNWebService.swift */; };
 		C664282F1E6852DC0016B562 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664282E1E6852DC0016B562 /* ErrorManager.swift */; };
-		C66428351E6857020016B562 /* JLDWProductGridVCCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66428341E6857020016B562 /* JLDWProductGridVCCollectionViewCell.swift */; };
+		C66D5BC71E6871EA0011DEA0 /* MLDWProductsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D5BC11E6871EA0011DEA0 /* MLDWProductsCollectionView.swift */; };
+		C66D5BC81E6871EA0011DEA0 /* JLDWProductGridVCCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D5BC41E6871EA0011DEA0 /* JLDWProductGridVCCollectionViewCell.swift */; };
 		C6AAF07D1E6852770026FF79 /* AdditionalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AAF06C1E6852770026FF79 /* AdditionalService.swift */; };
 		C6AAF07E1E6852770026FF79 /* AdditionalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AAF06C1E6852770026FF79 /* AdditionalService.swift */; };
 		C6AAF07F1E6852770026FF79 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AAF06E1E6852770026FF79 /* Attribute.swift */; };
@@ -89,7 +90,8 @@
 		C664282A1E6852D50016B562 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		C664282B1E6852D50016B562 /* DNWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNWebService.swift; sourceTree = "<group>"; };
 		C664282E1E6852DC0016B562 /* ErrorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
-		C66428341E6857020016B562 /* JLDWProductGridVCCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWProductGridVCCollectionViewCell.swift; sourceTree = "<group>"; };
+		C66D5BC11E6871EA0011DEA0 /* MLDWProductsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLDWProductsCollectionView.swift; sourceTree = "<group>"; };
+		C66D5BC41E6871EA0011DEA0 /* JLDWProductGridVCCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWProductGridVCCollectionViewCell.swift; sourceTree = "<group>"; };
 		C6AAF06C1E6852770026FF79 /* AdditionalService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalService.swift; sourceTree = "<group>"; };
 		C6AAF06E1E6852770026FF79 /* Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
 		C6AAF0701E6852770026FF79 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
@@ -291,17 +293,58 @@
 		C66428321E6857020016B562 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C66428331E6857020016B562 /* ProductGridVCCollectionViewCell */,
+				C66D5BBF1E6871EA0011DEA0 /* CollectionView */,
+				C66D5BC21E6871EA0011DEA0 /* CollectionViewCell */,
+				C66D5BC51E6871EA0011DEA0 /* TableView */,
+				C66D5BC61E6871EA0011DEA0 /* TableViewCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		C66428331E6857020016B562 /* ProductGridVCCollectionViewCell */ = {
+		C66D5BBF1E6871EA0011DEA0 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				C66428341E6857020016B562 /* JLDWProductGridVCCollectionViewCell.swift */,
+				C66D5BC01E6871EA0011DEA0 /* ProductsCollectionView */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		C66D5BC01E6871EA0011DEA0 /* ProductsCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				C66D5BC11E6871EA0011DEA0 /* MLDWProductsCollectionView.swift */,
+			);
+			path = ProductsCollectionView;
+			sourceTree = "<group>";
+		};
+		C66D5BC21E6871EA0011DEA0 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C66D5BC31E6871EA0011DEA0 /* ProductGridVCCollectionViewCell */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		C66D5BC31E6871EA0011DEA0 /* ProductGridVCCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C66D5BC41E6871EA0011DEA0 /* JLDWProductGridVCCollectionViewCell.swift */,
 			);
 			path = ProductGridVCCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		C66D5BC51E6871EA0011DEA0 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		C66D5BC61E6871EA0011DEA0 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		C6AAF06A1E6852770026FF79 /* Model */ = {
@@ -518,13 +561,14 @@
 				C6AAF07D1E6852770026FF79 /* AdditionalService.swift in Sources */,
 				C664282F1E6852DC0016B562 /* ErrorManager.swift in Sources */,
 				C65B3E181E6831F90055CD22 /* JLDWConstants.swift in Sources */,
-				C66428351E6857020016B562 /* JLDWProductGridVCCollectionViewCell.swift in Sources */,
 				C6AAF07F1E6852770026FF79 /* Attribute.swift in Sources */,
 				C664282C1E6852D50016B562 /* DataService.swift in Sources */,
+				C66D5BC81E6871EA0011DEA0 /* JLDWProductGridVCCollectionViewCell.swift in Sources */,
 				EA5FCFEC1E672FD200F65C1F /* JLDWTestUtility.swift in Sources */,
 				EA5FCF9C1E67197A00F65C1F /* JLDWProductDetailsViewControllerPresenter.swift in Sources */,
 				C6AAF08B1E6852770026FF79 /* ProductPrise.swift in Sources */,
 				EA607F381E6702C2004419F5 /* JLDWProductDetailsViewController.swift in Sources */,
+				C66D5BC71E6871EA0011DEA0 /* MLDWProductsCollectionView.swift in Sources */,
 				C6AAF08D1E6852770026FF79 /* SpecificProductInfo.swift in Sources */,
 				C6AAF0811E6852770026FF79 /* BaseModel.swift in Sources */,
 				EA607F351E670066004419F5 /* HelperUtils.swift in Sources */,

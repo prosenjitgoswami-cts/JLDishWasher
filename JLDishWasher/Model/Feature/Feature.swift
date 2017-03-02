@@ -10,4 +10,7 @@ import UIKit
 
 class Feature: BaseModel {
 
+    //Product Specification Name
+
+    //Value for the product specification
 }

@@ -221,7 +221,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
 
 
     //MARK:------------------------------- * ----------------------------------
-    //MARK: Test Cases For Details
+    //MARK: Test Cases For product
 
     // Test the response has not contained Details
     func testCheckThatResponseHasNotContainedDetails() {
@@ -245,7 +245,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
 
         let specificProductInfos : [SpecificProductInfo]? = productPageJsonInvalidResults()
         let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
-        XCTAssertNil(specificProductInfo?.details?.productInformation)
+        XCTAssertNil(specificProductInfo?.productInformation)
     }
 
     // Test the response has contained valid Media
@@ -254,7 +254,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
 
         let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
         let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
-        XCTAssertNotNil(specificProductInfo?.details?.productInformation)
+        XCTAssertNotNil(specificProductInfo?.productInformation)
     }
     
     // Test the response has contained valid details infomation
@@ -262,7 +262,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
 
         let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
         let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
-        let productInformation  = specificProductInfo?.details?.productInformation
+        let productInformation  = specificProductInfo?.productInformation
         XCTAssertEqual(productInformation, "<p>TestInfo</p>")
     }
 
@@ -271,7 +271,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
 
         let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
         let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
-        let productInformation  = specificProductInfo?.media?.imageURLStrings?[0]
+        let productInformation  = specificProductInfo?.productInformation
         XCTAssertNotNil(productInformation, "NA")
     }
 
@@ -309,9 +309,43 @@ class JLDWProductDetailsVCTests: XCTestCase {
 
         let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
         let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
-        XCTAssertNotNil(specificProductInfo?.code, "NA")
+        XCTAssertNotEqual (specificProductInfo?.code, "NA")
     }
 
+    //MARK:------------------------------- * ----------------------------------
+    //MARK: Test Cases For Guarantee Information
+
+    // Test the response has not contained guaranteeInformation
+    func testCheckThatResponseHasNotContainedGuaranteeInformation() {
+
+        let specificProductInfos : [SpecificProductInfo]? = productPageJsonInvalidResults()
+        let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
+        XCTAssertNil(specificProductInfo?.guaranteeInformation)
+    }
+
+    // Test the response hascontained guaranteeInformation
+    func testCheckThatResponseHasContainedGuaranteeInformation() {
+
+        let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
+        let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
+        XCTAssertNotNil(specificProductInfo?.guaranteeInformation)
+    }
+
+    // Test the response has contained valid guaranteeInformation
+    func testCheckThatResponseHasContainedValidGuaranteeInformation() {
+
+        let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
+        let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
+        XCTAssertEqual(specificProductInfo?.guaranteeInformation, "2 year guarantee included")
+    }
+
+    // Test the response has contained invalid guaranteeInformation
+    func testCheckThatResponseHasContainedInValidGuaranteeInformation() {
+
+        let specificProductInfos : [SpecificProductInfo]? = productPageJsonInvalidResults()
+        let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
+        XCTAssertNotEqual(specificProductInfo?.guaranteeInformation, "NA")
+    }
 
 }
 

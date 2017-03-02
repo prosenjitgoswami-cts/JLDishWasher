@@ -13,7 +13,9 @@ class SpecificProductInfo: Product {
     var details: Details?
     var displaySpecialOffer :String?
     var code :String?
-
+    var guaranteeInformation: String?
+    var productInformation: String?
+    var additionalService: AdditionalService?
 }
 
 //MARK:------------------------------- * ----------------------------------
@@ -37,10 +39,30 @@ extension SpecificProductInfo {
 
         bindMedia(with: response)
         bindDetails(with: response)
+        bindAdditionalService(with: response)
+        getGuaranteeInformation()
+        getProductInformation()
+
     }
+
+    func getGuaranteeInformation() {
+
+        if let guaranteeInfo = additionalService?.includedServices?[0].guaranteeinfo {
+            guaranteeInformation = guaranteeInfo
+        }
+    }
+
+    func getProductInformation() {
+
+        if let productInfo = details?.productInformation {
+            productInformation = productInfo
+        }
+    }
+
 }
 
 //MARK:------------------------------- * ----------------------------------
+// Dependency Binding
 extension SpecificProductInfo {
 
     func bindMedia(with mediaResult:Dictionary<String, Any>?) {
@@ -57,6 +79,15 @@ extension SpecificProductInfo {
 
             details = Details()
             details?.initWith(details: detailsResult)
+        }
+    }
+
+    func bindAdditionalService(with additionalServiceResult:Dictionary<String, Any>?) {
+
+        if let result: [String : Any] = additionalServiceResult?[kDictAdditionalServices] as? [String:Any]{
+
+            additionalService = AdditionalService()
+            additionalService?.initWith(additionalService: result)
         }
     }
 }

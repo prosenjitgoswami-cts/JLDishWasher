@@ -35,6 +35,8 @@ let kDictUrls = "urls"
 let kDictDetails = "details"
 let kDictProductInfo = "productInformation"
 let kDictCode = "code"
+let kDictAdditionalServices = "additionalServices"
+let kDictIncludedServices = "includedServices"
 
 // Error
 let kErrorDomain = "com.DishWasher.error"

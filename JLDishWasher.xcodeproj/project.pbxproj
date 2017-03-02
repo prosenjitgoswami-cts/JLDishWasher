@@ -22,6 +22,10 @@
 		C664282D1E6852D50016B562 /* DNWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664282B1E6852D50016B562 /* DNWebService.swift */; };
 		C664282F1E6852DC0016B562 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664282E1E6852DC0016B562 /* ErrorManager.swift */; };
 		C66428351E6857020016B562 /* JLDWProductGridVCCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66428341E6857020016B562 /* JLDWProductGridVCCollectionViewCell.swift */; };
+		C6AAF03D1E6812500026FF79 /* AdditionalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AAF03C1E6812500026FF79 /* AdditionalService.swift */; };
+		C6AAF0401E6812910026FF79 /* IncludedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AAF03F1E6812910026FF79 /* IncludedService.swift */; };
+		C6AAF0411E6818D40026FF79 /* IncludedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AAF03F1E6812910026FF79 /* IncludedService.swift */; };
+		C6AAF0421E6818DF0026FF79 /* AdditionalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AAF03C1E6812500026FF79 /* AdditionalService.swift */; };
 		EA5FCF8F1E6716D600F65C1F /* HelperUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA607F341E670066004419F5 /* HelperUtils.swift */; };
 		EA5FCF901E67174300F65C1F /* DNWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664282B1E6852D50016B562 /* DNWebService.swift */; };
 		EA5FCF911E67174900F65C1F /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664282A1E6852D50016B562 /* DataService.swift */; };
@@ -86,6 +90,8 @@
 		C664282B1E6852D50016B562 /* DNWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNWebService.swift; sourceTree = "<group>"; };
 		C664282E1E6852DC0016B562 /* ErrorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
 		C66428341E6857020016B562 /* JLDWProductGridVCCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWProductGridVCCollectionViewCell.swift; sourceTree = "<group>"; };
+		C6AAF03C1E6812500026FF79 /* AdditionalService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalService.swift; sourceTree = "<group>"; };
+		C6AAF03F1E6812910026FF79 /* IncludedService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncludedService.swift; sourceTree = "<group>"; };
 		EA5FCF931E6718BF00F65C1F /* TestJsonFileForProductsListWith21Products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestJsonFileForProductsListWith21Products.json; sourceTree = "<group>"; };
 		EA5FCF941E6718BF00F65C1F /* TestJsonFileForProductsListWithNoProduct.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestJsonFileForProductsListWithNoProduct.json; sourceTree = "<group>"; };
 		EA5FCF951E6718BF00F65C1F /* TestJsonFileForProductsListWithValidProducts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestJsonFileForProductsListWithValidProducts.json; sourceTree = "<group>"; };
@@ -258,9 +264,11 @@
 		C65B3E191E6832280055CD22 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C6AAF03B1E6812230026FF79 /* AdditionalService */,
 				EA5FCFB81E6722F300F65C1F /* BaseModel */,
 				EA5FCFD01E67243000F65C1F /* Details */,
 				EA5FCFD21E67243000F65C1F /* Feature */,
+				C6AAF03E1E68127E0026FF79 /* IncludedService */,
 				EA5FCFCD1E6723FD00F65C1F /* Media */,
 				EA5FCFBF1E6722F300F65C1F /* Product */,
 				EA5FCFC11E6722F300F65C1F /* ProductPrise */,
@@ -310,6 +318,22 @@
 				C66428341E6857020016B562 /* JLDWProductGridVCCollectionViewCell.swift */,
 			);
 			path = ProductGridVCCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		C6AAF03B1E6812230026FF79 /* AdditionalService */ = {
+			isa = PBXGroup;
+			children = (
+				C6AAF03C1E6812500026FF79 /* AdditionalService.swift */,
+			);
+			path = AdditionalService;
+			sourceTree = "<group>";
+		};
+		C6AAF03E1E68127E0026FF79 /* IncludedService */ = {
+			isa = PBXGroup;
+			children = (
+				C6AAF03F1E6812910026FF79 /* IncludedService.swift */,
+			);
+			path = IncludedService;
 			sourceTree = "<group>";
 		};
 		EA5FCFB81E6722F300F65C1F /* BaseModel */ = {
@@ -490,6 +514,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6AAF03D1E6812500026FF79 /* AdditionalService.swift in Sources */,
 				C664282F1E6852DC0016B562 /* ErrorManager.swift in Sources */,
 				EA5FCFC91E6722F300F65C1F /* ProductPrise.swift in Sources */,
 				C65B3E181E6831F90055CD22 /* JLDWConstants.swift in Sources */,
@@ -505,6 +530,7 @@
 				EA5FCFC51E6722F300F65C1F /* BaseModel.swift in Sources */,
 				EA607F351E670066004419F5 /* HelperUtils.swift in Sources */,
 				C65B3E101E682EFB0055CD22 /* AppDelegate.swift in Sources */,
+				C6AAF0401E6812910026FF79 /* IncludedService.swift in Sources */,
 				EA5FCFD41E67243000F65C1F /* Details.swift in Sources */,
 				C65B3E211E6832670055CD22 /* JLDWProductGridViewControllerPresenter.swift in Sources */,
 				C65B3E161E6831C80055CD22 /* JLDWProductGridViewController.swift in Sources */,
@@ -522,6 +548,7 @@
 				C65B3E2C1E6834450055CD22 /* JLDWConstants.swift in Sources */,
 				EA5FCFD71E6727E400F65C1F /* Feature.swift in Sources */,
 				C65B3E2F1E6836A50055CD22 /* JLDWTestUtility.swift in Sources */,
+				C6AAF0421E6818DF0026FF79 /* AdditionalService.swift in Sources */,
 				EA5FCFD91E6727E900F65C1F /* Product.swift in Sources */,
 				EA5FCF921E67176500F65C1F /* ErrorManager.swift in Sources */,
 				C65B3E231E6832DA0055CD22 /* JLDWProductGridVCTests.swift in Sources */,
@@ -529,6 +556,7 @@
 				EA5FCFDC1E6727F900F65C1F /* BaseModel.swift in Sources */,
 				EA5FCFD61E6727E100F65C1F /* Details.swift in Sources */,
 				C65B3E2B1E6834340055CD22 /* JLDWProductGridViewControllerPresenter.swift in Sources */,
+				C6AAF0411E6818D40026FF79 /* IncludedService.swift in Sources */,
 				EA5FCFDB1E6727EE00F65C1F /* SpecificProductInfo.swift in Sources */,
 				EA5FCF901E67174300F65C1F /* DNWebService.swift in Sources */,
 				EA5FCFDE1E67285900F65C1F /* JLDWProductDetailsVCTests.swift in Sources */,

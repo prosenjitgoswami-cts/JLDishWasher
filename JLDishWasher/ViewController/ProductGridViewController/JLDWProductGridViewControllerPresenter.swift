@@ -43,7 +43,7 @@ class JLDWProductGridViewControllerPresenter: NSObject {
         var i = 0
         for product: NSDictionary in results {
 
-            if i>=4 { break}
+            if i>=20 { break}
 
             let  productDetails =  Product(product: product as? [String: Any])
             products.append(productDetails)

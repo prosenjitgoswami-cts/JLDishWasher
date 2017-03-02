@@ -136,8 +136,11 @@ extension JLDWProductDetailsViewController {
 
 		if let title = title {
 			self.title = title
-
 		}
+
+		// Remove back button title
+		self.navigationController?.navigationBar.topItem?.title = ""
+
 	}
 }
 

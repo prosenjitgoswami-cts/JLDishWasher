@@ -16,8 +16,8 @@ let TestJsonFileForProductsListWithValidProducts = "TestJsonFileForProductsListW
 
 class JLDWProductGridVCTests: XCTestCase {
 
-    lazy var presenter: ProductGridViewControllerPresenter = {
-        return ProductGridViewControllerPresenter()
+    lazy var presenter: JLDWProductGridViewControllerPresenter = {
+        return JLDWProductGridViewControllerPresenter()
     }()
 
     override func setUp() {

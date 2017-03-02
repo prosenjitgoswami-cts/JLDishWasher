@@ -7,6 +7,10 @@
 //
 
 
+// Service URL
+let kURLStringProductList = "https://api.johnlewis.com/v1/products/search?q=dishwasher&key=Wu1Xqn3vNrd1p7hqkvB6hEu0G9OrsYGb&pageSize=20"
+
+
 // Dictionary Key
 let kDictProducts = "products"
 let kDictProductId = "productId"
@@ -15,3 +19,27 @@ let kDictPrice = "price"
 let kDictImageURLString = "image"
 let kDictPriseNow = "now"
 let kDictpriseCurrency = "currency"
+
+
+
+// Error
+let kErrorDomain = "com.DishWasher.error"
+
+// Enums
+
+enum ErrorManagerErrorCode: Int {
+
+    case NilURLString = 1
+    case NilResponseData
+}
+
+// Page Title
+
+let PageTitleProductGridVC = "Dishwashers"
+
+// CollectionView Cell Identifier
+
+let ProductGridCollectionViewCellId = "ProductGridCollectionViewCell"
+
+// Padding
+let leftAndRightPaddings = 10.0

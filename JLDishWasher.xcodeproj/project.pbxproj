@@ -15,11 +15,11 @@
 		C65B3E181E6831F90055CD22 /* JLDWConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E171E6831F90055CD22 /* JLDWConstants.swift */; };
 		C65B3E1E1E6832280055CD22 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E1B1E6832280055CD22 /* Product.swift */; };
 		C65B3E1F1E6832280055CD22 /* ProductPrise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E1D1E6832280055CD22 /* ProductPrise.swift */; };
-		C65B3E211E6832670055CD22 /* ProductGridViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E201E6832670055CD22 /* ProductGridViewControllerPresenter.swift */; };
+		C65B3E211E6832670055CD22 /* JLDWProductGridViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E201E6832670055CD22 /* JLDWProductGridViewControllerPresenter.swift */; };
 		C65B3E231E6832DA0055CD22 /* JLDWProductGridVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E221E6832DA0055CD22 /* JLDWProductGridVCTests.swift */; };
 		C65B3E281E68342B0055CD22 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E1B1E6832280055CD22 /* Product.swift */; };
 		C65B3E291E68342E0055CD22 /* ProductPrise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E1D1E6832280055CD22 /* ProductPrise.swift */; };
-		C65B3E2B1E6834340055CD22 /* ProductGridViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E201E6832670055CD22 /* ProductGridViewControllerPresenter.swift */; };
+		C65B3E2B1E6834340055CD22 /* JLDWProductGridViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E201E6832670055CD22 /* JLDWProductGridViewControllerPresenter.swift */; };
 		C65B3E2C1E6834450055CD22 /* JLDWConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E171E6831F90055CD22 /* JLDWConstants.swift */; };
 		C65B3E2F1E6836A50055CD22 /* JLDWTestUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B3E2E1E6836A50055CD22 /* JLDWTestUtility.swift */; };
 		C66428231E6845640016B562 /* TestJsonFileForProductsListWith21Products.txt in Resources */ = {isa = PBXBuildFile; fileRef = C66428211E6845640016B562 /* TestJsonFileForProductsListWith21Products.txt */; };
@@ -27,6 +27,9 @@
 		C66428251E6845640016B562 /* TestJsonFileForProductsListWithNoProduct.txt in Resources */ = {isa = PBXBuildFile; fileRef = C66428221E6845640016B562 /* TestJsonFileForProductsListWithNoProduct.txt */; };
 		C66428261E6845640016B562 /* TestJsonFileForProductsListWithNoProduct.txt in Resources */ = {isa = PBXBuildFile; fileRef = C66428221E6845640016B562 /* TestJsonFileForProductsListWithNoProduct.txt */; };
 		C66428291E6849270016B562 /* TestJsonFileForProductsListWithValidProducts.txt in Resources */ = {isa = PBXBuildFile; fileRef = C66428281E6849270016B562 /* TestJsonFileForProductsListWithValidProducts.txt */; };
+		C664282C1E6852D50016B562 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664282A1E6852D50016B562 /* DataService.swift */; };
+		C664282D1E6852D50016B562 /* DNWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664282B1E6852D50016B562 /* DNWebService.swift */; };
+		C664282F1E6852DC0016B562 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664282E1E6852DC0016B562 /* ErrorManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,12 +55,15 @@
 		C65B3E171E6831F90055CD22 /* JLDWConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWConstants.swift; sourceTree = "<group>"; };
 		C65B3E1B1E6832280055CD22 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		C65B3E1D1E6832280055CD22 /* ProductPrise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductPrise.swift; sourceTree = "<group>"; };
-		C65B3E201E6832670055CD22 /* ProductGridViewControllerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductGridViewControllerPresenter.swift; sourceTree = "<group>"; };
+		C65B3E201E6832670055CD22 /* JLDWProductGridViewControllerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWProductGridViewControllerPresenter.swift; sourceTree = "<group>"; };
 		C65B3E221E6832DA0055CD22 /* JLDWProductGridVCTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWProductGridVCTests.swift; sourceTree = "<group>"; };
 		C65B3E2E1E6836A50055CD22 /* JLDWTestUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWTestUtility.swift; sourceTree = "<group>"; };
 		C66428211E6845640016B562 /* TestJsonFileForProductsListWith21Products.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestJsonFileForProductsListWith21Products.txt; sourceTree = "<group>"; };
 		C66428221E6845640016B562 /* TestJsonFileForProductsListWithNoProduct.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestJsonFileForProductsListWithNoProduct.txt; sourceTree = "<group>"; };
 		C66428281E6849270016B562 /* TestJsonFileForProductsListWithValidProducts.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestJsonFileForProductsListWithValidProducts.txt; sourceTree = "<group>"; };
+		C664282A1E6852D50016B562 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		C664282B1E6852D50016B562 /* DNWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNWebService.swift; sourceTree = "<group>"; };
+		C664282E1E6852DC0016B562 /* ErrorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +108,6 @@
 				C66428271E6845660016B562 /* TestJsonFile */,
 				C65B3E011E682EFB0055CD22 /* Application */,
 				C65B3E041E682EFB0055CD22 /* Constants */,
-				C65B3E051E682EFB0055CD22 /* Manager */,
 				C65B3E191E6832280055CD22 /* Model */,
 				C65B3E061E682EFB0055CD22 /* Resource */,
 				C65B3E081E682EFB0055CD22 /* Utility */,
@@ -141,13 +146,6 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		C65B3E051E682EFB0055CD22 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
 		C65B3E061E682EFB0055CD22 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +174,7 @@
 		C65B3E091E682EFB0055CD22 /* ErrorManager */ = {
 			isa = PBXGroup;
 			children = (
+				C664282E1E6852DC0016B562 /* ErrorManager.swift */,
 			);
 			path = ErrorManager;
 			sourceTree = "<group>";
@@ -183,6 +182,8 @@
 		C65B3E0A1E682EFB0055CD22 /* ServiceManager */ = {
 			isa = PBXGroup;
 			children = (
+				C664282A1E6852D50016B562 /* DataService.swift */,
+				C664282B1E6852D50016B562 /* DNWebService.swift */,
 			);
 			path = ServiceManager;
 			sourceTree = "<group>";
@@ -222,7 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				C65B3E151E6831C80055CD22 /* JLDWProductGridViewController.swift */,
-				C65B3E201E6832670055CD22 /* ProductGridViewControllerPresenter.swift */,
+				C65B3E201E6832670055CD22 /* JLDWProductGridViewControllerPresenter.swift */,
 			);
 			path = ProductGridViewController;
 			sourceTree = "<group>";
@@ -394,11 +395,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C664282F1E6852DC0016B562 /* ErrorManager.swift in Sources */,
 				C65B3E181E6831F90055CD22 /* JLDWConstants.swift in Sources */,
+				C664282C1E6852D50016B562 /* DataService.swift in Sources */,
 				C65B3E1E1E6832280055CD22 /* Product.swift in Sources */,
 				C65B3E101E682EFB0055CD22 /* AppDelegate.swift in Sources */,
-				C65B3E211E6832670055CD22 /* ProductGridViewControllerPresenter.swift in Sources */,
+				C65B3E211E6832670055CD22 /* JLDWProductGridViewControllerPresenter.swift in Sources */,
 				C65B3E161E6831C80055CD22 /* JLDWProductGridViewController.swift in Sources */,
+				C664282D1E6852D50016B562 /* DNWebService.swift in Sources */,
 				C65B3E1F1E6832280055CD22 /* ProductPrise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,7 +415,7 @@
 				C65B3E291E68342E0055CD22 /* ProductPrise.swift in Sources */,
 				C65B3E2F1E6836A50055CD22 /* JLDWTestUtility.swift in Sources */,
 				C65B3E231E6832DA0055CD22 /* JLDWProductGridVCTests.swift in Sources */,
-				C65B3E2B1E6834340055CD22 /* ProductGridViewControllerPresenter.swift in Sources */,
+				C65B3E2B1E6834340055CD22 /* JLDWProductGridViewControllerPresenter.swift in Sources */,
 				C65B3E281E68342B0055CD22 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

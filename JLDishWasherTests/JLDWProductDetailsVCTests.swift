@@ -22,14 +22,14 @@ class JLDWProductDetailsVCTests: XCTestCase {
 
 	//MARK:------------------------------- * ----------------------------------
 	//MARK: Test Cases For Response Validation
-	// Check the Response Json response is valid
+	// Check the response is valid
 	func testCheckThatResponseContainsValidResult() {
 
 		let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
 		XCTAssertNotNil(specificProductInfos)
 	}
 
-	// Check the Response Json response is nil
+	// Check the response is nil
 	func testCheckThatResponseContainsNilResult() {
 
 		let specificProductInfos : [SpecificProductInfo]? = productPageJsonInvalidResults()
@@ -39,7 +39,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
 	//MARK:------------------------------- * ----------------------------------
 	//MARK: Test Cases For Product ID
 
-	// Test the Response Json response has not contained product id
+	// Test the response has not contained product id
 	func testCheckThatResponseHasNotContainedProductId() {
 
 			let specificProductInfos : [SpecificProductInfo]? = productPageJsonInvalidResults()
@@ -47,7 +47,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
 			XCTAssertNil(specificProductInfo?.productId)
 		}
 
-    // Test the Response Json response has contained product id
+    // Test the response has contained product id
 	func testCheckThatResponseHasContainsProductId() {
 
 		let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
@@ -55,7 +55,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
 		XCTAssertNotNil(specificProductInfo?.productId)
 	}
 
-	// Test the Response Json response has contained valid product id
+	// Test the response has contained valid product id
 	func testCheckThatResponseHasContainedValidProductId() {
 
 		let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
@@ -63,7 +63,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
 		XCTAssertEqual(specificProductInfo?.productId, "1913470")
 	}
 
-	// Test the Response Json response has not contained valid product id
+	// Test the response has not contained valid product id
 	func testCheckThatResponseHasNotContainedValidProductId() {
 
 		let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
@@ -73,7 +73,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
     //MARK:------------------------------- * ----------------------------------
     //MARK: Test Cases For Title
 
-    // Test the Response Json response has not contained title
+    // Test the response has not contained title
     func testCheckThatResponseHasNotContainedTitle() {
 
         let specificProductInfos : [SpecificProductInfo]? = productPageJsonInvalidResults()
@@ -81,7 +81,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
         XCTAssertNil(specificProductInfo?.title)
     }
 
-    // Test the Response Json response has contained valid title
+    // Test the response has contained valid title
 
     func testCheckThatResponseHasContainsTitle() {
 
@@ -90,7 +90,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
         XCTAssertNotNil(specificProductInfo?.title)
     }
 
-    // Test the Response Json response has contained valid title
+    // Test the response has contained valid title
     func testCheckThatResponseHasContainedValidTitle() {
 
         let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
@@ -98,7 +98,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
         XCTAssertEqual(specificProductInfo?.title, "Bosch SMV53M40GB Fully Integrated Dishwasher")
     }
 
-    // Test the Response Json response has not contained valid title
+    // Test the response has not contained valid title
     func testCheckThatResponseHasNotContainedValidTitle() {
 
         let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
@@ -160,7 +160,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
     //MARK:------------------------------- * ----------------------------------
     //MARK: Test Cases For Media
 
-    // Test the Response Json response has not contained Media
+    // Test the response has not contained Media
     func testCheckThatResponseHasNotContainedMedia() {
 
         let specificProductInfos : [SpecificProductInfo]? = productPageJsonInvalidResults()
@@ -168,7 +168,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
         XCTAssertNil(specificProductInfo?.media)
     }
 
-    // Test the Response Json response has contained valid Media
+    // Test the response has contained valid Media
 
     func testCheckThatResponseHasContainsMedia() {
 
@@ -177,7 +177,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
         XCTAssertNotNil(specificProductInfo?.media)
     }
 
-    // Test the Response Json response has contained valid Media image URL strings
+    // Test the response has contained valid Media image URL strings
     func testCheckThatResponseHasContainsMediaImageURLStrings() {
 
         let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
@@ -185,7 +185,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
         XCTAssertNotNil(specificProductInfo?.media?.imageURLStrings)
     }
 
-    // Test the Response Json response has contained valid Media image URL strings
+    // Test the response has contained valid Media image URL strings
     func testCheckThatResponseHasNotContainsMediaImageURLStrings() {
 
         let specificProductInfos : [SpecificProductInfo]? = productPageJsonInvalidResults()
@@ -193,7 +193,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
         XCTAssertNil(specificProductInfo?.media?.imageURLStrings)
     }
 
-    // Test the Response Json response has contained valid number Media image URL strings
+    // Test the response has contained valid number Media image URL strings
     func testCheckThatResponseHasContainsValidNumberMediaImageURLStrings() {
 
         let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
@@ -201,7 +201,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
         XCTAssertTrue (specificProductInfo?.media?.imageURLStrings?.count == 6)
     }
 
-    // Test the Response Json response has contained valid number Media image URL strings
+    // Test the response has contained valid number Media image URL strings
     func testCheckThatResponseHasContainsValidMediaImageURLStringsValue() {
 
         let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
@@ -210,7 +210,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
         XCTAssertEqual(firstURSStrings, "//johnlewis.scene7.com/is/image/JohnLewis/234326372?")
     }
 
-    // Test the Response Json response has contained in valid number Media image URL strings value
+    // Test the response has contained in valid number Media image URL strings value
     func testCheckThatResponseHasContainsInValidMediaImageURLStringsValue() {
 
         let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
@@ -220,23 +220,60 @@ class JLDWProductDetailsVCTests: XCTestCase {
     }
 
 
-//    // Test the Response Json response has contained valid media
-//    func testCheckThatResponseHasContainedValidTitle() {
-//
-//        let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
-//        let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
-//        XCTAssertEqual(specificProductInfo?.title, "Bosch SMV53M40GB Fully Integrated Dishwasher")
-//    }
-//
-//    // Test the Response Json response has not contained valid title
-//    func testCheckThatResponseHasNotContainedValidTitle() {
-//
-//        let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
-//        let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
-//        XCTAssertNotEqual(specificProductInfo?.title, "NotContainedValidTitle")
-//    }
-    
+    //MARK:------------------------------- * ----------------------------------
+    //MARK: Test Cases For Details
 
+    // Test the response has not contained Details
+    func testCheckThatResponseHasNotContainedDetails() {
+
+        let specificProductInfos : [SpecificProductInfo]? = productPageJsonInvalidResults()
+        let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
+        XCTAssertNil(specificProductInfo?.details)
+    }
+
+    // Test the response has contained valid Media
+
+    func testCheckThatResponseHasContainsDetails() {
+
+        let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
+        let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
+        XCTAssertNotNil(specificProductInfo?.details)
+    }
+
+    // Test the response has not contained productInformation
+    func testCheckThatResponseHasNotContainedProductDetailsInformation() {
+
+        let specificProductInfos : [SpecificProductInfo]? = productPageJsonInvalidResults()
+        let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
+        XCTAssertNil(specificProductInfo?.details?.productInformation)
+    }
+
+    // Test the response has contained valid productInformation
+
+    func testCheckThatResponseHasContainedProductDetailsInformation() {
+
+        let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
+        let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
+        XCTAssertNotNil(specificProductInfo?.details?.productInformation)
+    }
+    
+    // Test the response has contained valid details infomation
+    func testCheckThatResponseHasContainsValidDetailsInfomation() {
+
+        let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
+        let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
+        let productInformation  = specificProductInfo?.details?.productInformation
+        XCTAssertEqual(productInformation, "<p>TestInfo</p>")
+    }
+
+    // Test the response has contained invalid details infomation
+    func testCheckThatResponseHasContainsInValidDetailsInfomation() {
+
+        let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
+        let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
+        let productInformation  = specificProductInfo?.media?.imageURLStrings?[0]
+        XCTAssertNotNil(productInformation, "NA")
+    }
 }
 
 //MARK:------------------------------- * ----------------------------------

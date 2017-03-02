@@ -34,7 +34,7 @@ let kDictImages = "images"
 let kDictUrls = "urls"
 let kDictDetails = "details"
 let kDictProductInfo = "productInformation"
-
+let kDictCode = "code"
 
 // Error
 let kErrorDomain = "com.DishWasher.error"

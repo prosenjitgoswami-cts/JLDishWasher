@@ -248,7 +248,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
         XCTAssertNil(specificProductInfo?.details?.productInformation)
     }
 
-    // Test the response has contained valid productInformation
+    // Test the response has contained valid Media
 
     func testCheckThatResponseHasContainedProductDetailsInformation() {
 
@@ -274,6 +274,45 @@ class JLDWProductDetailsVCTests: XCTestCase {
         let productInformation  = specificProductInfo?.media?.imageURLStrings?[0]
         XCTAssertNotNil(productInformation, "NA")
     }
+
+
+    //MARK:------------------------------- * ----------------------------------
+    //MARK: Test Cases For Product Code
+
+    // Test the response has not contained product code
+    func testCheckThatResponseHasNotContainedProductCode() {
+
+        let specificProductInfos : [SpecificProductInfo]? = productPageJsonInvalidResults()
+        let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
+        XCTAssertNil(specificProductInfo?.code)
+    }
+
+    // Test the response has contained product code
+
+    func testCheckThatResponseHasContainsProductCode() {
+
+        let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
+        let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
+        XCTAssertNotNil(specificProductInfo?.code)
+    }
+
+    // Test the response has contained valid product code
+    func testCheckThatResponseHasContainsValidProductCode() {
+
+        let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
+        let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
+        XCTAssertEqual(specificProductInfo?.code, "88701205")
+    }
+
+    // Test the response has contained invalid product code
+    func testCheckThatResponseHasContainsInValidProductCode() {
+
+        let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
+        let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
+        XCTAssertNotNil(specificProductInfo?.code, "NA")
+    }
+
+
 }
 
 //MARK:------------------------------- * ----------------------------------

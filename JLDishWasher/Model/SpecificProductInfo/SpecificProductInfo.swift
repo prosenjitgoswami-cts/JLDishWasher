@@ -12,7 +12,7 @@ class SpecificProductInfo: Product {
     var media: Media?
     var details: Details?
     var displaySpecialOffer :String?
-
+    var code :String?
 
 }
 
@@ -28,8 +28,11 @@ extension SpecificProductInfo {
         super.initWithResponse(response: response)
 
         if let displaySpecialOfferStr = response[kDictDisplaySpecialOffer] as? String {
-
             displaySpecialOffer = displaySpecialOfferStr;
+        }
+
+        if let codeString = response[kDictCode] as? String {
+            code = codeString;
         }
 
         bindMedia(with: response)

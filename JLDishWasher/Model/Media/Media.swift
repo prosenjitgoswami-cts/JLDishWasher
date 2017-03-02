@@ -17,24 +17,15 @@ class Media: BaseModel {
 //MARK: Public Method
 extension Media {
 
-	public func initWith(response: Dictionary<String, Any>?) {
+	public func initWith(media results: Dictionary<String, Any>?) {
 
-		guard let response = response else{
+		guard let results = results else{
 			return;
 		}
-
-		if let media: Dictionary = response[kDictMedia] as! Dictionary<String, Any>? {
-
-			if let images: Dictionary = media[kDictImages] as! Dictionary<String, Any>? {
-
-				var urls = [String]()
-
-				for (key, value) in images {
-					urls.append("\(key) \(value)")
-				}
-
-				imageURLStrings = urls;
+            if let images = results[kDictImages] as? [String:Any] {
+                if let urls  = images[kDictUrls] as? [String] {
+                    imageURLStrings = urls
+                }
 			}
-		}
 	}
 }

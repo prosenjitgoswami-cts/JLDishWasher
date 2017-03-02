@@ -17,18 +17,14 @@ class Details: BaseModel {
 //MARK: Public Method
 extension Details {
 
-	public func initWith(response: Dictionary<String, Any>?) {
+	public func initWith(details result: Dictionary<String, Any>?) {
 
-		guard let response = response else{
+		guard let result = result else{
 			return;
 		}
 
-		if let details: Dictionary = response[kDictDetails] as! Dictionary<String, Any>? {
-
-			if let productInfo: String = details[kDictProductInfo] as! String? {
+			if let productInfo: String = result[kDictProductInfo] as? String {
 				productInformation = productInfo
 			}
-
-		}
 	}
 }

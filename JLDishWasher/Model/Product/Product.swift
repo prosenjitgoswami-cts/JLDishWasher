@@ -18,11 +18,11 @@ class Product: BaseModel {
 
 		if let response = response {
 
-			productId = response[kDictProductId] as! String?
-			title = response[kDictTitle] as! String?
-			imageURLString = response[kDictImageURLString] as! String?
+			productId = response[kDictProductId] as? String
+			title = response[kDictTitle] as? String
+			imageURLString = response[kDictImageURLString] as? String
 
-			if let dictPrice = response[kDictPrice] as! Dictionary<String, Any>?{
+			if let dictPrice = response[kDictPrice] as? Dictionary<String, Any>{
 				perseProductPriseWith(priceDetails: dictPrice)
 			}
 		}

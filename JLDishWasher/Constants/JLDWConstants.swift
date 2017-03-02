@@ -20,8 +20,6 @@ let kDictImageURLString = "image"
 let kDictPriseNow = "now"
 let kDictpriseCurrency = "currency"
 
-
-
 // Error
 let kErrorDomain = "com.DishWasher.error"
 
@@ -39,7 +37,8 @@ let PageTitleProductGridVC = "Dishwashers"
 
 // CollectionView Cell Identifier
 
-let ProductGridCollectionViewCellId = "ProductGridCollectionViewCell"
+let JLDWProductGridVCCollectionViewCellID = "JLDWProductGridVCCollectionViewCell"
 
 // Padding
 let leftAndRightPaddings = 10.0
+

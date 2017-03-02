@@ -30,6 +30,8 @@
 		C664282C1E6852D50016B562 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664282A1E6852D50016B562 /* DataService.swift */; };
 		C664282D1E6852D50016B562 /* DNWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664282B1E6852D50016B562 /* DNWebService.swift */; };
 		C664282F1E6852DC0016B562 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664282E1E6852DC0016B562 /* ErrorManager.swift */; };
+		C66428351E6857020016B562 /* JLDWProductGridVCCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66428341E6857020016B562 /* JLDWProductGridVCCollectionViewCell.swift */; };
+		C66428371E685D960016B562 /* DownloadImageViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66428361E685D960016B562 /* DownloadImageViewUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		C664282A1E6852D50016B562 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		C664282B1E6852D50016B562 /* DNWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNWebService.swift; sourceTree = "<group>"; };
 		C664282E1E6852DC0016B562 /* ErrorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		C66428341E6857020016B562 /* JLDWProductGridVCCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWProductGridVCCollectionViewCell.swift; sourceTree = "<group>"; };
+		C66428361E685D960016B562 /* DownloadImageViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadImageViewUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +115,8 @@
 				C65B3E191E6832280055CD22 /* Model */,
 				C65B3E061E682EFB0055CD22 /* Resource */,
 				C65B3E081E682EFB0055CD22 /* Utility */,
-				C65B3E0B1E682EFB0055CD22 /* View */,
 				C65B3E0D1E682EFB0055CD22 /* ViewController */,
+				C66428321E6857020016B562 /* View */,
 				C65B3E121E682F050055CD22 /* Storyboard */,
 				C65B3DE81E682ECE0055CD22 /* Assets.xcassets */,
 				C65B3DED1E682ECE0055CD22 /* Info.plist */,
@@ -167,6 +171,7 @@
 			children = (
 				C65B3E091E682EFB0055CD22 /* ErrorManager */,
 				C65B3E0A1E682EFB0055CD22 /* ServiceManager */,
+				C66428361E685D960016B562 /* DownloadImageViewUtils.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -186,21 +191,6 @@
 				C664282B1E6852D50016B562 /* DNWebService.swift */,
 			);
 			path = ServiceManager;
-			sourceTree = "<group>";
-		};
-		C65B3E0B1E682EFB0055CD22 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C65B3E0C1E682EFB0055CD22 /* ProductGridVCCell */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C65B3E0C1E682EFB0055CD22 /* ProductGridVCCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ProductGridVCCell;
 			sourceTree = "<group>";
 		};
 		C65B3E0D1E682EFB0055CD22 /* ViewController */ = {
@@ -285,6 +275,22 @@
 				C66428211E6845640016B562 /* TestJsonFileForProductsListWith21Products.txt */,
 			);
 			name = TestJsonFile;
+			sourceTree = "<group>";
+		};
+		C66428321E6857020016B562 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C66428331E6857020016B562 /* ProductGridVCCollectionViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C66428331E6857020016B562 /* ProductGridVCCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C66428341E6857020016B562 /* JLDWProductGridVCCollectionViewCell.swift */,
+			);
+			path = ProductGridVCCollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,8 +403,10 @@
 			files = (
 				C664282F1E6852DC0016B562 /* ErrorManager.swift in Sources */,
 				C65B3E181E6831F90055CD22 /* JLDWConstants.swift in Sources */,
+				C66428351E6857020016B562 /* JLDWProductGridVCCollectionViewCell.swift in Sources */,
 				C664282C1E6852D50016B562 /* DataService.swift in Sources */,
 				C65B3E1E1E6832280055CD22 /* Product.swift in Sources */,
+				C66428371E685D960016B562 /* DownloadImageViewUtils.swift in Sources */,
 				C65B3E101E682EFB0055CD22 /* AppDelegate.swift in Sources */,
 				C65B3E211E6832670055CD22 /* JLDWProductGridViewControllerPresenter.swift in Sources */,
 				C65B3E161E6831C80055CD22 /* JLDWProductGridViewController.swift in Sources */,

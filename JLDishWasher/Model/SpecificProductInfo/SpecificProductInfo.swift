@@ -48,7 +48,7 @@ extension SpecificProductInfo {
 
 	func bindDetails(with detailsResult:Dictionary<String, Any>?) {
 
-		let media: Details = Media()
+		let media: Media = Media()
 		media.initWith(response: detailsResult)
 		
 	}

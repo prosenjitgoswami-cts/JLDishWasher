@@ -11,40 +11,89 @@ import UIKit
 class JLDWProductDetailsViewControllerPresenter: NSObject {
 
 
-	/**
-	Perse the Json Response Result
-	@param results: Server Response
-	@retutn Return Collection of SpecificProductInfo
-	*/
-	public func perseResponseAndBind(withResults results: [NSDictionary]?) -> [SpecificProductInfo]? {
 
-		var specificProductInfos : [SpecificProductInfo];
+    /**
+     URLStringProductPage
+     @param withPeroductID: withPeroductID is ProductID
+     @return End point URL for URLStringProductPage
+     */
+    public func getEndPointURLStringForProductPage(withPeroductID peroductID: String?) -> String? {
+        if let peroductID = peroductID {
+            let urlPart1 = "https://api.johnlewis.com/v1/products/"
+            let urlPart2 = "?key=Wu1Xqn3vNrd1p7hqkvB6hEu0G9OrsYGb"
+            let endPointURLString = urlPart1 + peroductID + urlPart2
+            return endPointURLString
+        }
+        return nil;
+    }
+    /**
+     Fetch Product Details
+     @param Success: It return Collection of Product
+     @param failed: It is treturn failed
+     */
+    public func fetchProductDetails(withProducetID: String?, failed: @escaping (Error) -> Void, success: @escaping ([SpecificProductInfo]?) -> Void) {
 
-		if let results = results {
+        let endPointURLString  = getEndPointURLStringForProductPage(withPeroductID: withProducetID);
 
-			guard results.count > 0 else {
+        if let endPointURLString = endPointURLString {
 
-				return nil;
-			}
-			specificProductInfos  = [SpecificProductInfo] ()
+            ConnectionManager.requestWithURLString(urlString: endPointURLString, failed: { (error) in
 
-			for productInfo: NSDictionary? in results {
+            }) { (response) in
 
-				if let productInfo = productInfo {
-					if productInfo.count > 0 {
-						 let specificProductInfo =  SpecificProductInfo(product: productInfo as? [String: Any])
-						specificProductInfos.append(specificProductInfo)
+                guard let _response = response else{
+                    failed (ErrorManager.errorNilResponse())
+                    return
+                }
+                let productsResults = self.perseResponseAndBind(withResults: _response)
+                success (productsResults)
+            }
+        }
+    }
+
+    /**
+     Perse the Json Response Result
+     @param results: Server Response
+     @retutn Return Collection of SpecificProductInfo
+     */
+    public func perseResponseAndBind(withResults results: [String: Any]?) -> [SpecificProductInfo]? {
+
+        var specificProductInfos : [SpecificProductInfo];
+
+        if let results = results {
+
+            guard results.count > 0 else {
+
+                return nil;
+            }
+            specificProductInfos  = [SpecificProductInfo] ()
+
+            if results.count > 0 {
+
+                let specificProductInfo =  SpecificProductInfo(product: results)
+                        specificProductInfos.append(specificProductInfo)
                     } else {
                         return nil
                     }
-                } else  {
-                    return specificProductInfos
-                }
-			}
 
-			return specificProductInfos
-		}
 
-		return nil
-	}
+//            for productInfo: [String: Any]? in results {
+//
+//                if let productInfo = productInfo {
+//                    if productInfo.count > 0 {
+//                        let specificProductInfo =  SpecificProductInfo(product: productInfo as? [String: Any])
+//                        specificProductInfos.append(specificProductInfo)
+//                    } else {
+//                        return nil
+//                    }
+//                } else  {
+//                    return specificProductInfos
+//                }
+//            }
+
+            return specificProductInfos
+        }
+        
+        return nil
+    }
 }

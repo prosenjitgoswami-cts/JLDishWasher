@@ -33,6 +33,7 @@ class JLDWProductGridViewController: UIViewController {
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+		setNavigationBarTitle(withProductCount: 0)
 		updateUIOnOrientation ()
 	}
 
@@ -98,9 +99,11 @@ extension JLDWProductGridViewController {
 	Navigate to JLDWProductDetailsViewController though Segue
 	@param product: Selected product details
 	*/
-	internal func navigate(withSelectedProduct product: Product?) {
+	internal func navigateToProductDetailsPage(withSelectedProduct product: Product?) {
 
 		if let product: Product = product {
+			self.title = " "
+
 			self.performSegue(withIdentifier: kSegurID_ToJLDWProductDetailsViewController, sender: product)
 		}
 	}
@@ -124,7 +127,7 @@ extension JLDWProductGridViewController {
 	Navigate to JLDWProductDetailsViewController though Segue
 	@param product: Selected product details
 	*/
-	private func setNavigationBarTitle(withProductCount productCount: Int) {
+	internal func setNavigationBarTitle(withProductCount productCount: Int) {
 
 		var pageTitle: String = PageTitleProductGridVC;
 
@@ -191,7 +194,7 @@ extension JLDWProductGridViewController: UICollectionViewDataSource,UICollection
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
 		let product = productDatasource?[indexPath.row]
-		navigate(withSelectedProduct: product)
+		navigateToProductDetailsPage(withSelectedProduct: product)
 
 	}
 }

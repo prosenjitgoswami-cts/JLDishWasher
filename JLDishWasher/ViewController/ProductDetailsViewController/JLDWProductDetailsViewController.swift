@@ -162,8 +162,6 @@ extension JLDWProductDetailsViewController {
      Reload Carosal Image View
      */
     func reloadImageCarouselView() {
-
-        customImageCarouselView.currentPageColor = UIColor.black
         if let _productImagesDataSource = specificProduct?.media?.imageURLStrings {
             customImageCarouselView.imageURLStrings = _productImagesDataSource;
         }

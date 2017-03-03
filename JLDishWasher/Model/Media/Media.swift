@@ -10,7 +10,7 @@ import UIKit
 
 class Media: BaseModel {
 
-	var imageURLStrings: [String]?
+    var imageURLStrings: [String]?
 
     required init(media results: [String: Any]?) {
         super.init()
@@ -21,15 +21,31 @@ class Media: BaseModel {
 //MARK:------------------------------- * ----------------------------------
 //MARK: Bind Data
 extension Media {
-	public func bindMediaResultResult(media results: [String: Any]?) {
-		guard let results = results else{
-			return;
-		}
-            if let images = results[kDictImages] as? [String:Any] {
-                if let urls  = images[kDictUrls] as? [String] {
-                    
-                    imageURLStrings = urls
-                }
-			}
-	}
+    public func bindMediaResultResult(media results: [String: Any]?) {
+        guard let results = results else{
+            return;
+        }
+        if let images = results[kDictImages] as? [String:Any] {
+            if let urls  = images[kDictUrls] as? [String] {
+                imageURLStrings = modifiedURLS(with: urls)
+            }
+        }
+    }
+
+    /*
+     In the method idf the urls does not contains https, then its added
+     @param urls: Its string collection of urls
+     @return Its string collection of urls containg https
+
+     */
+    private func modifiedURLS(with urls:[String]) -> [String] {
+
+        var modifiedUrls = [String]()
+        for url in urls {
+            if let modifiedUrl = url.addHTTPSAndColonPrefixIfNotExits() {
+                modifiedUrls.append(modifiedUrl)
+            }
+        }
+        return modifiedUrls
+    }
 }

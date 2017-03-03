@@ -20,12 +20,22 @@ class DefaultCache: NSCache<AnyObject, AnyObject> {
 
 class CustomImageView: UIImageView {
 
+
     var task: URLSessionDownloadTask!
     var session: URLSession!
 
     var loaderIndicator: UIActivityIndicatorView?
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        loaderIndicator?.center = self.center
+    }
 
+    /*
+     Load image in image view
+     @param urlString
+     
+     */
     public func loadImage(withURLString urlString: String?) {
 
         //Create Session
@@ -59,14 +69,15 @@ class CustomImageView: UIImageView {
     private func showLoaderIndicator(){
         //Create Activity Indicator
         loaderIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
-        // Position Activity Indicator in the center of the main view
-        loaderIndicator?.center = self.center
-        // If needed, you can prevent Acivity Indicator from hiding when stopAnimating() is called
         loaderIndicator?.hidesWhenStopped = false
+        self.addSubview(loaderIndicator!)
+        loaderIndicator?.isHidden = true
+        loaderIndicator?.translatesAutoresizingMaskIntoConstraints = false
+        addLayoutConstraint()
         // Start Activity Indicator
         loaderIndicator?.startAnimating()
-        self.addSubview(loaderIndicator!)
-        self.bringSubview(toFront: self)
+        loaderIndicator?.isHidden = false
+
     }
 
     private func removeLoader() {
@@ -75,5 +86,25 @@ class CustomImageView: UIImageView {
             loaderIndicator.removeFromSuperview()            
         }
     }
+
+    private func addLayoutConstraint() {
+
+
+        guard  let loaderIndicator = loaderIndicator else {
+            return;
+        }
+//        let widthConstraint = NSLayoutConstraint(item: loaderIndicator as Any, attribute: .width, relatedBy: .equal,
+//                                                 toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 30)
+//
+//        let heightConstraint = NSLayoutConstraint(item: loaderIndicator as Any, attribute: .height, relatedBy: .equal,
+//                                                  toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 30)
+
+        let xCenterConstraint = NSLayoutConstraint(item: loaderIndicator as Any, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0)
+
+        let yCenterConstraint = NSLayoutConstraint(item: loaderIndicator as Any, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
+        NSLayoutConstraint.activate([ xCenterConstraint,yCenterConstraint])
+    }
+    
+
 }
 

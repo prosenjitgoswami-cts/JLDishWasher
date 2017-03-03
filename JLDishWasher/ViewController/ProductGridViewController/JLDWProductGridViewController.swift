@@ -17,7 +17,7 @@ class JLDWProductGridViewController: UIViewController {
     var cellsPerRow:CGFloat = 4
     let cellPadding:CGFloat = 1
     var productDatasource: [Product]?
-    let sectionInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right:10)
+    let sectionInsets = UIEdgeInsets(top: 0, left: 1, bottom: 0, right:1)
     lazy var presenter: JLDWProductGridViewControllerPresenter = {
         return JLDWProductGridViewControllerPresenter()
     }()
@@ -107,7 +107,9 @@ extension JLDWProductGridViewController {
         setNavigationBarTitle(withProductCount: 0)
     }
 
-    // Update UI  On Orientation
+    /**
+     Update UI  On Orientation
+     */
     func updateUIOnOrientation() {
         productGridCollectionView.reloadData()
     }
@@ -127,25 +129,24 @@ extension JLDWProductGridViewController {
         self.title = pageTitle
 
     }
-
-
 }
-
 
 //MARK:------------------------------- * ----------------------------------
 //MARK: CollectionView DataSource and Delegate
 
 extension JLDWProductGridViewController: UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
 
-
-    // Set Number of Items in section
+    /**
+     Set Number of Items in section
+     */
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
         return (productDatasource?.count)!
     }
 
-
-    // Create CollectionViewCell
+    /**
+     Create CollectionViewCell
+     */
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cellReuseIdentifier: String = kCellID_JLDWProductGridVCCollectionViewCell
@@ -160,22 +161,27 @@ extension JLDWProductGridViewController: UICollectionViewDataSource,UICollection
         return cell
     }
 
-    // Set Size in CollectionView cell
+    /**
+     Set Size in CollectionView cell
+     */
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return sectionInsets
     }
 
+    /**
+     Set Size in collectionView
 
-    // Set Size in collectionView
+     */
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let widthMinusPadding = sectionInsets.left * (cellsPerRow+1)
         let availableWidth = view.frame.size.width - widthMinusPadding
         let width = (availableWidth / cellsPerRow)
         return CGSize(width: width, height: max(width, 300.0))
     }
-    
-    
-    // Select Product Item
+
+    /**
+     Select Product Item
+     */
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let product = productDatasource?[indexPath.row]

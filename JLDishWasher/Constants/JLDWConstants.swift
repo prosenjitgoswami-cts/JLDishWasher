@@ -51,6 +51,9 @@ let PageTitleProductGridVC = "Dishwashers"
 let kCellID_JLDWProductGridVCCollectionViewCell = "JLDWProductGridVCCollectionViewCell"
 let kCellID_JLDWProduceImgesCollectionViewCell = "JLDWProduceImgesCollectionViewCell"
 
+// TableView Cell Identifier
+let kCellIDAttributeTableViewCell = "AttributeTableViewCell"
+
 // Padding
 let leftAndRightPaddings = 10.0
 

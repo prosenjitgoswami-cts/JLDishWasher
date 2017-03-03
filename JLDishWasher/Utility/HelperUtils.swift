@@ -52,3 +52,12 @@ extension DispatchQueue {
 	}
 
 }
+
+extension String {
+
+ public func addHTTPSPrefix() -> String? {
+    var imageURLStringWithHTTPS: String = "https:"
+    imageURLStringWithHTTPS.append(self);
+    return imageURLStringWithHTTPS
+    }
+}

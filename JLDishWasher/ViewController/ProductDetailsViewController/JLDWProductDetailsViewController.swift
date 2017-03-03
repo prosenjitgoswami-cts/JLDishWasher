@@ -10,70 +10,52 @@ import UIKit
 
 class JLDWProductDetailsViewController: UIViewController {
 
-	@IBOutlet weak var productImagesCollectionView: JLDWProductsCollectionView!
-	//@IBOutlet weak var priceDetailsHConstraint: NSLayoutConstraint!
-	//@IBOutlet weak var rightSidePanelWidthConstraints: NSLayoutConstraint!
-	//@IBOutlet weak var rightPanelContainerView: UIView!
-	//@IBOutlet weak var leftPanelContainerView: UIView!
-
-
-	// This Stzckvire chanes its axis on orientation.
-	@IBOutlet weak var axisChangableStackView: UIStackView!
-	@IBOutlet weak var productFeaturesStackView: UIStackView!
-	@IBOutlet weak var priceLabel: UILabel!
-	@IBOutlet weak var displaySpecialOfferLabel: UILabel!
-	@IBOutlet weak var guaranteeInfoLabel: UILabel!
+    @IBOutlet weak var productImagesCollectionView: JLDWProductsCollectionView!
+    // This Stzckvire chanes its axis on orientation.
+    @IBOutlet weak var axisChangableStackView: UIStackView!
+    @IBOutlet weak var productFeaturesStackView: UIStackView!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var displaySpecialOfferLabel: UILabel!
+    @IBOutlet weak var guaranteeInfoLabel: UILabel!
     @IBOutlet weak var productCodeLabel: UILabel!
     @IBOutlet weak var productDescLabel: UILabel!
-    @IBOutlet weak var radMoreBtnContanerView: UIView!
-    @IBOutlet weak var attributesTableView: UITableView!
+    @IBOutlet weak var seperatorLineBelowPdCodeView: UIView!
+    @IBOutlet weak var lowerReadmoreSeperatorLineView: UIView!
+    @IBOutlet weak var readMoreBtnContanerView: UIView!
+    @IBOutlet weak var attributesTableView: ProductAttributeTableView!
+    @IBOutlet weak var rightBackArrowButton: UIImageView!
+    @IBOutlet weak var reaMoreButton: UIButton!
+
     // @IBOutlet LayoutConstraint
     @IBOutlet weak var readMoreBtnContanerHeightConstraint: NSLayoutConstraint!
 
 
-	var productImagesDataSource: [String]?
-	var specificProduct: SpecificProductInfo?
+    var productImagesDataSource: [String]?
+    var specificProduct: SpecificProductInfo?
 
-	lazy var presenter: JLDWProductDetailsViewControllerPresenter = {
-		return JLDWProductDetailsViewControllerPresenter()
-	}()
+    lazy var presenter: JLDWProductDetailsViewControllerPresenter = {
+        return JLDWProductDetailsViewControllerPresenter()
+    }()
 
-	var productID: String?
+    var productID: String?
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
-	}
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 
-	override func viewWillAppear(_ animated: Bool) {
-		fetchService()
-		updateUIOnOrientation()
-	}
+    override func viewWillAppear(_ animated: Bool) {
+        fetchService()
+        updateUIOnOrientation()
+    }
 
-	override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-		updateUIOnOrientation()
-	}
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        updateUIOnOrientation()
+    }
 
-	// Update UI  On Orientation
-	func updateUIOnOrientation() {
-
-		if UIDevice.current.orientation.isLandscape {
-			//rightSidePanelWidthConstraints.constant = 300
-			//priceDetailsHConstraint.constant = 0
-			axisChangableStackView.axis = .horizontal
-            readMoreBtnContanerHeightConstraint.constant = 44
-
-		} else {
-			//rightSidePanelWidthConstraints.constant = 0
-			axisChangableStackView.axis = .vertical
-            readMoreBtnContanerHeightConstraint.constant = 0
-
-		}
-	}
-
-	// PubLic Method
-	public func setProduct(withProduct product: Product) {
-		productID = product.productId;
-	}
+      // PubLic Method
+    public func setProduct(withProduct product: Product) {
+        productID = product.productId;
+    }
 
 
 }
@@ -83,46 +65,53 @@ class JLDWProductDetailsViewController: UIViewController {
 
 extension JLDWProductDetailsViewController {
 
-	/**
-	Invoke Web Service and Get Products details and Refresh UI
-	@param failed: Fail Block
+    /**
+     Invoke Web Service and Get Products details and Refresh UI
+     @param failed: Fail Block
+     */
+    func fetchService() {
 
-	*/
-	func fetchService() {
+        if let productID  = productID {
+            presenter.fetchProductDetails(withProducetID: productID, failed: { (error) in
 
-		if let productID  = productID {
-			presenter.fetchProductDetails(withProducetID: productID, failed: { (error) in
+            }, success: {[weak self] (specificProductInfos) in
 
-			}, success: {[weak self] (specificProductInfos) in
+                if let datasource = specificProductInfos {
+                    self?.specificProduct = datasource[0]
+                    self?.updateUI()
+                }
+            })
+        }
+    }
 
-				if let datasource = specificProductInfos {
-					self?.specificProduct = datasource[0]
-					self?.updateUI()
-				}
-			})
-		}
-	}
+    /**
+     Update UI
+     @param products: Collection of Product
+     */
+    internal func updateUI() {
 
-	/**
-	Update UI
-	@param products: Collection of Product
-	*/
-	internal func updateUI() {
-		setNavigationBarTitle(withProductTitle: specificProduct?.title)
-		loadProductImages()
+        //Set Navigation Title
+        setNavigationBarTitle(withProductTitle: specificProduct?.title)
 
-		if let priceLabelText = specificProduct?.priseDisplayString {
-			priceLabel.text = priceLabelText
-		}
+        //Reload Carosal Product Images
+        reloadCarosalProductImages()
 
-		if let displaySpecialOfferLabelText = specificProduct?.displaySpecialOffer {
-			displaySpecialOfferLabel.text = displaySpecialOfferLabelText
-		}
+        //Set priceLabelText text
+        if let priceLabelText = specificProduct?.priseDisplayString {
+            priceLabel.text = priceLabelText
+        }
 
-		if let guaranteeInfoLabelText = specificProduct?.guaranteeInformation {
-			guaranteeInfoLabel.text = guaranteeInfoLabelText
-		}
+        //Set displaySpecialOfferLabel text
+        if let displaySpecialOfferLabelText = specificProduct?.displaySpecialOffer {
+            displaySpecialOfferLabel.text = displaySpecialOfferLabelText
+        }
 
+        //Set guaranteeInfoLabel text
+        if let guaranteeInfoLabelText = specificProduct?.guaranteeInformation {
+            guaranteeInfoLabel.text = guaranteeInfoLabelText
+        }
+
+        //Set productCodeLabel text
         if let productCode = specificProduct?.code {
             var productCodeStr = "Product Code:"
             productCodeStr = productCodeStr + productCode;
@@ -130,46 +119,86 @@ extension JLDWProductDetailsViewController {
             productCodeLabel.text = productCodeStr
         }
 
+        //Set productDescLabel text
         if let productInformation = specificProduct?.productInformation {
             productDescLabel.text = productInformation
         }
-	}
 
-	/**
-	Navigate to JLDWProductDetailsViewController though Segue
-	@param product: Selected product details
-	*/
-	internal func navigate(withSelectedProduct product: Product?) {
+        // Reload Attribute Table View 
+        reloadAttributeTableView()
+    }
 
-		if let product: Product = product {
-			self.performSegue(withIdentifier: kSegurID_ToJLDWProductDetailsViewController, sender: product)
-		}
-	}
+    /**
+     Navigate to JLDWProductDetailsViewController though Segue
+     @param product: Selected product details
+     */
+    internal func navigate(withSelectedProduct product: Product?) {
 
+        if let product: Product = product {
+            self.performSegue(withIdentifier: kSegurID_ToJLDWProductDetailsViewController, sender: product)
+        }
+    }
 
-	func loadProductImages() {
+    // Update UI  On Orientation
+    func updateUIOnOrientation() {
 
-		if let _productImagesDataSource = specificProduct?.media?.imageURLStrings {
+        let isPortrait = UIDevice.current.orientation.isPortrait
 
-			productImagesDataSource = _productImagesDataSource
-			productImagesCollectionView.reloadCollectionView(withCollections: productImagesDataSource)
-		}
-	}
+        if isPortrait {
+            axisChangableStackView.axis = .vertical
+            readMoreBtnContanerHeightConstraint.constant = 0
+                   } else {
+            axisChangableStackView.axis = .horizontal
+            readMoreBtnContanerHeightConstraint.constant = 40
+        }
+        uiComponentVisibilityChange(isHidden: isPortrait)
+        self.view.layoutIfNeeded()
+        self.view.needsUpdateConstraints()
+    }
 
-	/**
-	Navigate to JLDWProductDetailsViewController though Segue
-	@param product: Selected product details
-	*/
-	private func setNavigationBarTitle(withProductTitle title: String?) {
+    // UI component visibility change
+    private func uiComponentVisibilityChange(isHidden : Bool) {
 
-		if let title = title {
-			self.title = title
-		}
+        readMoreBtnContanerView.isHidden = isHidden
+        lowerReadmoreSeperatorLineView.isHidden = isHidden
+        rightBackArrowButton.isHidden = isHidden
+        reaMoreButton.isHidden = isHidden
+    }
+    /**
+     Reload Carosal Image View
+     */
+    func reloadCarosalProductImages() {
 
-		// Remove back button title
-		self.navigationController?.navigationBar.topItem?.title = ""
+        if let _productImagesDataSource = specificProduct?.media?.imageURLStrings {
 
-	}
+            productImagesDataSource = _productImagesDataSource
+            productImagesCollectionView.reloadCollectionView(withCollections: productImagesDataSource)
+        }
+    }
+    
+    /**Reload Attribute Table view
+     */
+    func reloadAttributeTableView () {
+        
+        if let attributes = specificProduct?.details?.attributes {
+
+            let sortedAttributes = attributes.sorted {
+                $0.attributeName! < $1.attributeName!
+            }
+              attributesTableView.reloadCollectionView(with: sortedAttributes)
+        }
+    }
+    
+    /**
+     Navigate to JLDWProductDetailsViewController though Segue
+     @param product: Selected product details
+     */
+    private func setNavigationBarTitle(withProductTitle title: String?) {
+        
+        if let title = title {
+            self.title = title
+        }
+    }
 }
 
 

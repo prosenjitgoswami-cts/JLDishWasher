@@ -9,15 +9,27 @@
 import UIKit
 
 class JLDWProduceImgesCollectionViewCell: UICollectionViewCell {
-	@IBOutlet weak var productImageView: UIImageView!
+    @IBOutlet weak var productImageView: UIImageView!
 
- public func setProductImage(withImageURLString imageURLString: String?) {
 
-	if let imageURLString = imageURLString {
-		var imageURLStringWithHTTPS: String = "https:"
-		imageURLStringWithHTTPS.append(imageURLString);
-		// Download image and set in imagevieew
-		productImageView.imageFromServerURL(urlString: imageURLStringWithHTTPS)
-	}
-	}
+    /**
+     Set Product Details and Update UI
+     */
+    public func setProductImage(withImageURLString imageURLString: String?) {
+
+        updateUI(with: imageURLString)
+    }
+
+    /**
+     Update UI
+     */
+    private func updateUI(with imageURLString: String?) {
+        if let imageURLString = imageURLString {
+            //imageURLString is not contained https: so added
+            if  let imageURLStringWithHTTPS = imageURLString.addHTTPSPrefix(){
+                //Set Download image in productImageView
+            productImageView.imageFromServerURL(urlString: imageURLStringWithHTTPS)
+            }
+        }
+    }
 }

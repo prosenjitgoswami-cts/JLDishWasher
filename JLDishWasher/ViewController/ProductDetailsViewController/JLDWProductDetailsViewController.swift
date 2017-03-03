@@ -16,13 +16,16 @@ class JLDWProductDetailsViewController: UIViewController {
 	//@IBOutlet weak var rightPanelContainerView: UIView!
 	//@IBOutlet weak var leftPanelContainerView: UIView!
 
+
 	// This Stzckvire chanes its axis on orientation.
 	@IBOutlet weak var axisChangableStackView: UIStackView!
 	@IBOutlet weak var productFeaturesStackView: UIStackView!
-
 	@IBOutlet weak var priceLabel: UILabel!
 	@IBOutlet weak var displaySpecialOfferLabel: UILabel!
 	@IBOutlet weak var GuaranteeInfoLabel: UILabel!
+
+    // @IBOutlet LayoutConstraint
+    @IBOutlet weak var readMoreBtnContanerHeightConstraint: NSLayoutConstraint!
 
 
 	var productImagesDataSource: [String]?
@@ -54,11 +57,13 @@ class JLDWProductDetailsViewController: UIViewController {
 			//rightSidePanelWidthConstraints.constant = 300
 			//priceDetailsHConstraint.constant = 0
 			axisChangableStackView.axis = .horizontal
-
+            readMoreBtnContanerHeightConstraint.constant = 44
 
 		} else {
 			//rightSidePanelWidthConstraints.constant = 0
 			axisChangableStackView.axis = .vertical
+            readMoreBtnContanerHeightConstraint.constant = 0
+
 		}
 	}
 
@@ -66,6 +71,8 @@ class JLDWProductDetailsViewController: UIViewController {
 	public func setProduct(withProduct product: Product) {
 		productID = product.productId;
 	}
+
+
 }
 
 

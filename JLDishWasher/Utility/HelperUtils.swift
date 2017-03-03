@@ -100,6 +100,62 @@ public extension String {
 	}
 }
 
+//MARK:------------------------------- * ----------------------------------
+//MARK: UIAlertController Helper Utils
+public extension UIViewController {
 
+	/*
+	show alert 
+	*/
+	public func showAlert(with title: String?, message: String?, defaultButtonTitle: String?, cancelButtonTitle: String?, defaultButtonHandler: @escaping (UIAlertAction!) -> Void, cancelButtonHandler: @escaping (UIAlertAction!) -> Void) {
 
+		let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+
+		if let defaultButtonTitle = defaultButtonTitle {
+			alertController.addAction(UIAlertAction(title: defaultButtonTitle, style: .default, handler: { (action: UIAlertAction!) in
+
+				defaultButtonHandler(action)
+			}))
+		}
+
+		if let cancelButtonTitle = cancelButtonTitle {
+			alertController.addAction(UIAlertAction(title: cancelButtonTitle, style: .cancel, handler: { (action: UIAlertAction!) in
+
+				cancelButtonHandler(action)
+
+			}))
+		}
+
+		self.present(alertController, animated: true) {
+		}
+	}
+
+	/*
+	show alert with title, message, OK button
+	*/
+	public func showAlert(with title: String?, message: String?) {
+
+		self.showAlert(with: title, message: message, defaultButtonTitle: AltBtnTitleOK, cancelButtonTitle: nil,  defaultButtonHandler: { action in
+		}, cancelButtonHandler: { action in
+		})
+	}
+
+	/*
+	show alert on offline
+	*/
+	public func showAlertOnNoInternetConnection() {
+
+		showAlert(with: AltTitleEmpty, message: ALTMessageNetworkConnection)
+	}
+
+	/*
+	show alert on error
+	*/
+	public func showAlertOnError() {
+
+		showAlert(with: AltTitleError, message: ALTMessageError)
+
+	}
+
+}
 

@@ -22,8 +22,11 @@ class JLDWProductDetailsViewController: UIViewController {
 	@IBOutlet weak var productFeaturesStackView: UIStackView!
 	@IBOutlet weak var priceLabel: UILabel!
 	@IBOutlet weak var displaySpecialOfferLabel: UILabel!
-	@IBOutlet weak var GuaranteeInfoLabel: UILabel!
-
+	@IBOutlet weak var guaranteeInfoLabel: UILabel!
+    @IBOutlet weak var productCodeLabel: UILabel!
+    @IBOutlet weak var productDescLabel: UILabel!
+    @IBOutlet weak var radMoreBtnContanerView: UIView!
+    @IBOutlet weak var attributesTableView: UITableView!
     // @IBOutlet LayoutConstraint
     @IBOutlet weak var readMoreBtnContanerHeightConstraint: NSLayoutConstraint!
 
@@ -117,8 +120,19 @@ extension JLDWProductDetailsViewController {
 		}
 
 		if let guaranteeInfoLabelText = specificProduct?.guaranteeInformation {
-			displaySpecialOfferLabel.text = guaranteeInfoLabelText
+			guaranteeInfoLabel.text = guaranteeInfoLabelText
 		}
+
+        if let productCode = specificProduct?.code {
+            var productCodeStr = "Product Code:"
+            productCodeStr = productCodeStr + productCode;
+
+            productCodeLabel.text = productCodeStr
+        }
+
+        if let productInformation = specificProduct?.productInformation {
+            productDescLabel.text = productInformation
+        }
 	}
 
 	/**

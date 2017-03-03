@@ -31,6 +31,9 @@ class CustomImageCarouselView: UIView {
 
     var carouselScrollView: UIScrollView!
 
+    /*
+     Assign Image URL Strings
+     */
     var imageURLStrings = [String]() {
         didSet {
             setupView()
@@ -55,6 +58,9 @@ class CustomImageCarouselView: UIView {
         }
     }
 
+    /*
+     Set Up view
+     */
     func setupView() {
         for view in subviews {
             view.removeFromSuperview()
@@ -71,6 +77,9 @@ class CustomImageCarouselView: UIView {
         }
     }
 
+    /*
+     Add images Up view
+     */
     func addImages() {
         carouselScrollView.isPagingEnabled = true
         carouselScrollView.contentSize = CGSize(width: bounds.width * CGFloat(imageURLStrings.count), height: bounds.height)
@@ -89,6 +98,9 @@ class CustomImageCarouselView: UIView {
         self.addSubview(carouselScrollView)
     }
 
+    /*
+     Add Page Control
+     */
     func addPageControl() {
         if imageURLStrings.count <= pageControlMaxItems {
             pageControl.numberOfPages = imageURLStrings.count

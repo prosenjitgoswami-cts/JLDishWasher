@@ -21,14 +21,13 @@ class Media: BaseModel {
 //MARK:------------------------------- * ----------------------------------
 //MARK: Bind Data
 extension Media {
-
 	public func bindMediaResultResult(media results: [String: Any]?) {
-
 		guard let results = results else{
 			return;
 		}
             if let images = results[kDictImages] as? [String:Any] {
                 if let urls  = images[kDictUrls] as? [String] {
+                    
                     imageURLStrings = urls
                 }
 			}

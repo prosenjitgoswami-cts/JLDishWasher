@@ -10,7 +10,7 @@ import UIKit
 
 class JLDWProductDetailsViewController: UIViewController {
 
-    @IBOutlet weak var productImagesCollectionView: JLDWProductsCollectionView!
+    @IBOutlet weak var customImageCarouselView: CustomImageCarouselView!
     // This Stzckvire chanes its axis on orientation.
     @IBOutlet weak var axisChangableStackView: UIStackView!
     @IBOutlet weak var productFeaturesStackView: UIStackView!
@@ -28,11 +28,7 @@ class JLDWProductDetailsViewController: UIViewController {
 
     // @IBOutlet LayoutConstraint
     @IBOutlet weak var readMoreBtnContanerHeightConstraint: NSLayoutConstraint!
-
-
-    var productImagesDataSource: [String]?
     var specificProduct: SpecificProductInfo?
-
     lazy var presenter: JLDWProductDetailsViewControllerPresenter = {
         return JLDWProductDetailsViewControllerPresenter()
     }()
@@ -41,6 +37,7 @@ class JLDWProductDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -56,13 +53,10 @@ class JLDWProductDetailsViewController: UIViewController {
     public func setProduct(withProduct product: Product) {
         productID = product.productId;
     }
-
-
 }
 
 
 //MARK:------------------------------- * ----------------------------------
-
 extension JLDWProductDetailsViewController {
 
     /**
@@ -94,7 +88,7 @@ extension JLDWProductDetailsViewController {
         setNavigationBarTitle(withProductTitle: specificProduct?.title)
 
         //Reload Carosal Product Images
-        reloadCarosalProductImages()
+        reloadImageCarouselView()
 
         //Set priceLabelText text
         if let priceLabelText = specificProduct?.priseDisplayString {
@@ -139,7 +133,7 @@ extension JLDWProductDetailsViewController {
         }
     }
 
-    // Update UI  On Orientation
+    // Update UI On Orientation
     func updateUIOnOrientation() {
 
         let isPortrait = UIDevice.current.orientation.isPortrait
@@ -167,12 +161,11 @@ extension JLDWProductDetailsViewController {
     /**
      Reload Carosal Image View
      */
-    func reloadCarosalProductImages() {
+    func reloadImageCarouselView() {
 
+        customImageCarouselView.currentPageColor = UIColor.black
         if let _productImagesDataSource = specificProduct?.media?.imageURLStrings {
-
-            productImagesDataSource = _productImagesDataSource
-            productImagesCollectionView.reloadCollectionView(withCollections: productImagesDataSource)
+            customImageCarouselView.imageURLStrings = _productImagesDataSource;
         }
     }
     

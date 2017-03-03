@@ -82,7 +82,7 @@
 		C63FB20A1E697032000225D4 /* ProductAttributeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductAttributeTableView.swift; sourceTree = "<group>"; };
 		C65B3DDE1E682ECD0055CD22 /* JLDishWasher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLDishWasher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C65B3DE61E682ECE0055CD22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C65B3DE81E682ECE0055CD22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C65B3DE81E682ECE0055CD22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = JLDishWasher/Assets.xcassets; sourceTree = "<group>"; };
 		C65B3DEB1E682ECE0055CD22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C65B3DED1E682ECE0055CD22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C65B3DF21E682ECE0055CD22 /* JLDishWasherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JLDishWasherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				C65B3DE01E682ECD0055CD22 /* JLDishWasher */,
+				C65B3DE81E682ECE0055CD22 /* Assets.xcassets */,
 				C65B3DF51E682ECE0055CD22 /* JLDishWasherTests */,
 				C65B3DDF1E682ECD0055CD22 /* Products */,
 			);
@@ -169,7 +170,6 @@
 		C65B3DE01E682ECD0055CD22 /* JLDishWasher */ = {
 			isa = PBXGroup;
 			children = (
-				C66428271E6845660016B562 /* TestJsonFile */,
 				C65B3E011E682EFB0055CD22 /* Application */,
 				C65B3E041E682EFB0055CD22 /* Constants */,
 				C6AAF06A1E6852770026FF79 /* Model */,
@@ -178,7 +178,7 @@
 				C65B3E0D1E682EFB0055CD22 /* ViewController */,
 				C66428321E6857020016B562 /* View */,
 				C65B3E121E682F050055CD22 /* Storyboard */,
-				C65B3DE81E682ECE0055CD22 /* Assets.xcassets */,
+				C66428271E6845660016B562 /* TestJsonFile */,
 				C65B3DED1E682ECE0055CD22 /* Info.plist */,
 			);
 			path = JLDishWasher;

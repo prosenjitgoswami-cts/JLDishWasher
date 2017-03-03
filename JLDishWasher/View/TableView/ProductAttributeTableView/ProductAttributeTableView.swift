@@ -36,6 +36,7 @@ class ProductAttributeTableView: UITableView,UITableViewDelegate,UITableViewData
         if let attribute = attributeDataSource?[indexPath.row] {
             cell.setAttribute(with: attribute)
         }
+		cell.layoutMargins = .zero;
 
         return cell
     }

@@ -111,7 +111,7 @@
 		EA5FCFDD1E67285900F65C1F /* JLDWProductDetailsVCTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWProductDetailsVCTests.swift; sourceTree = "<group>"; };
 		EA5FCFE01E672AC800F65C1F /* TestJsonForProductPageNoProductInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestJsonForProductPageNoProductInfo.json; sourceTree = "<group>"; };
 		EA607F341E670066004419F5 /* HelperUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperUtils.swift; sourceTree = "<group>"; };
-		EA607F371E6702C2004419F5 /* JLDWProductDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWProductDetailsViewController.swift; sourceTree = "<group>"; };
+		EA607F371E6702C2004419F5 /* JLDWProductDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JLDWProductDetailsViewController.swift; path = ../../../ViewController/ProductDetailsViewController/JLDWProductDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				C66D5BC11E6871EA0011DEA0 /* JLDWProductsCollectionView.swift */,
+				EA607F371E6702C2004419F5 /* JLDWProductDetailsViewController.swift */,
 			);
 			path = ProductsCollectionView;
 			sourceTree = "<group>";
@@ -449,7 +450,6 @@
 		EA607F361E6702A6004419F5 /* ProductDetailsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				EA607F371E6702C2004419F5 /* JLDWProductDetailsViewController.swift */,
 				EA5FCF9B1E67197A00F65C1F /* JLDWProductDetailsViewControllerPresenter.swift */,
 			);
 			path = ProductDetailsViewController;

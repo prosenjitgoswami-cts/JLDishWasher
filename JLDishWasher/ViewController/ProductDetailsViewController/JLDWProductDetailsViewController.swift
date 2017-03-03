@@ -11,10 +11,14 @@ import UIKit
 class JLDWProductDetailsViewController: UIViewController {
 
 	@IBOutlet weak var productImagesCollectionView: JLDWProductsCollectionView!
-	@IBOutlet weak var priceDetailsHConstraint: NSLayoutConstraint!
-	@IBOutlet weak var rightSidePanelWidthConstraints: NSLayoutConstraint!
-	@IBOutlet weak var rightPanelContainerView: UIView!
-	@IBOutlet weak var leftPanelContainerView: UIView!
+	//@IBOutlet weak var priceDetailsHConstraint: NSLayoutConstraint!
+	//@IBOutlet weak var rightSidePanelWidthConstraints: NSLayoutConstraint!
+	//@IBOutlet weak var rightPanelContainerView: UIView!
+	//@IBOutlet weak var leftPanelContainerView: UIView!
+
+	// This Stzckvire chanes its axis on orientation.
+	@IBOutlet weak var axisChangableStackView: UIStackView!
+	@IBOutlet weak var productFeaturesStackView: UIStackView!
 
 	@IBOutlet weak var priceLabel: UILabel!
 	@IBOutlet weak var displaySpecialOfferLabel: UILabel!
@@ -47,11 +51,14 @@ class JLDWProductDetailsViewController: UIViewController {
 	func updateUIOnOrientation() {
 
 		if UIDevice.current.orientation.isLandscape {
-			rightSidePanelWidthConstraints.constant = 300
+			//rightSidePanelWidthConstraints.constant = 300
 			//priceDetailsHConstraint.constant = 0
+			axisChangableStackView.axis = .horizontal
+
 
 		} else {
-			rightSidePanelWidthConstraints.constant = 0
+			//rightSidePanelWidthConstraints.constant = 0
+			axisChangableStackView.axis = .vertical
 		}
 	}
 

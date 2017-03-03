@@ -26,4 +26,22 @@ class UtilityTestCases: XCTestCase {
         XCTAssertEqual(urlUithOutHttps.addHTTPSAndColonPrefixIfNotExits(), "https://testurl.com")
     }
 
+	func testThatremoveHTMLTagsInString() {
+		let HTMLTagsInString = "<p>removeHTMLTagsInString<p>"
+		XCTAssertEqual(HTMLTagsInString.removeHTMLTagsInString(), "removeHTMLTagsInString")
+	}
+
+	func testThatRemoveHTMLTagsFromHTMLTagsContainsString() {
+		let HTMLTagsInString = "<p>removeHTMLTagsInString<p>"
+		XCTAssertEqual(HTMLTagsInString.removeHTMLTagsInString(), "removeHTMLTagsInString")
+	}
+
+
+	func testThatPlainStrinRemainSame() {
+		let HTMLTagsInString = "PlaneText"
+		XCTAssertEqual(HTMLTagsInString.removeHTMLTagsInString(), "PlaneText")
+	}
+
+
+
 }

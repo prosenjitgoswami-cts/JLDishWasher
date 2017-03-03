@@ -48,6 +48,7 @@
 		C6F0A1FA1E69B0DB00C3C49B /* JLDWProductDetailsViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C671E4D91E6970A100774E3D /* JLDWProductDetailsViewControllerPresenter.swift */; };
 		C6F0A1FE1E69B20600C3C49B /* UtilityTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F0A1FD1E69B20600C3C49B /* UtilityTestCases.swift */; };
 		EA29AC521E684E230036F012 /* JLDWProductGridVCCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA29AC501E684E230036F012 /* JLDWProductGridVCCollectionViewCell.swift */; };
+		EA29C28A1E69E2440085B9C8 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA29C2891E69E2440085B9C8 /* Reachability.swift */; };
 		EA5FCF8F1E6716D600F65C1F /* HelperUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA607F341E670066004419F5 /* HelperUtils.swift */; };
 		EA5FCF901E67174300F65C1F /* DNWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664282B1E6852D50016B562 /* DNWebService.swift */; };
 		EA5FCF911E67174900F65C1F /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664282A1E6852D50016B562 /* DataService.swift */; };
@@ -111,6 +112,7 @@
 		C6F0A1F61E69A62900C3C49B /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		C6F0A1FD1E69B20600C3C49B /* UtilityTestCases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityTestCases.swift; sourceTree = "<group>"; };
 		EA29AC501E684E230036F012 /* JLDWProductGridVCCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWProductGridVCCollectionViewCell.swift; sourceTree = "<group>"; };
+		EA29C2891E69E2440085B9C8 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		EA5FCF931E6718BF00F65C1F /* TestJsonFileForProductsListWith21Products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestJsonFileForProductsListWith21Products.json; sourceTree = "<group>"; };
 		EA5FCF941E6718BF00F65C1F /* TestJsonFileForProductsListWithNoProduct.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestJsonFileForProductsListWithNoProduct.json; sourceTree = "<group>"; };
 		EA5FCF951E6718BF00F65C1F /* TestJsonFileForProductsListWithValidProducts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestJsonFileForProductsListWithValidProducts.json; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				C6F0A1F51E69A61B00C3C49B /* CustomImageView */,
 				C6F0A1F21E69A5D800C3C49B /* CustomImageCarouselView */,
 				C65B3E091E682EFB0055CD22 /* ErrorManager */,
+				EA29C2881E69E22B0085B9C8 /* Reachability */,
 				C65B3E0A1E682EFB0055CD22 /* ServiceManager */,
 				EA607F341E670066004419F5 /* HelperUtils.swift */,
 			);
@@ -472,6 +475,14 @@
 			path = ProductGridVCCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		EA29C2881E69E22B0085B9C8 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				EA29C2891E69E2440085B9C8 /* Reachability.swift */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -597,6 +608,7 @@
 				EA5FCFEC1E672FD200F65C1F /* JLDWTestUtility.swift in Sources */,
 				C6AAF08B1E6852770026FF79 /* ProductPrise.swift in Sources */,
 				C63FB20B1E697032000225D4 /* ProductAttributeTableView.swift in Sources */,
+				EA29C28A1E69E2440085B9C8 /* Reachability.swift in Sources */,
 				C671E4DB1E6970A100774E3D /* JLDWProductDetailsViewControllerPresenter.swift in Sources */,
 				C6AAF08D1E6852770026FF79 /* SpecificProductInfo.swift in Sources */,
 				C6AAF0811E6852770026FF79 /* BaseModel.swift in Sources */,

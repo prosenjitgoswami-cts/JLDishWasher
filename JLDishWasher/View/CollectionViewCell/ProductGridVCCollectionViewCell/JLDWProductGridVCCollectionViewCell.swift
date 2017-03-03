@@ -40,7 +40,7 @@ class JLDWProductGridVCCollectionViewCell: UICollectionViewCell {
 
             // Download image and set in image view
 
-            if  let imageURLStringWithHTTPS = imageURLString.addHTTPSPrefix(){
+            if  let imageURLStringWithHTTPS = imageURLString.addHTTPSAndColonPrefix(){
 
                 productImageView.loadImage(withURLString: imageURLStringWithHTTPS)
             }

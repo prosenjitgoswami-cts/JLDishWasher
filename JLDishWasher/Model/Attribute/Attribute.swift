@@ -10,20 +10,20 @@ import UIKit
 
 class Attribute: NSObject {
 
-    var specificProductName: String?
-    var specificProductvalue: String?
+    var attributeName: String?
+    var attributeValue: String?
 
     required init(attribute result: [String:Any]?) {
         super.init()
         guard let result = result else{
             return;
         }
-        if let specificProductNameStr: String = result[kDictName] as? String {
-            specificProductName = specificProductNameStr
+        if let attributeNameStr: String = result[kDictName] as? String {
+            attributeName = attributeNameStr
         }
 
         if let specificProductValStr: String = result[kDictValue] as? String {
-            specificProductvalue = specificProductValStr
+            attributeValue = specificProductValStr
         }
     }
 }

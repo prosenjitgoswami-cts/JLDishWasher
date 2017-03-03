@@ -371,7 +371,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
         let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
         let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
 
-        let name  = specificProductInfo?.details?.attributes?[0].specificProductName
+        let name  = specificProductInfo?.details?.attributes?[0].attributeName
         XCTAssertEqual(name, "Dimensions")
     }
 
@@ -381,7 +381,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
         let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
         let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
 
-        let name  = specificProductInfo?.details?.attributes?[0].specificProductName
+        let name  = specificProductInfo?.details?.attributes?[0].attributeName
         XCTAssertNotEqual(name, "NA-Dimensions")
     }
 
@@ -391,7 +391,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
         let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
         let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
 
-        let value  = specificProductInfo?.details?.attributes?[0].specificProductvalue
+        let value  = specificProductInfo?.details?.attributes?[0].attributeValue
         XCTAssertEqual(value, "H81.5 x W59.8 x D55cm")
     }
 
@@ -401,7 +401,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
         let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
         let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
 
-        let value  = specificProductInfo?.details?.attributes?[0].specificProductvalue
+        let value  = specificProductInfo?.details?.attributes?[0].attributeValue
         XCTAssertNotEqual(value, "NA-H81.5 x W59.8 x D55cm")
     }
 

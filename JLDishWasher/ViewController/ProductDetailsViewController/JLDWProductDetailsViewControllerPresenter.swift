@@ -10,8 +10,6 @@ import UIKit
 
 class JLDWProductDetailsViewControllerPresenter: NSObject {
 
-
-
     /**
      URLStringProductPage
      @param withPeroductID: withPeroductID is ProductID
@@ -75,22 +73,6 @@ class JLDWProductDetailsViewControllerPresenter: NSObject {
                     } else {
                         return nil
                     }
-
-
-//            for productInfo: [String: Any]? in results {
-//
-//                if let productInfo = productInfo {
-//                    if productInfo.count > 0 {
-//                        let specificProductInfo =  SpecificProductInfo(product: productInfo as? [String: Any])
-//                        specificProductInfos.append(specificProductInfo)
-//                    } else {
-//                        return nil
-//                    }
-//                } else  {
-//                    return specificProductInfos
-//                }
-//            }
-
             return specificProductInfos
         }
         

@@ -13,21 +13,35 @@ class JLDWProductGridVCCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var productCostLabel: UILabel!
     @IBOutlet weak var productBriefDescLabel: UILabel!
 
-    // Public Function
+
+    /**
+     Set Product Details and Update ui
+     */
     public func setProductDetails(product: Product) {
+        updateUI(product: product)
+    }
+
+    /**
+     Update UI
+     */
+    private  func updateUI(product: Product) {
+
+        // Set text Title
         if let productTitle = product.title {
             productBriefDescLabel.text = productTitle
-
         }
+
+        // Set text product Cost
         if let priseDisplayString = product.priseDisplayString {
-          productCostLabel.text = priseDisplayString
+            productCostLabel.text = priseDisplayString
         }
 
+        // Set image product Image View
         if let imageURLString = product.imageURLString {
-            
+
             var imageURLStringWithHTTPS: String = "https:"
             imageURLStringWithHTTPS.append(imageURLString);
-            // Download image and set in imagevieew
+            // Download image and set in image view
             productImageView.imageFromServerURL(urlString: imageURLStringWithHTTPS)
         }
     }

@@ -10,12 +10,34 @@ import UIKit
 
 class JLDWProductDetailsViewController: UIViewController {
 
+    @IBOutlet weak var productImagesCollectionView: JLDWProductsCollectionView!
+    // This Stzckvire chanes its axis on orientation.
+    @IBOutlet weak var axisChangableStackView: UIStackView!
+    @IBOutlet weak var productFeaturesStackView: UIStackView!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var displaySpecialOfferLabel: UILabel!
+    @IBOutlet weak var guaranteeInfoLabel: UILabel!
+    @IBOutlet weak var productCodeLabel: UILabel!
+    @IBOutlet weak var productDescLabel: UILabel!
+    @IBOutlet weak var seperatorLineBelowPdCodeView: UIView!
+    @IBOutlet weak var lowerReadmoreSeperatorLineView: UIView!
+    @IBOutlet weak var readMoreBtnContanerView: UIView!
+    @IBOutlet weak var attributesTableView: ProductAttributeTableView!
+    @IBOutlet weak var rightBackArrowButton: UIImageView!
+    @IBOutlet weak var reaMoreButton: UIButton!
+
+    // @IBOutlet LayoutConstraint
+    @IBOutlet weak var readMoreBtnContanerHeightConstraint: NSLayoutConstraint!
+
+
+    var productImagesDataSource: [String]?
+    var specificProduct: SpecificProductInfo?
+
     lazy var presenter: JLDWProductDetailsViewControllerPresenter = {
         return JLDWProductDetailsViewControllerPresenter()
     }()
 
     var productID: String?
-    var datasource: [SpecificProductInfo]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +45,18 @@ class JLDWProductDetailsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         fetchService()
-
+        updateUIOnOrientation()
     }
 
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        updateUIOnOrientation()
+    }
+
+      // PubLic Method
     public func setProduct(withProduct product: Product) {
         productID = product.productId;
     }
+
 
 }
 
@@ -40,17 +68,18 @@ extension JLDWProductDetailsViewController {
     /**
      Invoke Web Service and Get Products details and Refresh UI
      @param failed: Fail Block
-
      */
     func fetchService() {
 
         if let productID  = productID {
             presenter.fetchProductDetails(withProducetID: productID, failed: { (error) in
 
-            }, success: {(specificProductInfos) in
+            }, success: {[weak self] (specificProductInfos) in
 
-                print ("Helllllll")
-                self.datasource = specificProductInfos;
+                if let datasource = specificProductInfos {
+                    self?.specificProduct = datasource[0]
+                    self?.updateUI()
+                }
             })
         }
     }
@@ -59,12 +88,44 @@ extension JLDWProductDetailsViewController {
      Update UI
      @param products: Collection of Product
      */
-    internal func updateUI(withProducts products: [Product]?) {
+    internal func updateUI() {
 
-        if let products = products {
-            setNavigationBarTitle(withProductCount:products.count)
+        //Set Navigation Title
+        setNavigationBarTitle(withProductTitle: specificProduct?.title)
 
+        //Reload Carosal Product Images
+        reloadCarosalProductImages()
+
+        //Set priceLabelText text
+        if let priceLabelText = specificProduct?.priseDisplayString {
+            priceLabel.text = priceLabelText
         }
+
+        //Set displaySpecialOfferLabel text
+        if let displaySpecialOfferLabelText = specificProduct?.displaySpecialOffer {
+            displaySpecialOfferLabel.text = displaySpecialOfferLabelText
+        }
+
+        //Set guaranteeInfoLabel text
+        if let guaranteeInfoLabelText = specificProduct?.guaranteeInformation {
+            guaranteeInfoLabel.text = guaranteeInfoLabelText
+        }
+
+        //Set productCodeLabel text
+        if let productCode = specificProduct?.code {
+            var productCodeStr = "Product Code:"
+            productCodeStr = productCodeStr + productCode;
+
+            productCodeLabel.text = productCodeStr
+        }
+
+        //Set productDescLabel text
+        if let productInformation = specificProduct?.productInformation {
+            productDescLabel.text = productInformation
+        }
+
+        // Reload Attribute Table View 
+        reloadAttributeTableView()
     }
 
     /**
@@ -78,29 +139,65 @@ extension JLDWProductDetailsViewController {
         }
     }
 
-    /**
-     Set Navigation Bar Title
-     */
-    internal func configureUI() {
+    // Update UI  On Orientation
+    func updateUIOnOrientation() {
 
-        setNavigationBarTitle(withProductCount: 0)
+        let isPortrait = UIDevice.current.orientation.isPortrait
+
+        if isPortrait {
+            axisChangableStackView.axis = .vertical
+            readMoreBtnContanerHeightConstraint.constant = 0
+                   } else {
+            axisChangableStackView.axis = .horizontal
+            readMoreBtnContanerHeightConstraint.constant = 40
+        }
+        uiComponentVisibilityChange(isHidden: isPortrait)
+        self.view.layoutIfNeeded()
+        self.view.needsUpdateConstraints()
     }
 
+    // UI component visibility change
+    private func uiComponentVisibilityChange(isHidden : Bool) {
 
+        readMoreBtnContanerView.isHidden = isHidden
+        lowerReadmoreSeperatorLineView.isHidden = isHidden
+        rightBackArrowButton.isHidden = isHidden
+        reaMoreButton.isHidden = isHidden
+    }
+    /**
+     Reload Carosal Image View
+     */
+    func reloadCarosalProductImages() {
+
+        if let _productImagesDataSource = specificProduct?.media?.imageURLStrings {
+
+            productImagesDataSource = _productImagesDataSource
+            productImagesCollectionView.reloadCollectionView(withCollections: productImagesDataSource)
+        }
+    }
+    
+    /**Reload Attribute Table view
+     */
+    func reloadAttributeTableView () {
+        
+        if let attributes = specificProduct?.details?.attributes {
+
+            let sortedAttributes = attributes.sorted {
+                $0.attributeName! < $1.attributeName!
+            }
+              attributesTableView.reloadCollectionView(with: sortedAttributes)
+        }
+    }
+    
     /**
      Navigate to JLDWProductDetailsViewController though Segue
      @param product: Selected product details
      */
-    private func setNavigationBarTitle(withProductCount productCount: Int) {
-
-        var pageTitle: String = PageTitleProductGridVC;
+    private func setNavigationBarTitle(withProductTitle title: String?) {
         
-        if (productCount > 0) {
-            
-            pageTitle.append("("+"\(productCount)"+")")
+        if let title = title {
+            self.title = title
         }
-        self.title = pageTitle
-        
     }
 }
 

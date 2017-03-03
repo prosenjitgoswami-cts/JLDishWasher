@@ -14,17 +14,24 @@ import UIKit
 extension UIImageView {
 	public func imageFromServerURL(urlString: String) {
 
-		URLSession.shared.dataTask(with: NSURL(string: urlString)! as URL, completionHandler: { (data, response, error) -> Void in
 
-			if error != nil {
-				return
-			}
-			DispatchQueue.main.async(execute: { () -> Void in
-				let image = UIImage(data: data!)
-				self.image = image
-			})
+		DispatchQueue.background(delay:0.3, background: {
 
-		}).resume()
+			URLSession.shared.dataTask(with: NSURL(string: urlString)! as URL, completionHandler: { (data, response, error) -> Void in
+				if error != nil {
+					return
+				}
+				DispatchQueue.main.async(execute: { () -> Void in
+					let image = UIImage(data: data!)
+					self.image = image
+				})
+
+			}).resume()
+
+		}) { 
+//
+		}
+
 	}
 }
 
@@ -44,4 +51,13 @@ extension DispatchQueue {
 		}
 	}
 
+}
+
+extension String {
+
+ public func addHTTPSPrefix() -> String? {
+    var imageURLStringWithHTTPS: String = "https:"
+    imageURLStringWithHTTPS.append(self);
+    return imageURLStringWithHTTPS
+    }
 }

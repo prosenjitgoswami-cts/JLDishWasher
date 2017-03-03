@@ -26,6 +26,7 @@ let kDictUrls = "urls"
 let kDictDetails = "details"
 let kDictProductInfo = "productInformation"
 let kDictCode = "code"
+let kdisplaySpecialOffer = "displaySpecialOffer"
 let kDictAdditionalServices = "additionalServices"
 let kDictIncludedServices = "includedServices"
 let kDictFeature = "features"
@@ -48,6 +49,10 @@ let PageTitleProductGridVC = "Dishwashers"
 
 // CollectionView Cell Identifier
 let kCellID_JLDWProductGridVCCollectionViewCell = "JLDWProductGridVCCollectionViewCell"
+let kCellID_JLDWProduceImgesCollectionViewCell = "JLDWProduceImgesCollectionViewCell"
+
+// TableView Cell Identifier
+let kCellIDAttributeTableViewCell = "AttributeTableViewCell"
 
 // Padding
 let leftAndRightPaddings = 10.0

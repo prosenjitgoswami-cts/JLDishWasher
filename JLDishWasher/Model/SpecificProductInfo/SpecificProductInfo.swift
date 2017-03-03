@@ -15,7 +15,6 @@ class SpecificProductInfo: Product {
     var code :String?
     var guaranteeInformation: String?
     var productInformation: String?
-
     var additionalService: AdditionalService?
 
     required init(product response: [String : Any]?) {
@@ -40,6 +39,12 @@ extension SpecificProductInfo {
         if let codeString = response[kDictCode] as? String {
             code = codeString;
         }
+
+		if let displaySpecialOfferValue = response[kdisplaySpecialOffer] as? String {
+			displaySpecialOffer = displaySpecialOfferValue;
+		}
+
+
 
         bindMediaResult(with: response)
         bindDetailsResult(with: response)

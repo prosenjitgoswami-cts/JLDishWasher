@@ -11,53 +11,89 @@ import UIKit
 
 //MARK:------------------------------- * ----------------------------------
 //MARK: UIImageView HelperUtils
-extension UIImageView {
-	public func imageFromServerURL(urlString: String) {
+public extension UIImageView {
+    public func imageFromServerURL(urlString: String) {
 
 
-		DispatchQueue.background(delay:0.3, background: {
+        DispatchQueue.background(delay:0.3, background: {
 
-			URLSession.shared.dataTask(with: NSURL(string: urlString)! as URL, completionHandler: { (data, response, error) -> Void in
-				if error != nil {
-					return
-				}
-				DispatchQueue.main.async(execute: { () -> Void in
-					let image = UIImage(data: data!)
-					self.image = image
-				})
+            URLSession.shared.dataTask(with: NSURL(string: urlString)! as URL, completionHandler: { (data, response, error) -> Void in
+                if error != nil {
+                    return
+                }
+                DispatchQueue.main.async(execute: { () -> Void in
+                    let image = UIImage(data: data!)
+                    self.image = image
+                })
 
-			}).resume()
+            }).resume()
 
-		}) { 
-//
-		}
+        }) {
+            //
+        }
 
-	}
+    }
 }
 
 //MARK:------------------------------- * ----------------------------------
 //MARK: DispatchQueue HelperUtils
 
-extension DispatchQueue {
+public extension DispatchQueue {
 
-	static func background(delay: Double = 0.0, background: (()->Void)? = nil, completion: (() -> Void)? = nil) {
-		DispatchQueue.global(qos: .background).async {
-			background?()
-			if let completion = completion {
-				DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
-					completion()
-				})
-			}
-		}
-	}
+    static func background(delay: Double = 0.0, background: (()->Void)? = nil, completion: (() -> Void)? = nil) {
+        DispatchQueue.global(qos: .background).async {
+            background?()
+            if let completion = completion {
+                DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
+                    completion()
+                })
+            }
+        }
+    }
 
 }
 
-extension String {
+//MARK:------------------------------- * ----------------------------------
+//MARK: String HelperUtils
+public extension String {
 
- public func addHTTPSPrefix() -> String? {
-    var imageURLStringWithHTTPS: String = "https:"
-    imageURLStringWithHTTPS.append(self);
-    return imageURLStringWithHTTPS
+    /* Add Prefix
+     @param string Prefix string
+     @return string with prefix
+     */
+    public func addPrefix(with string: String) -> String? {
+        var imageURLStringWithHTTPS: String = string
+        imageURLStringWithHTTPS.append(self);
+        return imageURLStringWithHTTPS
+    }
+    /* add HTTPS And Colon Prefix
+     @param string Prefix string
+     @return string with prefix with https
+     */
+    public func addHTTPSAndColonPrefix() -> String? {
+        return addPrefix(with: "https:")
+    }
+
+    /*
+     Add Prefix https when does not exits or Having http:
+     */
+    public func addHTTPSAndColonPrefixIfNotExits() -> String? {
+
+        let httpsString = "https:"
+        let httpString = "http:"
+
+        if self.lowercased().range(of:httpsString) != nil {
+            return self
+
+        } else if self.lowercased().range(of:httpString) != nil {
+            return self.replacingOccurrences(of: httpString, with: httpsString)
+        } else {
+            
+            return self.addHTTPSAndColonPrefix()
+        }
     }
 }
+
+
+
+

@@ -26,7 +26,7 @@ class JLDWProduceImgesCollectionViewCell: UICollectionViewCell {
     private func updateUI(with imageURLString: String?) {
         if let imageURLString = imageURLString {
             //imageURLString is not contained https: so added
-            if  let imageURLStringWithHTTPS = imageURLString.addHTTPSPrefix(){
+            if  let imageURLStringWithHTTPS = imageURLString.addHTTPSAndColonPrefixIfNotExits(){
                 //Set Download image in productImageView
             productImageView.imageFromServerURL(urlString: imageURLStringWithHTTPS)
             }

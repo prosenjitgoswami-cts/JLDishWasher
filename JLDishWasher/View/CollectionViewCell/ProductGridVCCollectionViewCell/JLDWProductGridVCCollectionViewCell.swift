@@ -9,10 +9,9 @@
 import UIKit
 
 class JLDWProductGridVCCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var productImageView: UIImageView!
+    @IBOutlet weak var productImageView: CustomImageView!
     @IBOutlet weak var productCostLabel: UILabel!
     @IBOutlet weak var productBriefDescLabel: UILabel!
-
 
     /**
      Set Product Details and Update ui
@@ -39,10 +38,12 @@ class JLDWProductGridVCCollectionViewCell: UICollectionViewCell {
         // Set image product Image View
         if let imageURLString = product.imageURLString {
 
-            var imageURLStringWithHTTPS: String = "https:"
-            imageURLStringWithHTTPS.append(imageURLString);
             // Download image and set in image view
-            productImageView.imageFromServerURL(urlString: imageURLStringWithHTTPS)
+
+            if  let imageURLStringWithHTTPS = imageURLString.addHTTPSAndColonPrefix(){
+
+                productImageView.loadImage(withURLString: imageURLStringWithHTTPS)
+            }
         }
     }
 }

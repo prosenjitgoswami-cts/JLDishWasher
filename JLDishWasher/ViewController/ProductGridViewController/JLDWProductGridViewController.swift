@@ -12,8 +12,7 @@ import UIKit
 //MARK:------------------------------- * ----------------------------------
 //MARK: ViewController Life Cycle
 class JLDWProductGridViewController: UIViewController {
-    @IBOutlet weak var productGridCollectionView: UICollectionView!
-
+@IBOutlet weak var productGridCollectionView: UICollectionView!
     var cellsPerRow:CGFloat = 4
     let cellPadding:CGFloat = 1
     var productDatasource: [Product]?

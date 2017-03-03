@@ -66,3 +66,13 @@ let StaticStrProductInformation =  "Product Information"
 let StaticProductSpecification =  "Product specification"
 let StaticProductCodeWithColon =   "Product Code:"
 
+// Alert Message
+let ALTMessageNetworkConnection = "Internet connection is not available, Please try again"
+let ALTMessageError = "Please try again"
+
+// Alert Button Title
+let AltBtnTitleOK = "OK"
+
+// Alert Title
+let AltTitleEmpty = ""
+let AltTitleError = "Error"

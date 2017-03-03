@@ -45,7 +45,13 @@ class JLDWProductDetailsViewController: UIViewController {
 
 
 	override func viewWillAppear(_ animated: Bool) {
-		fetchService()
+
+		if Reachability.isConnectedToNetwork() == true {
+			fetchService()
+		} else {
+			self.showAlertOnNoInternetConnection()
+		}
+
 		updateUIOnOrientation()
 	}
 

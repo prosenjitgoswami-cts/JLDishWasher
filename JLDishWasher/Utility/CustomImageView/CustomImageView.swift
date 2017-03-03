@@ -24,12 +24,9 @@ class CustomImageView: UIImageView {
     var task: URLSessionDownloadTask!
     var session: URLSession!
 
-    var loaderIndicator: UIActivityIndicatorView?
-
     override func layoutSubviews() {
         super.layoutSubviews()
-        loaderIndicator?.center = self.center
-    }
+	}
 
     /*
      Load image in image view
@@ -50,7 +47,6 @@ class CustomImageView: UIImageView {
             // Use cache
             self.image = cachedimage as? UIImage
         } else{
-            showLoaderIndicator ()
             let url:URL! = URL(string: urlString)
             task = session.downloadTask(with: url, completionHandler: { (location, response, error) -> Void in
                 if let data = try? Data(contentsOf: url){
@@ -58,48 +54,12 @@ class CustomImageView: UIImageView {
                         let downloadedImage:UIImage! = UIImage(data: data)
                         self.image = downloadedImage
                         DefaultCache.shared.setObject(downloadedImage, forKey: urlString as AnyObject)
-                        self.removeLoader()
                     })
                 }
             })
             task.resume()
         }
     }
-
-    private func showLoaderIndicator(){
-        //Create Activity Indicator
-        loaderIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
-        loaderIndicator?.hidesWhenStopped = false
-        self.addSubview(loaderIndicator!)
-        loaderIndicator?.isHidden = true
-        loaderIndicator?.translatesAutoresizingMaskIntoConstraints = false
-        addLayoutConstraint()
-        // Start Activity Indicator
-        loaderIndicator?.startAnimating()
-        loaderIndicator?.isHidden = false
-
-    }
-
-    private func removeLoader() {
-        if let loaderIndicator = loaderIndicator {
-            loaderIndicator.stopAnimating()
-            loaderIndicator.removeFromSuperview()            
-        }
-    }
-
-    private func addLayoutConstraint() {
-
-
-        guard  let loaderIndicator = loaderIndicator else {
-            return;
-        }
-
-        let xCenterConstraint = NSLayoutConstraint(item: loaderIndicator as Any, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0)
-
-        let yCenterConstraint = NSLayoutConstraint(item: loaderIndicator as Any, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
-        NSLayoutConstraint.activate([ xCenterConstraint,yCenterConstraint])
-    }
-    
 
 }
 

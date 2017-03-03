@@ -13,6 +13,7 @@ import UIKit
 //MARK: ViewController Life Cycle
 class JLDWProductGridViewController: UIViewController {
 	@IBOutlet weak var productGridCollectionView: UICollectionView!
+	@IBOutlet weak var indicatorView: UIActivityIndicatorView!
 	var cellsPerRow:CGFloat = 4
 	let cellPadding:CGFloat = 1
 	var productDatasource: [Product]?
@@ -69,14 +70,21 @@ extension JLDWProductGridViewController {
 	internal func fetchService() {
 
 		if Reachability.isConnectedToNetwork() == true {
+			showLoadingIndicator()
 			self.presenter.fetchProductList(failed: { [weak self] (error) in
+
 				self?.showAlertOnError()
+				self?.hideLoadingIndicator()
+
 			}) { [weak self] (products) in
+
 				self?.updateUI(withProducts: products)
+				self?.hideLoadingIndicator()
 			}
 		}
 		else {
-			self.showAlertOnNoInternetConnection()
+			showAlertOnNoInternetConnection()
+			hideLoadingIndicator()
 		}
 	}
 
@@ -138,6 +146,23 @@ extension JLDWProductGridViewController {
 		self.title = pageTitle
 
 	}
+
+	/* Show loading
+	*/
+	private func showLoadingIndicator() {
+		self.indicatorView.bringSubview(toFront: self.view)
+		self.indicatorView.isHidden = false
+		self.indicatorView.startAnimating()
+	}
+
+	/*
+	Hide Loading Indicator
+	*/
+	private func hideLoadingIndicator() {
+		self.indicatorView.isHidden = true
+		self.indicatorView.stopAnimating()
+	}
+
 }
 
 //MARK:------------------------------- * ----------------------------------

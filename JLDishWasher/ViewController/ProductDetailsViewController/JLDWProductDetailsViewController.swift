@@ -9,7 +9,7 @@
 import UIKit
 
 class JLDWProductDetailsViewController: UIViewController {
-
+	@IBOutlet weak var indicatorView: UIActivityIndicatorView!
 	@IBOutlet weak var trailingConstraintsForLanSepetView: NSLayoutConstraint!
 	@IBOutlet weak var customImageCarouselView: CustomImageCarouselView!
 	@IBOutlet weak var landscapeSeparetorView: UIView!
@@ -46,12 +46,8 @@ class JLDWProductDetailsViewController: UIViewController {
 
 	override func viewWillAppear(_ animated: Bool) {
 
-		if Reachability.isConnectedToNetwork() == true {
-			fetchService()
-		} else {
-			self.showAlertOnNoInternetConnection()
-		}
-
+		super.viewWillAppear(animated)
+		fetchService()
 		updateUIOnOrientation()
 	}
 
@@ -75,16 +71,27 @@ extension JLDWProductDetailsViewController {
 	*/
 	internal func fetchService() {
 
-		if let productID  = productID {
-			presenter.fetchProductDetails(withProducetID: productID, failed: { (error) in
+		if Reachability.isConnectedToNetwork() == true {
 
-			}, success: {[weak self] (specificProductInfos) in
+			if let productID  = productID {
+				showLoadingIndicator()
+				presenter.fetchProductDetails(withProducetID: productID, failed: {[weak self] (error) in
 
-				if let datasource = specificProductInfos {
-					self?.specificProduct = datasource[0]
-					self?.updateUI()
-				}
-			})
+					self?.hideLoadingIndicator()
+					self?.showAlertOnError()
+
+					}, success: {[weak self] (specificProductInfos) in
+
+						if let datasource = specificProductInfos {
+							self?.specificProduct = datasource[0]
+							self?.updateUI()
+							self?.hideLoadingIndicator()
+						}
+				})
+			}
+		} else {
+			showAlertOnNoInternetConnection()
+			hideLoadingIndicator()
 		}
 	}
 
@@ -156,23 +163,23 @@ extension JLDWProductDetailsViewController {
 
 
 		/*
-		In Landscape mode Verticle Stack view as follow
-
-		** //1, 3 index view is usedFor Specing, because In code there are Uneven specing. So not used StackView specing
-		0-[productInfoLabel]
-		1-[UIVIew]
-		2-[productCodeLabel]
-		3-[UIView]
-		4-[productDescLabel]
-		*/
-
-		/*
+		** //1, 3 index view is usedFor Specing, because In code there are uneven specing. So not used StackView specing
 		In portrait mode Verticle Stack view as follow
+		
 		0-[productInfoLabel]
 		1-[UIVIew]
 		2-[productDescLabel]
 		3-[UIView]
 		4-[productCodeLabel]
+		
+
+		In Landscape mode Verticle Stack view as follow
+
+		0-[productInfoLabel]
+		1-[UIVIew]
+		2-[productCodeLabel]
+		3-[UIView]
+		4-[productDescLabel]
 
 		*/
 		setTextProductDescLabelAndProductCodeLabelOnOrientationBased()
@@ -181,8 +188,25 @@ extension JLDWProductDetailsViewController {
 		self.view.needsUpdateConstraints()
 	}
 
+	/* Show loading
+	*/
+	private func showLoadingIndicator() {
+		self.indicatorView.bringSubview(toFront: self.view)
+		self.indicatorView.isHidden = false
+		self.indicatorView.startAnimating()
+	}
 
-	// update UI on portrait orientation
+	/*
+	Hide Loading Indicator
+	*/
+	private func hideLoadingIndicator() {
+		self.indicatorView.isHidden = true
+		self.indicatorView.stopAnimating()
+	}
+
+	/*
+	update UI on portrait orientation
+	*/
 	private func updateUIOnPortraitOrientation() {
 		axisChangableStackView.axis = .vertical
 		readMoreBtnContanerHeightConstraint.constant = 0
@@ -194,7 +218,9 @@ extension JLDWProductDetailsViewController {
 
 	}
 
-	// update UI on Landscape orientation
+	/*
+	update UI on Landscape orientation
+	*/
 	private func updateUIOnLandscapeOrientation() {
 
 		landscapeSeparetorView.backgroundColor = UIColor.lightGray

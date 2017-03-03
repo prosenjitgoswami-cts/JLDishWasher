@@ -22,7 +22,6 @@
 		C664282C1E6852D50016B562 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664282A1E6852D50016B562 /* DataService.swift */; };
 		C664282D1E6852D50016B562 /* DNWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664282B1E6852D50016B562 /* DNWebService.swift */; };
 		C664282F1E6852DC0016B562 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664282E1E6852DC0016B562 /* ErrorManager.swift */; };
-		C66D5BC71E6871EA0011DEA0 /* JLDWProductsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D5BC11E6871EA0011DEA0 /* JLDWProductsCollectionView.swift */; };
 		C671E4DB1E6970A100774E3D /* JLDWProductDetailsViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C671E4D91E6970A100774E3D /* JLDWProductDetailsViewControllerPresenter.swift */; };
 		C671E4DD1E6970BB00774E3D /* JLDWProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C671E4DC1E6970BB00774E3D /* JLDWProductDetailsViewController.swift */; };
 		C671E4E81E6972D400774E3D /* AttributeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C671E4E71E6972D400774E3D /* AttributeTableViewCell.swift */; };
@@ -49,7 +48,6 @@
 		C6F0A1FA1E69B0DB00C3C49B /* JLDWProductDetailsViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C671E4D91E6970A100774E3D /* JLDWProductDetailsViewControllerPresenter.swift */; };
 		C6F0A1FE1E69B20600C3C49B /* UtilityTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F0A1FD1E69B20600C3C49B /* UtilityTestCases.swift */; };
 		EA29AC521E684E230036F012 /* JLDWProductGridVCCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA29AC501E684E230036F012 /* JLDWProductGridVCCollectionViewCell.swift */; };
-		EA29AC541E685EB80036F012 /* JLDWProduceImgesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA29AC531E685EB80036F012 /* JLDWProduceImgesCollectionViewCell.swift */; };
 		EA5FCF8F1E6716D600F65C1F /* HelperUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA607F341E670066004419F5 /* HelperUtils.swift */; };
 		EA5FCF901E67174300F65C1F /* DNWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664282B1E6852D50016B562 /* DNWebService.swift */; };
 		EA5FCF911E67174900F65C1F /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C664282A1E6852D50016B562 /* DataService.swift */; };
@@ -97,7 +95,6 @@
 		C664282A1E6852D50016B562 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		C664282B1E6852D50016B562 /* DNWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNWebService.swift; sourceTree = "<group>"; };
 		C664282E1E6852DC0016B562 /* ErrorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
-		C66D5BC11E6871EA0011DEA0 /* JLDWProductsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWProductsCollectionView.swift; sourceTree = "<group>"; };
 		C671E4D91E6970A100774E3D /* JLDWProductDetailsViewControllerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWProductDetailsViewControllerPresenter.swift; sourceTree = "<group>"; };
 		C671E4DC1E6970BB00774E3D /* JLDWProductDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWProductDetailsViewController.swift; sourceTree = "<group>"; };
 		C671E4E71E6972D400774E3D /* AttributeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeTableViewCell.swift; sourceTree = "<group>"; };
@@ -114,7 +111,6 @@
 		C6F0A1F61E69A62900C3C49B /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		C6F0A1FD1E69B20600C3C49B /* UtilityTestCases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityTestCases.swift; sourceTree = "<group>"; };
 		EA29AC501E684E230036F012 /* JLDWProductGridVCCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWProductGridVCCollectionViewCell.swift; sourceTree = "<group>"; };
-		EA29AC531E685EB80036F012 /* JLDWProduceImgesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLDWProduceImgesCollectionViewCell.swift; sourceTree = "<group>"; };
 		EA5FCF931E6718BF00F65C1F /* TestJsonFileForProductsListWith21Products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestJsonFileForProductsListWith21Products.json; sourceTree = "<group>"; };
 		EA5FCF941E6718BF00F65C1F /* TestJsonFileForProductsListWithNoProduct.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestJsonFileForProductsListWithNoProduct.json; sourceTree = "<group>"; };
 		EA5FCF951E6718BF00F65C1F /* TestJsonFileForProductsListWithValidProducts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestJsonFileForProductsListWithValidProducts.json; sourceTree = "<group>"; };
@@ -316,7 +312,6 @@
 		C66428321E6857020016B562 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C66D5BBF1E6871EA0011DEA0 /* CollectionView */,
 				C66D5BC21E6871EA0011DEA0 /* CollectionViewCell */,
 				C66D5BC51E6871EA0011DEA0 /* TableView */,
 				C66D5BC61E6871EA0011DEA0 /* TableViewCell */,
@@ -324,26 +319,9 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		C66D5BBF1E6871EA0011DEA0 /* CollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				C66D5BC01E6871EA0011DEA0 /* ProductsCollectionView */,
-			);
-			path = CollectionView;
-			sourceTree = "<group>";
-		};
-		C66D5BC01E6871EA0011DEA0 /* ProductsCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				C66D5BC11E6871EA0011DEA0 /* JLDWProductsCollectionView.swift */,
-			);
-			path = ProductsCollectionView;
-			sourceTree = "<group>";
-		};
 		C66D5BC21E6871EA0011DEA0 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				EA29AC4D1E684E230036F012 /* ProduceImgesCollectionViewCell */,
 				EA29AC4F1E684E230036F012 /* ProductGridVCCollectionViewCell */,
 			);
 			path = CollectionViewCell;
@@ -486,14 +464,6 @@
 			path = CustomImageView;
 			sourceTree = "<group>";
 		};
-		EA29AC4D1E684E230036F012 /* ProduceImgesCollectionViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				EA29AC531E685EB80036F012 /* JLDWProduceImgesCollectionViewCell.swift */,
-			);
-			path = ProduceImgesCollectionViewCell;
-			sourceTree = "<group>";
-		};
 		EA29AC4F1E684E230036F012 /* ProductGridVCCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -627,8 +597,6 @@
 				EA5FCFEC1E672FD200F65C1F /* JLDWTestUtility.swift in Sources */,
 				C6AAF08B1E6852770026FF79 /* ProductPrise.swift in Sources */,
 				C63FB20B1E697032000225D4 /* ProductAttributeTableView.swift in Sources */,
-				EA29AC541E685EB80036F012 /* JLDWProduceImgesCollectionViewCell.swift in Sources */,
-				C66D5BC71E6871EA0011DEA0 /* JLDWProductsCollectionView.swift in Sources */,
 				C671E4DB1E6970A100774E3D /* JLDWProductDetailsViewControllerPresenter.swift in Sources */,
 				C6AAF08D1E6852770026FF79 /* SpecificProductInfo.swift in Sources */,
 				C6AAF0811E6852770026FF79 /* BaseModel.swift in Sources */,

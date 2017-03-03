@@ -93,11 +93,6 @@ class CustomImageView: UIImageView {
         guard  let loaderIndicator = loaderIndicator else {
             return;
         }
-//        let widthConstraint = NSLayoutConstraint(item: loaderIndicator as Any, attribute: .width, relatedBy: .equal,
-//                                                 toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 30)
-//
-//        let heightConstraint = NSLayoutConstraint(item: loaderIndicator as Any, attribute: .height, relatedBy: .equal,
-//                                                  toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 30)
 
         let xCenterConstraint = NSLayoutConstraint(item: loaderIndicator as Any, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0)
 

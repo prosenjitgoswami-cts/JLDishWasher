@@ -207,7 +207,7 @@ class JLDWProductDetailsVCTests: XCTestCase {
         let specificProductInfos : [SpecificProductInfo]? = productPageJsonResults()
         let specificProductInfo: SpecificProductInfo? = specificProductInfos?[0]
         let firstURSStrings  = specificProductInfo?.media?.imageURLStrings?[0]
-        XCTAssertEqual(firstURSStrings, "//johnlewis.scene7.com/is/image/JohnLewis/234326372?")
+        XCTAssertEqual(firstURSStrings, "https://johnlewis.scene7.com/is/image/JohnLewis/234326372?")
     }
 
     // Test the response has contained in valid number Media image URL strings value

@@ -149,7 +149,7 @@ class CustomImageCarouselView: UIView {
         let heightConstraint = NSLayoutConstraint(item: pageControl, attribute: .height, relatedBy: .equal,
                                                   toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 20)
         let bottomConstraint = NSLayoutConstraint(item: pageControl, attribute: .bottom, relatedBy: .equal,
-                                                  toItem: self, attribute: .bottom, multiplier: 1.0, constant: 20)
+                                                  toItem: self, attribute: .bottom, multiplier: 1.0, constant: 40)
 
         let xCenterConstraint = NSLayoutConstraint(item: pageControl, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0)
 

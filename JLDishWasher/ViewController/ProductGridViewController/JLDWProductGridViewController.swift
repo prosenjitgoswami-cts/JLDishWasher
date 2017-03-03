@@ -109,7 +109,7 @@ extension JLDWProductGridViewController {
     /**
      Update UI  On Orientation
      */
-    func updateUIOnOrientation() {
+    internal func updateUIOnOrientation() {
         productGridCollectionView.reloadData()
     }
 

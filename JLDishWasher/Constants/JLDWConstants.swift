@@ -59,3 +59,10 @@ let leftAndRightPaddings = 10.0
 
 // Segue Identifier
 let kSegurID_ToJLDWProductDetailsViewController = "ToJLDWProductDetailsViewController"
+
+//Static String 
+
+let StaticStrProductInformation =  "Product Information"
+let StaticProductSpecification =  "Product specification"
+let StaticProductCodeWithColon =   "Product Code:"
+

@@ -95,12 +95,6 @@ extension JLDWProductDetailsViewController {
 		} else {
 
 			hideLoadingIndicator()
-
-			self.showAlertOnError(withOKHandler: { (action) in
-			}, tryAgainHandler: { [weak self] (action) in
-				self?.fetchService()})
-
-			return
 			showAlertOnNoInternetConnection(tryAgainHandler: {[weak self] (action) in
 				// Fetch setvice on user request
 				self?.fetchService()

@@ -61,13 +61,13 @@ let kSegurID_ToJLDWProductDetailsViewController = "ToJLDWProductDetailsViewContr
 
 //Static String 
 
-let StaticStrProductInformation =  "Product information"
+let StaticStrProductInformation = "Product information"
 let StaticProductSpecification =  "Product specification"
-let StaticProductCodeWithColon =   "Product Code:"
+let StaticProductCodeWithColon =  "Product Code:"
 
 // Alert Message
-let ALTMessageNetworkConnection = "Internet connection is not available, Please try again"
-let ALTMessageError = "Please try again"
+let ALTMessageNetworkConnection = "Internet connection is not available. Please try again."
+let ALTMessageError = "Please try again."
 
 // Alert Button Title
 let AltBtnTitleOK = "OK"

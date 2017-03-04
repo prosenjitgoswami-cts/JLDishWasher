@@ -20,34 +20,12 @@ class JLDWProductGridVCTests: XCTestCase {
         return JLDWProductGridViewControllerPresenter()
     }()
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
     //MARK:------------------------------- * ----------------------------------
     //MARK: Test Cases For Response Validation
     // Check the Response Json response is valid
     func testCheckThatResponseContainsValidResult() {
 
-        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(jsonFile:TestJsonFileForProductsListWith21Products) {
+        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(withJSONFileName:TestJsonFileForProductsListWith21Products) {
 
             let productLists: [Product] = self.presenter.perseResponseAndBind(results: products)
 
@@ -58,7 +36,7 @@ class JLDWProductGridVCTests: XCTestCase {
     // Check the Response Json containts Max 20 results
     func testJsonFileForProductsListWithMax20Products() {
 
-        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(jsonFile:TestJsonFileForProductsListWith21Products) {
+        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(withJSONFileName:TestJsonFileForProductsListWith21Products) {
 
             let productLists: [Product] = self.presenter.perseResponseAndBind(results: products)
             XCTAssertTrue(productLists.count == 20)
@@ -69,7 +47,7 @@ class JLDWProductGridVCTests: XCTestCase {
     // Check the Response Json response is nil
     func testCheckThatResponseContainsNilResult() {
 
-        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(jsonFile:TestJsonFileForProductsListWithNoProduct) {
+        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(withJSONFileName:TestJsonFileForProductsListWithNoProduct) {
 
             let productLists: [Product] = self.presenter.perseResponseAndBind(results: products)
 
@@ -80,7 +58,7 @@ class JLDWProductGridVCTests: XCTestCase {
     // Check the Response Json response is valid Product DataModel
     func testCheckThatResponseContainsValidProductDataModel() {
 
-        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(jsonFile:TestJsonFileForProductsListWithValidProducts) {
+        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(withJSONFileName:TestJsonFileForProductsListWithValidProducts) {
 
             let productLists: [Product] = self.presenter.perseResponseAndBind(results: products)
 
@@ -95,7 +73,7 @@ class JLDWProductGridVCTests: XCTestCase {
     // Check the Response Json response has invalid product id
     func testCheckThatResponseHasInValidProductId() {
 
-        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(jsonFile:TestJsonFileForProductsListWithNoProduct) {
+        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(withJSONFileName:TestJsonFileForProductsListWithNoProduct) {
 
             let productLists: [Product] = self.presenter.perseResponseAndBind(results: products)
 
@@ -106,7 +84,7 @@ class JLDWProductGridVCTests: XCTestCase {
 
     func testCheckThatResponseContainsNotNUllProductId() {
 
-        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(jsonFile:TestJsonFileForProductsListWithValidProducts) {
+        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(withJSONFileName:TestJsonFileForProductsListWithValidProducts) {
 
             let productLists: [Product] = self.presenter.perseResponseAndBind(results: products)
 
@@ -118,7 +96,7 @@ class JLDWProductGridVCTests: XCTestCase {
     // Check the Response Json response has  product id
     func testCheckThatResponseHasValidProductId() {
 
-        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(jsonFile:TestJsonFileForProductsListWithValidProducts) {
+        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(withJSONFileName:TestJsonFileForProductsListWithValidProducts) {
 
             let productLists: [Product] = self.presenter.perseResponseAndBind(results: products)
 
@@ -133,7 +111,7 @@ class JLDWProductGridVCTests: XCTestCase {
     // Check the Response Json response has  product id
     func testCheckThatResponseHasValidTitle() {
 
-        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(jsonFile:TestJsonFileForProductsListWithValidProducts) {
+        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(withJSONFileName:TestJsonFileForProductsListWithValidProducts) {
 
             let productLists: [Product] = self.presenter.perseResponseAndBind(results: products)
 
@@ -145,7 +123,7 @@ class JLDWProductGridVCTests: XCTestCase {
     // Check the Response Json response has invalid Title
     func testCheckThatResponseHasInValidTitle() {
 
-        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(jsonFile:TestJsonFileForProductsListWithNoProduct) {
+        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(withJSONFileName:TestJsonFileForProductsListWithNoProduct) {
 
             let productLists: [Product] = self.presenter.perseResponseAndBind(results: products)
 
@@ -157,7 +135,7 @@ class JLDWProductGridVCTests: XCTestCase {
     // Check the Response Json response containts not null title
     func testCheckThatResponseContainsNotNUllTitle() {
 
-        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(jsonFile:TestJsonFileForProductsListWithValidProducts) {
+        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(withJSONFileName:TestJsonFileForProductsListWithValidProducts) {
 
             let productLists: [Product] = self.presenter.perseResponseAndBind(results: products)
 
@@ -172,7 +150,7 @@ class JLDWProductGridVCTests: XCTestCase {
     // Check the Response Json response containts not null imageURLString
     func testCheckThatResponseContainsNotNUllImageURLString() {
 
-        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(jsonFile:TestJsonFileForProductsListWithValidProducts) {
+        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(withJSONFileName:TestJsonFileForProductsListWithValidProducts) {
 
             let productLists: [Product] = self.presenter.perseResponseAndBind(results: products)
 
@@ -184,7 +162,7 @@ class JLDWProductGridVCTests: XCTestCase {
     // Check the Response Json response has invalid imageURLString
     func testCheckThatResponseHasInValidImageURLString() {
 
-        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(jsonFile:TestJsonFileForProductsListWithNoProduct) {
+        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(withJSONFileName:TestJsonFileForProductsListWithNoProduct) {
 
             let productLists: [Product] = self.presenter.perseResponseAndBind(results: products)
 
@@ -197,7 +175,7 @@ class JLDWProductGridVCTests: XCTestCase {
     // Check the Response Json response has  imageURLString
     func testCheckThatResponseHasValidImageURLString() {
 
-        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(jsonFile:TestJsonFileForProductsListWithValidProducts) {
+        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(withJSONFileName:TestJsonFileForProductsListWithValidProducts) {
 
             let productLists: [Product] = self.presenter.perseResponseAndBind(results: products)
 
@@ -206,12 +184,11 @@ class JLDWProductGridVCTests: XCTestCase {
         }
     }
     //MARK:------------------------------- * ----------------------------------
-    // Check the Response Json response containts not null ProductPrise Result
-
+    //MARK: Test Cases For ProductPrise
     // Check the Response Json response has invalid productPrise result
     func testCheckThatResponseHasInValidProductPriseResult() {
 
-        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(jsonFile:TestJsonFileForProductsListWithNoProduct) {
+        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(withJSONFileName:TestJsonFileForProductsListWithNoProduct) {
 
             let productLists: [Product] = self.presenter.perseResponseAndBind(results: products)
 
@@ -223,7 +200,7 @@ class JLDWProductGridVCTests: XCTestCase {
 
     func testCheckThatResponseContainsNotNUllProductPriseResult() {
 
-        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(jsonFile:TestJsonFileForProductsListWithValidProducts) {
+        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(withJSONFileName:TestJsonFileForProductsListWithValidProducts) {
 
             let productLists: [Product] = self.presenter.perseResponseAndBind(results: products)
 
@@ -235,7 +212,7 @@ class JLDWProductGridVCTests: XCTestCase {
     // Check the Response Json response containts has valid product prise
     func testCheckThatResponseHasValidProductPrise() {
 
-        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(jsonFile:TestJsonFileForProductsListWithValidProducts) {
+        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(withJSONFileName:TestJsonFileForProductsListWithValidProducts) {
 
             let productLists: [Product] = self.presenter.perseResponseAndBind(results: products)
 
@@ -247,7 +224,7 @@ class JLDWProductGridVCTests: XCTestCase {
     // Check the Response Json response containts has valid product prise
     func testCheckThatResponseHasValidProductPrisewithPriseSymBol() {
 
-        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(jsonFile:TestJsonFileForProductsListWithValidProducts) {
+        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(withJSONFileName:TestJsonFileForProductsListWithValidProducts) {
 
             let productLists: [Product] = self.presenter.perseResponseAndBind(results: products)
 
@@ -259,7 +236,7 @@ class JLDWProductGridVCTests: XCTestCase {
     // Check the Response Json response has invalid productPrise result
     func testCheckThatResponseHasInValidProductPriseWthPriseSymBol() {
 
-        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(jsonFile:TestJsonFileForProductsListWithNoProduct) {
+        if let products : [NSDictionary] = JLDWTestUtility.fetchJSONFromTestJsonFile(withJSONFileName:TestJsonFileForProductsListWithNoProduct) {
 
             let productLists: [Product] = self.presenter.perseResponseAndBind(results: products)
 

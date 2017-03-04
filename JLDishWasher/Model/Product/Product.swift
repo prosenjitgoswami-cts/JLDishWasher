@@ -6,36 +6,48 @@
 //  Copyright © 2017 CTS. All rights reserved.
 //
 
-import UIKit
+class Product: BaseModel {
 
-class Product: NSObject {
+	var productId: String?
+	var title: String?
+	var imageURLString: String?
+	var productPrise: ProductPrise?
+	var priseDisplayString: String?
 
-    var productId: String?
-    var title: String?
-    var imageURLString: String?
-    var productPrise: ProductPrise?
-    var priseDisplayString: String?
+    required init(product response: [String: Any]?) {
+    super.init()
+        bindWithProductResult(product: response)
+    }
 
-    public func initWithResponse(response: Dictionary<String, Any>?) {
+}
+
+//MARK:------------------------------- * ----------------------------------
+//MARK: Data Bind Method
+
+extension Product {
+
+    public func bindWithProductResult(product response: [String: Any]?) {
 
         if let response = response {
 
-            productId = response[kDictProductId] as! String?
-            title = response[kDictTitle] as! String?
-            imageURLString = response[kDictImageURLString] as! String?
+            productId = response[kDictProductId] as? String
+            title = response[kDictTitle] as? String
+            imageURLString = response[kDictImageURLString] as? String
 
-            if let dictPrice = response[kDictPrice] as! Dictionary<String, Any?>?{
-                perseProductPriseWith(price: dictPrice)
+            if let dictPrice = response[kDictPrice] as? [String: Any]{
+                bindWith(priceDetails: dictPrice)
             }
         }
     }
 
-
-    private func perseProductPriseWith(price: Dictionary<String, Any>){
-        productPrise = ProductPrise();
-        productPrise?.initWith(productPrise: price)
+    /**
+     Perse product prise response and Bind with model
+     @param  priceDetails: It product prise details Dictionary
+     */
+    private func bindWith(priceDetails: [String: Any]){
+        productPrise = ProductPrise(productPrise: priceDetails)
         if let productPrise = productPrise?.priseNow {
-        self.priseDisplayString  = "£" + productPrise
+            self.priseDisplayString  = "£" + productPrise
         }
     }
 }

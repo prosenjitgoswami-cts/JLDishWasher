@@ -17,7 +17,7 @@ class JLDWProductGridViewControllerPresenter: NSObject {
     public func fetchProductList(failed: @escaping (Error) -> Void, success: @escaping ([Product]?) -> Void) {
 
         ConnectionManager.requestWithURLString(urlString: kURLStringProductList, failed: { (error) in
-
+			failed (error)
         }) { (response) in
 
             guard let _response = response else{
@@ -45,8 +45,7 @@ class JLDWProductGridViewControllerPresenter: NSObject {
 
             if i>=20 { break}
 
-            let  productDetails =  Product()
-            productDetails.initWithResponse(response: product as? Dictionary<String, Any>)
+            let  productDetails =  Product(product: product as? [String: Any])
             products.append(productDetails)
             i += 1
         }
@@ -54,3 +53,6 @@ class JLDWProductGridViewControllerPresenter: NSObject {
     }
 
 }
+
+
+

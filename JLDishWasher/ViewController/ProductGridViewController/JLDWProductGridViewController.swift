@@ -73,7 +73,11 @@ extension JLDWProductGridViewController {
 			showLoadingIndicator()
 			self.presenter.fetchProductList(failed: { [weak self] (error) in
 
-				self?.showAlertOnError()
+				self?.showAlertOnError(withOKHandler: { (action) in
+				}, tryAgainHandler: { [weak self] (action) in
+					// Fetch setvice on user request
+					self?.fetchService() })
+
 				self?.hideLoadingIndicator()
 
 			}) { [weak self] (products) in
@@ -83,8 +87,13 @@ extension JLDWProductGridViewController {
 			}
 		}
 		else {
-			showAlertOnNoInternetConnection()
+
+			//Hide loading 
 			hideLoadingIndicator()
+			showAlertOnNoInternetConnection(tryAgainHandler: {[weak self] (action) in
+				// Fetch setvice on user request
+				self?.fetchService()
+			})
 		}
 	}
 

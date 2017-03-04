@@ -10,7 +10,6 @@
 // Service URL
 let kURLStringProductList = "https://api.johnlewis.com/v1/products/search?q=dishwasher&key=Wu1Xqn3vNrd1p7hqkvB6hEu0G9OrsYGb&pageSize=20"
 
-
 // Dictionary Key
 let kDictProducts = "products"
 let kDictProductId = "productId"
@@ -72,6 +71,7 @@ let ALTMessageError = "Please try again"
 
 // Alert Button Title
 let AltBtnTitleOK = "OK"
+let AltBtnTitleTRYAGAIN = "TRY AGAIN"
 
 // Alert Title
 let AltTitleEmpty = ""

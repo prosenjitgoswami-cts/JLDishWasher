@@ -64,6 +64,14 @@ class DNWebService:BaseDataService {
 //MARK: ConnectionManager Class
 class ConnectionManager: URLSession {
 
+
+	/*
+	Request With URL String
+	@param urlString: URL String
+
+	failed: Failed Callback always in Main Thread, In success UI may be updated.
+	successBlock: Success Callback always in Main Thread, In success UI may be updated.
+	*/
 	class func requestWithURLString(urlString: String?,
 	                                failed: @escaping (Error) -> Void,
 	                                successBlock: @escaping ([String: Any]?)->Void) -> Void{
@@ -73,7 +81,6 @@ class ConnectionManager: URLSession {
 		guard let url = URL(string: endpointURLString!) else {
 			//Error: cannot create URL
 			ConnectionManager.errThrowWithFailed(failed: ErrorManager.errorNilURlString(), failedBlock: failed)
-
 			return
 		}
 		let urlRequest = URLRequest(url: url)

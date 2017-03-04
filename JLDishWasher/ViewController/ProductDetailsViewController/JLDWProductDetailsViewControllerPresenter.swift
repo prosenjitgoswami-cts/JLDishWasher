@@ -36,7 +36,7 @@ class JLDWProductDetailsViewControllerPresenter: NSObject {
         if let endPointURLString = endPointURLString {
 
             ConnectionManager.requestWithURLString(urlString: endPointURLString, failed: { (error) in
-
+				failed (error)
             }) { (response) in
 
                 guard let _response = response else{

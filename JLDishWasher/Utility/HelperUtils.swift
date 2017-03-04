@@ -105,7 +105,7 @@ public extension String {
 public extension UIViewController {
 
 	/*
-	show alert 
+	show alert
 	*/
 	public func showAlert(with title: String?, message: String?, defaultButtonTitle: String?, cancelButtonTitle: String?, defaultButtonHandler: @escaping (UIAlertAction!) -> Void, cancelButtonHandler: @escaping (UIAlertAction!) -> Void) {
 
@@ -126,36 +126,63 @@ public extension UIViewController {
 			}))
 		}
 
-		self.present(alertController, animated: true) {
+		// If current exctution is in MainThread
+		if Thread.isMainThread {
+			self.present(alertController, animated: true) {}
+		} //If current exctution is not in MainThread, then present on MainThread
+		else {DispatchQueue.main.async {
+			self.present(alertController, animated: true) {}}
 		}
 	}
+		/*
+		show alert with title, message, OK button
+		*/
+		public func showAlert(with title: String?, message: String?) {
 
-	/*
-	show alert with title, message, OK button
-	*/
-	public func showAlert(with title: String?, message: String?) {
+			self.showAlert(with: title, message: message, defaultButtonTitle: AltBtnTitleOK, cancelButtonTitle: nil,  defaultButtonHandler: { action in
+			}, cancelButtonHandler: { action in
+			})
+		}
 
-		self.showAlert(with: title, message: message, defaultButtonTitle: AltBtnTitleOK, cancelButtonTitle: nil,  defaultButtonHandler: { action in
-		}, cancelButtonHandler: { action in
-		})
-	}
+		/*
+		show alert with title, message, OK button, TRY AGAIN gain Button
+		*/
+		public func showAlert(with title: String?, message: String?, okButtonHandler: @escaping (UIAlertAction!) -> Void, tryAgainButtonHandler: @escaping (UIAlertAction!) -> Void) {
 
-	/*
-	show alert on offline
-	*/
-	public func showAlertOnNoInternetConnection() {
+			showAlert(with: title,
+			          message: message,
+			          defaultButtonTitle: AltBtnTitleOK,
+			          cancelButtonTitle: AltBtnTitleTRYAGAIN,
+			          defaultButtonHandler: okButtonHandler,
+			          cancelButtonHandler: tryAgainButtonHandler)
+		}
 
-		showAlert(with: AltTitleEmpty, message: ALTMessageNetworkConnection)
-	}
+		/*
+		show alert on offline
+		*/
+		public func showAlertOnNoInternetConnection(tryAgainHandler: @escaping (UIAlertAction!) -> Void) {
 
-	/*
-	show alert on error
-	*/
-	public func showAlertOnError() {
+			showAlert(with: AltTitleEmpty,
+			          message: ALTMessageNetworkConnection,
+			          defaultButtonTitle: nil,
+			          cancelButtonTitle: AltBtnTitleTRYAGAIN,
+			          defaultButtonHandler:{(action) in},
+			          cancelButtonHandler: tryAgainHandler)
 
-		showAlert(with: AltTitleError, message: ALTMessageError)
+		}
 
-	}
+		/*
+		show alert on error
+		*/
+		public func showAlertOnError(withOKHandler okButtonHandler: @escaping (UIAlertAction!) -> Void, tryAgainHandler: @escaping (UIAlertAction!) -> Void) {
 
+			showAlert(with: AltTitleError,
+			          message: ALTMessageError,
+			          defaultButtonTitle: AltBtnTitleOK,
+			          cancelButtonTitle: AltBtnTitleTRYAGAIN,
+			          defaultButtonHandler: okButtonHandler,
+			          cancelButtonHandler: tryAgainHandler)
+		}
+		
 }
 

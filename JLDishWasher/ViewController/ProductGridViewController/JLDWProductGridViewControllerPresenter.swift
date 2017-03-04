@@ -17,7 +17,7 @@ class JLDWProductGridViewControllerPresenter: NSObject {
     public func fetchProductList(failed: @escaping (Error) -> Void, success: @escaping ([Product]?) -> Void) {
 
         ConnectionManager.requestWithURLString(urlString: kURLStringProductList, failed: { (error) in
-
+			failed (error)
         }) { (response) in
 
             guard let _response = response else{

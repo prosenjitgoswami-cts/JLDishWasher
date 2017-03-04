@@ -44,6 +44,8 @@ Additional Information
 - Hardware: All apple iPad device in both orientation.
 - iOS version: supports iOS 9 and above
 - Programing Language: Swift 3.0
+
+
 Known Issues
 ================
 - In the Product details page the pagination max dots 20
@@ -51,7 +53,7 @@ Known Issues
 
 Credits
 ================
-Swift-Reachability class is taken from Apple Swift-Reachability
+Reachability class used Apple Swift-Reachability functions
 
 License
 =======

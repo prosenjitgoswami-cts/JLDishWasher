@@ -40,10 +40,10 @@ This JLDishWasher application is displaying the dishwasher product Listing with 
     
 Additional Information
 ===========================
-Version: 1.0
-Hardware: All apple iPad device in both orientation.
-iOS version: supports iOS 9 and above
-
+- Version: 1.0
+- Hardware: All apple iPad device in both orientation.
+- iOS version: supports iOS 9 and above
+- Programing Language: Swift 3.0
 Known Issues
 ================
 - In the Product details page the pagination max dots 20

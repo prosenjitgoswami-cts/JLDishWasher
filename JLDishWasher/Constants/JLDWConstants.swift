@@ -62,7 +62,7 @@ let kSegurID_ToJLDWProductDetailsViewController = "ToJLDWProductDetailsViewContr
 
 //Static String 
 
-let StaticStrProductInformation =  "Product Information"
+let StaticStrProductInformation =  "Product information"
 let StaticProductSpecification =  "Product specification"
 let StaticProductCodeWithColon =   "Product Code:"
 

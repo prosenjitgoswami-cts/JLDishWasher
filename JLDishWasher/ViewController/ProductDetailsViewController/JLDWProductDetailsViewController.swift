@@ -78,7 +78,10 @@ extension JLDWProductDetailsViewController {
 				presenter.fetchProductDetails(withProducetID: productID, failed: {[weak self] (error) in
 
 					self?.hideLoadingIndicator()
-					self?.showAlertOnError()
+
+					self?.showAlertOnError(withOKHandler: { (action) in
+					}, tryAgainHandler: { [weak self] (action) in
+						self?.fetchService()})
 
 					}, success: {[weak self] (specificProductInfos) in
 
@@ -90,8 +93,18 @@ extension JLDWProductDetailsViewController {
 				})
 			}
 		} else {
-			showAlertOnNoInternetConnection()
+
 			hideLoadingIndicator()
+
+			self.showAlertOnError(withOKHandler: { (action) in
+			}, tryAgainHandler: { [weak self] (action) in
+				self?.fetchService()})
+
+			return
+			showAlertOnNoInternetConnection(tryAgainHandler: {[weak self] (action) in
+				// Fetch setvice on user request
+				self?.fetchService()
+			})
 		}
 	}
 
